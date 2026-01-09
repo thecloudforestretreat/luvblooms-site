@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   fetch("/assets/includes/header.html")
-    .then(r => r.text())
-    .then(h => document.getElementById("siteHeader").innerHTML = h);
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var mount = document.getElementById("siteHeader");
+      if (mount) mount.innerHTML = html;
+    });
 
   fetch("/assets/includes/footer.html")
-    .then(r => r.text())
-    .then(f => document.getElementById("siteFooter").innerHTML = f);
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var mount = document.getElementById("siteFooter");
+      if (mount) mount.innerHTML = html;
+    });
 });
