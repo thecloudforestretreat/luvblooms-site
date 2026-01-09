@@ -23,11 +23,12 @@
   justify-content: space-between;
 }
 
+/* Bigger logo */
 .logo img {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
-  opacity: 0.95;
+  opacity: 0.96;
 }
 
 .nav-desktop a {
@@ -37,9 +38,11 @@
   font-size: 16px;
 }
 
-.nav-desktop a:hover { opacity: 1; }
+.nav-desktop a:hover {
+  opacity: 1;
+}
 
-/* Hamburger (fix iOS underscore look) */
+/* Hamburger button */
 .hamburger {
   display: none;
   background: transparent;
@@ -50,14 +53,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.hamburger span {
+.icon-hamburger {
+  width: 30px;
+  height: 30px;
   display: block;
-  width: 24px;
-  height: 3px;              /* thicker */
-  background: var(--lb-text);
-  margin: 4px 0;            /* tighter spacing */
-  border-radius: 999px;
-  transform: translateZ(0); /* crisp on iOS */
+}
+
+.icon-hamburger path {
+  stroke: var(--lb-text);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  fill: none;
 }
 
 /* Overlay + Panel */
@@ -82,7 +88,9 @@
   transition: transform 180ms ease;
 }
 
-.menu-panel[data-open="true"] { transform: translateX(0); }
+.menu-panel[data-open="true"] {
+  transform: translateX(0);
+}
 
 .menu-top {
   display: flex;
@@ -106,23 +114,24 @@
   border: 1px solid var(--lb-border-soft);
   background: rgba(231, 228, 209, 0.06);
   cursor: pointer;
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   -webkit-tap-highlight-color: transparent;
 }
 
-.menu-close span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 22px;
-  height: 3px;              /* match hamburger thickness */
-  background: var(--lb-text);
-  border-radius: 999px;
-  transform-origin: center;
+.icon-close {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
-.menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
-.menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
+.icon-close path {
+  stroke: var(--lb-text);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  fill: none;
+}
 
 .menu-links {
   display: grid;
@@ -139,10 +148,13 @@
   background: rgba(231, 228, 209, 0.04);
 }
 
-.menu-links a:hover { background: rgba(231, 228, 209, 0.07); }
+.menu-links a:hover {
+  background: rgba(231, 228, 209, 0.07);
+}
 
 /* Mobile */
 @media (max-width: 900px) {
   .nav-desktop { display: none; }
   .hamburger { display: inline-flex; }
+  .logo img { height: 38px; }
 }
