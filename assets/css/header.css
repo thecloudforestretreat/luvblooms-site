@@ -37,11 +37,9 @@
   font-size: 16px;
 }
 
-.nav-desktop a:hover {
-  opacity: 1;
-}
+.nav-desktop a:hover { opacity: 1; }
 
-/* Hamburger */
+/* Hamburger (fix iOS underscore look) */
 .hamburger {
   display: none;
   background: transparent;
@@ -49,15 +47,17 @@
   padding: 10px;
   border-radius: 12px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 24px;
+  height: 3px;              /* thicker */
   background: var(--lb-text);
-  margin: 5px 0;
+  margin: 4px 0;            /* tighter spacing */
   border-radius: 999px;
+  transform: translateZ(0); /* crisp on iOS */
 }
 
 /* Overlay + Panel */
@@ -82,9 +82,7 @@
   transition: transform 180ms ease;
 }
 
-.menu-panel[data-open="true"] {
-  transform: translateX(0);
-}
+.menu-panel[data-open="true"] { transform: translateX(0); }
 
 .menu-top {
   display: flex;
@@ -109,26 +107,22 @@
   background: rgba(231, 228, 209, 0.06);
   cursor: pointer;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-close span {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 20px;
-  height: 2px;
+  width: 22px;
+  height: 3px;              /* match hamburger thickness */
   background: var(--lb-text);
   border-radius: 999px;
   transform-origin: center;
 }
 
-.menu-close span:first-child {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.menu-close span:last-child {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
+.menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+.menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
 
 .menu-links {
   display: grid;
@@ -145,11 +139,9 @@
   background: rgba(231, 228, 209, 0.04);
 }
 
-.menu-links a:hover {
-  background: rgba(231, 228, 209, 0.07);
-}
+.menu-links a:hover { background: rgba(231, 228, 209, 0.07); }
 
-/* Mobile rules */
+/* Mobile */
 @media (max-width: 900px) {
   .nav-desktop { display: none; }
   .hamburger { display: inline-flex; }
