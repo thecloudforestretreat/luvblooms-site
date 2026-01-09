@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #364449;
+  color: #0D5925;
+  font-family: "Cormorant Garamond", serif;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+.hero {
+  max-width: 720px;
+}
+
+.hero-actions {
+  margin-top: 24px;
+}
+
+.btn-primary {
+  background: #0D5925;
+  color: #FBF8F4;
+  padding: 10px 22px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  border: 1px solid #0D5925;
+  color: #0D5925;
+  padding: 10px 22px;
+  text-decoration: none;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-social img {
+  width: 26px;
+  margin: 0 6px;
+}
+
+.footer-copy {
+  margin-top: 16px;
+  font-size: 14px;
+}
