@@ -10,24 +10,29 @@
       <a href="/contact.html">Contact</a>
     </nav>
 
+    <!-- HAMBURGER -->
     <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <svg class="icon-hamburger" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M4 7H20" />
-        <path d="M4 12H20" />
-        <path d="M4 17H20" />
+      <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7H20" stroke="#E7E4D1" stroke-width="2.8" stroke-linecap="round" />
+        <path d="M4 12H20" stroke="#E7E4D1" stroke-width="2.8" stroke-linecap="round" />
+        <path d="M4 17H20" stroke="#E7E4D1" stroke-width="2.8" stroke-linecap="round" />
       </svg>
     </button>
   </div>
 
+  <!-- OVERLAY -->
   <div class="menu-overlay" data-menu-overlay hidden></div>
 
+  <!-- MOBILE MENU -->
   <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu" hidden>
     <div class="menu-top">
       <div class="menu-brand">Menu</div>
+
+      <!-- CLOSE -->
       <button class="menu-close" type="button" aria-label="Close menu">
-        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M6 6L18 18" />
-          <path d="M18 6L6 18" />
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="#E7E4D1" stroke-width="2.8" stroke-linecap="round" />
+          <path d="M18 6L6 18" stroke="#E7E4D1" stroke-width="2.8" stroke-linecap="round" />
         </svg>
       </button>
     </div>
