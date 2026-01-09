@@ -2,11 +2,12 @@
   --lb-bg: #364449;
   --lb-text: #E7E4D1;
 
-  /* Requested button colors */
+  /* Buttons */
   --lb-btn-bg: #E7E4D1;
-  --lb-btn-text: #A1BFAA;
+  --lb-btn-text: #364449; /* primary button text requested */
+  --lb-btn-ghost-text: #E7E4D1;
 
-  /* Accent (still used for subtle lines, not buttons) */
+  /* Accent for subtle lines only */
   --lb-accent: #0D5925;
 
   --lb-card: rgba(231, 228, 209, 0.06);
@@ -52,7 +53,6 @@ a { text-decoration: none; }
     radial-gradient(700px 450px at 12% 10%, rgba(231, 228, 209, 0.06), transparent 60%),
     radial-gradient(680px 520px at 90% 18%, rgba(161, 191, 170, 0.05), transparent 58%),
     radial-gradient(800px 560px at 40% 92%, rgba(231, 228, 209, 0.05), transparent 60%);
-  opacity: 1;
 }
 
 .hero {
@@ -106,6 +106,7 @@ h1 {
   border: 1px solid var(--lb-border);
   transition: transform 140ms ease, opacity 140ms ease;
   min-width: 140px;
+  font-weight: 600;
 }
 
 .btn:active { transform: translateY(1px); }
@@ -120,7 +121,7 @@ h1 {
 
 .btn-ghost {
   background: transparent;
-  color: var(--lb-text);
+  color: var(--lb-btn-ghost-text);
   border-color: rgba(231, 228, 209, 0.35);
 }
 
@@ -470,23 +471,9 @@ h1 {
 
 /* Mobile */
 @media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 38px;
-  }
-
-  .visual-card {
-    height: 280px;
-  }
-
-  .journey, .cards, .how {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-bar {
-    align-items: flex-start;
-  }
+  .hero-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 38px; }
+  .visual-card { height: 280px; }
+  .journey, .cards, .how { grid-template-columns: 1fr; }
+  .cta-bar { align-items: flex-start; }
 }
