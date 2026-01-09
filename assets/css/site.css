@@ -1,22 +1,29 @@
-/* Global reset */
+:root {
+  --lb-bg: #364449;
+  --lb-text: #E7E4D1;
+  --lb-accent: #0D5925;
+}
+
+/* Reset */
 * {
   box-sizing: border-box;
 }
 
-/* Base typography */
+/* Base */
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #364449;
-  color: #0D5925;
+  background-color: var(--lb-bg);
+  color: var(--lb-text);
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Force all text elements to brand color */
+/* Force all typography */
+body, main, section, header, footer, div,
 h1, h2, h3, h4, h5, h6,
 p, span, li, ol, ul, label,
 a, button, input, textarea {
-  color: #0D5925;
+  color: var(--lb-text);
   font-family: "Cormorant Garamond", serif;
 }
 
@@ -43,8 +50,8 @@ h1, h2, h3 {
 
 /* Buttons */
 .btn-primary {
-  background-color: #0D5925;
-  color: #FBF8F4;
+  background-color: var(--lb-accent);
+  color: var(--lb-text);
   padding: 10px 22px;
   text-decoration: none;
   border-radius: 4px;
@@ -52,8 +59,8 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-  border: 1px solid #0D5925;
-  color: #0D5925;
+  border: 1px solid var(--lb-text);
+  color: var(--lb-text);
   padding: 10px 22px;
   text-decoration: none;
   border-radius: 4px;
@@ -82,5 +89,5 @@ h1, h2, h3 {
 .footer-copy {
   margin-top: 16px;
   font-size: 14px;
-  color: #0D5925;
+  color: var(--lb-text);
 }
