@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | LuvBlooms</title>
 
+  <meta name="description" content="Get in touch with LuvBlooms. We would love to hear your questions, thoughts, or ideas about floral rituals and curated blooms.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://luvblooms.us/contact.html">
+  <meta name="theme-color" content="#364449">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | LuvBlooms">
+  <meta property="og:description" content="Questions, thoughts, or ideas? Connect with LuvBlooms and let us know how we can help.">
+  <meta property="og:url" content="https://luvblooms.us/contact.html">
+  <meta property="og:image" content="https://luvblooms.us/og-lb.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | LuvBlooms">
+  <meta name="twitter:description" content="Questions, thoughts, or ideas? Connect with LuvBlooms and let us know how we can help.">
+  <meta name="twitter:image" content="https://luvblooms.us/og-lb.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=4">
+  <link rel="stylesheet" href="/assets/css/header.css?v=4">
+
+  <!-- Head-only JS -->
+  <script src="/assets/js/includes.js" defer></script>
+
+  <style>
+    /* Contact page only styles */
+
+    .contact-hero {
+      padding: 34px 0 10px;
+    }
+
+    .contact-kicker {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin: 0 0 10px;
+      opacity: 0.88;
+    }
+
+    .contact-title {
+      margin: 0 0 12px;
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .contact-lead {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.6;
+      opacity: 0.92;
+      max-width: 60ch;
+    }
+
+    .contact-wrap {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-card {
+      border-radius: 22px;
+      border: 1px solid rgba(231, 228, 209, 0.16);
+      background: rgba(0, 0, 0, 0.18);
+      padding: 18px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(231, 228, 209, 0.14), transparent 45%),
+        radial-gradient(circle at 75% 45%, rgba(161, 191, 170, 0.12), transparent 48%);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .contact-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .contact-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    /* Placeholder form */
+    .form-shell {
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(231, 228, 209, 0.18);
+      background: rgba(0, 0, 0, 0.14);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+      padding: 18px 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .form-line {
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(231, 228, 209, 0.28);
+      background: rgba(231, 228, 209, 0.06);
+    }
+
+    .form-line.large {
+      height: 120px;
+      border-radius: 16px;
+    }
+
+    .form-note {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: 0.75;
+    }
+
+    .contact-quiet {
+      margin-top: 28px;
+      border-top: 1px solid rgba(231, 228, 209, 0.12);
+      padding-top: 22px;
+    }
+
+    .contact-quiet p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.7;
+      opacity: 0.92;
+      max-width: 78ch;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .contact-title {
+        font-size: 36px;
+      }
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="page">
+    <section class="contact-hero">
+      <p class="contact-kicker">Contact</p>
+      <h1 class="contact-title">Let us bloom together.</h1>
+      <p class="contact-lead">
+        Have a question, a thought, or a quiet idea you would like to share?
+        We would love to hear from you.
+      </p>
+    </section>
+
+    <section class="contact-wrap">
+      <div class="contact-card">
+        <h3>Why reach out?</h3>
+        <p>
+          Whether you are curious about upcoming floral experiences, have feedback,
+          or simply want to say hello, this space is here for connection.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>A gentle note</h3>
+        <p>
+          This is a placeholder form for now. Soon, it will become a place to begin
+          thoughtful conversations and meaningful floral moments.
+        </p>
+      </div>
+    </section>
+
+    <!-- Placeholder form -->
+    <section class="form-shell" aria-label="Contact form placeholder">
+      <div class="form-row">
+        <div class="form-field">
+          <div class="form-label">First Name</div>
+          <div class="form-line"></div>
+        </div>
+        <div class="form-field">
+          <div class="form-label">Last Name</div>
+          <div class="form-line"></div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <div class="form-label">Email</div>
+          <div class="form-line"></div>
+        </div>
+        <div class="form-field">
+          <div class="form-label">How did you hear about us?</div>
+          <div class="form-line"></div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div class="form-label">Questions or Comments</div>
+        <div class="form-line large"></div>
+      </div>
+
+      <div class="form-note">
+        Form submission coming soon.
+      </div>
+    </section>
+
+    <section class="contact-quiet">
+      <p>
+        At LuvBlooms, we believe communication should feel as thoughtful as the
+        arrangements we create. Thank you for taking a moment to connect.
+      </p>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="/assets/js/site.js?v=4"></script>
+</body>
+</html>
