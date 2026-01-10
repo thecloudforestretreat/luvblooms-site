@@ -304,6 +304,10 @@
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
+    function safeJsonParse(text) {
+      try { return JSON.parse(text); } catch (e) { return {}; }
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       const ts = document.getElementById("client_timestamp");
       const ua = document.getElementById("user_agent");
@@ -333,6 +337,9 @@
         const email = (data.get("email") || "").toString().trim();
         const heard = (data.get("heard_from") || "").toString().trim();
         const message = (data.get("message") || "").toString().trim();
+        const page = (data.get("page") || "/contact").toString();
+        const clientTs = (data.get("client_timestamp") || "").toString();
+        const userAgent = (data.get("user_agent") || "").toString();
 
         if (!first || !last || !email || !heard || !message) {
           setStatus("Please complete all fields.");
@@ -346,30 +353,35 @@
         btn.disabled = true;
         setStatus("Sending...");
 
-        const payload = {
-          first_name: first,
-          last_name: last,
-          email: email,
-          heard_from: heard,
-          message: message,
-          page: "/contact",
-          client_timestamp: (data.get("client_timestamp") || "").toString(),
-          user_agent: (data.get("user_agent") || "").toString(),
-          ip: "" // Apps Script web apps do not reliably expose client IP
-        };
-
         try {
+          // IMPORTANT: URL-encoded to avoid CORS preflight
+          const body = new URLSearchParams({
+            website: "", // honeypot remains empty
+            first_name: first,
+            last_name: last,
+            email: email,
+            heard_from: heard,
+            message: message,
+            page: page,
+            client_timestamp: clientTs,
+            user_agent: userAgent,
+            ip: ""
+          });
+
           const resp = await fetch(APPS_SCRIPT_URL, {
             method: "POST",
             mode: "cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: body.toString()
           });
 
-          const json = await resp.json().catch(() => ({}));
+          const text = await resp.text();
+          const json = safeJsonParse(text);
 
           if (!resp.ok || !json || json.ok !== true) {
-            setStatus("Something went wrong. Please try again.");
+            setStatus((json && json.message) ? json.message : "Something went wrong. Please try again.");
             btn.disabled = false;
             return;
           }
