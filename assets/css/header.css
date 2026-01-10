@@ -21,26 +21,52 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
 }
 
-/* Logo size */
+/* Constrain logo block so it cannot squeeze everything */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+/* Logo image stays stable */
 .logo img {
   height: 38px;
   width: auto;
   display: block;
+  flex: 0 0 auto;
+}
+
+/* If your logo text is inside the same <a>, clamp it safely */
+.logo span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
 }
 
 /* Desktop nav */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
 .nav-desktop a {
   margin-left: 18px;
   color: var(--lb-text);
   opacity: 0.92;
   font-size: 16px;
+  white-space: nowrap;
 }
 
-.nav-desktop a:hover {
-  opacity: 1;
-}
+.nav-desktop a:hover { opacity: 1; }
 
 /* Hamburger */
 .hamburger {
@@ -50,6 +76,7 @@
   padding: 8px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto;
 }
 
 /* Overlay */
@@ -92,7 +119,6 @@
   text-transform: uppercase;
 }
 
-/* Close button */
 .menu-close {
   background: transparent;
   border: 0;
@@ -101,7 +127,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Menu links */
 .menu-links {
   margin-top: 20px;
   display: grid;
@@ -119,10 +144,9 @@
 
 /* Mobile only */
 @media (max-width: 900px) {
-  .nav-desktop {
-    display: none;
-  }
-  .hamburger {
-    display: inline-flex;
-  }
+  .nav-desktop { display: none; }
+  .hamburger { display: inline-flex; }
+
+  /* Give logo text less room on mobile */
+  .logo span { max-width: 150px; }
 }
