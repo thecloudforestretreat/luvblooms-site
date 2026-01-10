@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Contact | LuvBlooms</title>
 
-  <meta name="description" content="Get in touch with LuvBlooms. We would love to hear your questions, thoughts, or ideas about floral rituals and curated blooms.">
+  <meta name="description" content="Contact LuvBlooms. Send a message, share an idea, or ask a question about our floral rituals and curated blooms.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://luvblooms.us/contact.html">
@@ -34,58 +34,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
-  <link rel="stylesheet" href="/assets/css/header.css?v=4">
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
+  <link rel="stylesheet" href="/assets/css/header.css?v=6">
 
   <!-- Head-only JS -->
   <script src="/assets/js/includes.js" defer></script>
 
   <style>
-    /* Contact page only styles */
-
-    .contact-hero {
-      padding: 34px 0 10px;
-    }
-
+    /* Contact page styles: scoped, no impact on other pages */
+    .contact-hero { padding: 34px 0 10px; }
     .contact-kicker {
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 14px;
       margin: 0 0 10px;
       opacity: 0.88;
     }
-
     .contact-title {
       margin: 0 0 12px;
       font-size: 40px;
       line-height: 1.1;
       font-weight: 500;
     }
-
     .contact-lead {
       margin: 0;
       font-size: 19px;
-      line-height: 1.6;
+      line-height: 1.65;
       opacity: 0.92;
-      max-width: 60ch;
+      max-width: 66ch;
     }
 
-    .contact-wrap {
-      margin-top: 28px;
+    .contact-grid {
+      margin-top: 22px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 16px;
+      align-items: start;
     }
 
     .contact-card {
       border-radius: 22px;
       border: 1px solid rgba(231, 228, 209, 0.16);
-      background: rgba(0, 0, 0, 0.18);
+      background: rgba(0, 0, 0, 0.16);
       padding: 18px 16px;
       position: relative;
       overflow: hidden;
     }
-
     .contact-card::before {
       content: "";
       position: absolute;
@@ -96,7 +90,6 @@
       opacity: 0.55;
       pointer-events: none;
     }
-
     .contact-card h3 {
       position: relative;
       z-index: 1;
@@ -104,19 +97,17 @@
       font-size: 22px;
       font-weight: 500;
     }
-
     .contact-card p {
       position: relative;
       z-index: 1;
       margin: 0;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       opacity: 0.92;
     }
 
-    /* Placeholder form */
     .form-shell {
-      margin-top: 18px;
+      margin-top: 16px;
       border-radius: 22px;
       border: 1px solid rgba(231, 228, 209, 0.18);
       background: rgba(0, 0, 0, 0.14);
@@ -131,59 +122,77 @@
       margin-bottom: 14px;
     }
 
-    .form-field {
-      display: grid;
-      gap: 6px;
-    }
+    .field { display: grid; gap: 6px; }
+    label { font-size: 14px; opacity: 0.92; }
 
-    .form-label {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .form-line {
-      height: 44px;
-      border-radius: 12px;
+    input, select, textarea {
+      width: 100%;
+      border-radius: 14px;
       border: 1px solid rgba(231, 228, 209, 0.28);
       background: rgba(231, 228, 209, 0.06);
+      color: #E7E4D1;
+      padding: 12px 12px;
+      font-size: 16px;
+      outline: none;
+      font-family: "Cormorant Garamond", serif;
     }
 
-    .form-line.large {
-      height: 120px;
-      border-radius: 16px;
+    textarea { min-height: 140px; resize: vertical; }
+
+    input::placeholder, textarea::placeholder { color: rgba(231, 228, 209, 0.65); }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(231, 228, 209, 0.55);
+      box-shadow: 0 0 0 4px rgba(231, 228, 209, 0.08);
     }
 
-    .form-note {
+    .form-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
       margin-top: 10px;
-      font-size: 14px;
-      opacity: 0.75;
     }
 
-    .contact-quiet {
-      margin-top: 28px;
-      border-top: 1px solid rgba(231, 228, 209, 0.12);
-      padding-top: 22px;
+    .submit-btn {
+      background: #E7E4D1;
+      color: #364449;
+      border: 1px solid rgba(231, 228, 209, 0.35);
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      transition: opacity 140ms ease, transform 140ms ease;
+      min-width: 160px;
     }
+    .submit-btn:active { transform: translateY(1px); }
+    .submit-btn[disabled] { opacity: 0.6; cursor: not-allowed; }
 
-    .contact-quiet p {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.7;
+    .status {
+      font-size: 15px;
       opacity: 0.92;
-      max-width: 78ch;
     }
 
-    /* Mobile */
+    .thankyou {
+      display: none;
+      margin-top: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(231, 228, 209, 0.20);
+      background: rgba(231, 228, 209, 0.06);
+      padding: 14px;
+    }
+    .thankyou .t1 { font-size: 18px; font-weight: 500; margin: 0; }
+    .thankyou .t2 { margin: 8px 0 0; font-size: 16px; line-height: 1.7; opacity: 0.92; }
+
+    /* Honeypot (anti-spam) */
+    .hp { position: absolute; left: -9999px; top: -9999px; height: 0; width: 0; overflow: hidden; }
+
     @media (max-width: 900px) {
-      .contact-title {
-        font-size: 36px;
-      }
-      .contact-wrap {
-        grid-template-columns: 1fr;
-      }
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      .contact-title { font-size: 36px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -196,73 +205,199 @@
       <p class="contact-kicker">Contact</p>
       <h1 class="contact-title">Let us bloom together.</h1>
       <p class="contact-lead">
-        Have a question, a thought, or a quiet idea you would like to share?
-        We would love to hear from you.
+        Share a question, an idea, or a moment you want to create. We read every message.
       </p>
     </section>
 
-    <section class="contact-wrap">
+    <section class="contact-grid">
       <div class="contact-card">
-        <h3>Why reach out?</h3>
+        <h3>What to expect</h3>
         <p>
-          Whether you are curious about upcoming floral experiences, have feedback,
-          or simply want to say hello, this space is here for connection.
+          If you are reaching out about collaborations, events, or your first floral ritual,
+          send us a note. We typically reply within 1 to 2 business days.
         </p>
       </div>
 
       <div class="contact-card">
-        <h3>A gentle note</h3>
+        <h3>Gentle and simple</h3>
         <p>
-          This is a placeholder form for now. Soon, it will become a place to begin
-          thoughtful conversations and meaningful floral moments.
+          This form submits directly to our private inbox and log sheet. Your details stay with us.
         </p>
       </div>
     </section>
 
-    <!-- Placeholder form -->
-    <section class="form-shell" aria-label="Contact form placeholder">
-      <div class="form-row">
-        <div class="form-field">
-          <div class="form-label">First Name</div>
-          <div class="form-line"></div>
+    <section class="form-shell" aria-label="Contact form">
+      <!-- IMPORTANT: paste your Apps Script URL below -->
+      <form id="lbContactForm" autocomplete="on" novalidate>
+        <!-- Honeypot field (bots fill this, humans never see it) -->
+        <div class="hp">
+          <label>Leave this field empty</label>
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
         </div>
-        <div class="form-field">
-          <div class="form-label">Last Name</div>
-          <div class="form-line"></div>
+
+        <input type="hidden" name="page" value="contact">
+        <input type="hidden" name="ts_client" id="ts_client" value="">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="first_name">First Name</label>
+            <input id="first_name" name="first_name" type="text" placeholder="Your first name" required>
+          </div>
+          <div class="field">
+            <label for="last_name">Last Name</label>
+            <input id="last_name" name="last_name" type="text" placeholder="Your last name" required>
+          </div>
         </div>
-      </div>
 
-      <div class="form-row">
-        <div class="form-field">
-          <div class="form-label">Email</div>
-          <div class="form-line"></div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="heard_from">How did you hear about us?</label>
+            <select id="heard_from" name="heard_from" required>
+              <option value="" selected disabled>Select one</option>
+              <option value="Instagram">Instagram</option>
+              <option value="TikTok">TikTok</option>
+              <option value="Facebook">Facebook</option>
+              <option value="YouTube">YouTube</option>
+              <option value="Pinterest">Pinterest</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Google Reviews">Google Reviews</option>
+              <option value="Friend or Family">Friend or Family</option>
+              <option value="Event">Event</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
-        <div class="form-field">
-          <div class="form-label">How did you hear about us?</div>
-          <div class="form-line"></div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what you are thinking..." required></textarea>
         </div>
-      </div>
 
-      <div class="form-field">
-        <div class="form-label">Questions or Comments</div>
-        <div class="form-line large"></div>
-      </div>
+        <div class="form-actions">
+          <button id="submitBtn" class="submit-btn" type="submit">Send Message</button>
+          <div id="status" class="status"></div>
+        </div>
 
-      <div class="form-note">
-        Form submission coming soon.
-      </div>
-    </section>
-
-    <section class="contact-quiet">
-      <p>
-        At LuvBlooms, we believe communication should feel as thoughtful as the
-        arrangements we create. Thank you for taking a moment to connect.
-      </p>
+        <div id="thankyou" class="thankyou" role="status" aria-live="polite">
+          <p class="t1">Thank you.</p>
+          <p class="t2">
+            Your message has been sent. We will get back to you soon.
+          </p>
+        </div>
+      </form>
     </section>
   </main>
 
   <div id="siteFooter"></div>
 
-  <script src="/assets/js/site.js?v=4"></script>
+  <script>
+    // Paste your Apps Script Web App URL here after you deploy it.
+    // Example: https://script.google.com/macros/s/AKfycbxxxxxxx/exec
+    const APPS_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
+    function setStatus(msg) {
+      const el = document.getElementById("status");
+      if (el) el.textContent = msg || "";
+    }
+
+    function showThankYou() {
+      const box = document.getElementById("thankyou");
+      if (box) box.style.display = "block";
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const ts = document.getElementById("ts_client");
+      if (ts) ts.value = new Date().toISOString();
+
+      const form = document.getElementById("lbContactForm");
+      const btn = document.getElementById("submitBtn");
+
+      if (!form) return;
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        setStatus("");
+
+        if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("PASTE_YOUR_WEB_APP_URL_HERE") !== -1) {
+          setStatus("Form is not connected yet. Add your Apps Script URL.");
+          return;
+        }
+
+        const data = new FormData(form);
+
+        // Honeypot check
+        if ((data.get("website") || "").toString().trim() !== "") {
+          // silently succeed for bots
+          showThankYou();
+          form.reset();
+          return;
+        }
+
+        const first = (data.get("first_name") || "").toString().trim();
+        const last = (data.get("last_name") || "").toString().trim();
+        const email = (data.get("email") || "").toString().trim();
+        const heard = (data.get("heard_from") || "").toString().trim();
+        const message = (data.get("message") || "").toString().trim();
+
+        if (!first || !last || !email || !heard || !message) {
+          setStatus("Please complete all fields.");
+          return;
+        }
+        if (!validateEmail(email)) {
+          setStatus("Please enter a valid email.");
+          return;
+        }
+
+        btn.disabled = true;
+        setStatus("Sending...");
+
+        try {
+          const payload = {
+            first_name: first,
+            last_name: last,
+            email: email,
+            heard_from: heard,
+            message: message,
+            page: (data.get("page") || "").toString(),
+            ts_client: (data.get("ts_client") || "").toString(),
+            user_agent: navigator.userAgent
+          };
+
+          const resp = await fetch(APPS_SCRIPT_URL, {
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          const json = await resp.json().catch(() => ({}));
+
+          if (!resp.ok || !json || json.ok !== true) {
+            setStatus("Something went wrong. Please try again.");
+            btn.disabled = false;
+            return;
+          }
+
+          setStatus("");
+          showThankYou();
+          form.reset();
+          btn.disabled = false;
+        } catch (err) {
+          setStatus("Network error. Please try again.");
+          btn.disabled = false;
+        }
+      });
+    });
+  </script>
+
+  <script src="/assets/js/site.js?v=6"></script>
 </body>
 </html>
