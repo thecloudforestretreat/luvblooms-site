@@ -4,7 +4,7 @@
 
   /* Buttons */
   --lb-btn-bg: #E7E4D1;
-  --lb-btn-text: #364449; /* primary button text requested */
+  --lb-btn-text: #364449;
   --lb-btn-ghost-text: #E7E4D1;
 
   /* Accent for subtle lines only */
@@ -70,20 +70,20 @@ a { text-decoration: none; }
 .kicker {
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 0 10px;
   opacity: 0.88;
 }
 
 h1 {
-  font-size: 44px;
+  font-size: 45px;
   line-height: 1.08;
   font-weight: 500;
   margin: 0 0 12px;
 }
 
 .lead {
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.55;
   margin: 0;
   opacity: 0.92;
@@ -107,6 +107,7 @@ h1 {
   transition: transform 140ms ease, opacity 140ms ease;
   min-width: 140px;
   font-weight: 600;
+  font-size: 17px;
 }
 
 .btn:active { transform: translateY(1px); }
@@ -143,70 +144,20 @@ h1 {
   padding: 8px 6px;
 }
 
-.micro-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(231, 228, 209, 0.85);
-  box-shadow: 0 0 0 6px rgba(231, 228, 209, 0.06);
-}
-
 .micro-text {
-  font-size: 16px;
+  font-size: 17px;
   opacity: 0.92;
 }
 
-.hero-visual {
-  display: grid;
-  gap: 12px;
-  align-content: start;
-}
-
-.visual-card {
-  position: relative;
-  height: 360px;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--lb-border);
-  background: linear-gradient(135deg, rgba(231, 228, 209, 0.10), rgba(161, 191, 170, 0.10));
-  box-shadow: var(--lb-shadow);
-}
-
-.visual-bloom {
-  position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(231, 228, 209, 0.18), transparent 40%),
-    radial-gradient(circle at 70% 40%, rgba(161, 191, 170, 0.16), transparent 42%),
-    radial-gradient(circle at 55% 70%, rgba(231, 228, 209, 0.14), transparent 45%);
-  filter: blur(2px);
-}
-
-.visual-overlay {
-  position: absolute;
-  inset: auto 14px 14px 14px;
-  padding: 14px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(231, 228, 209, 0.20);
-  background: rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(8px);
-}
-
 .visual-title {
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 0.02em;
 }
 
 .visual-subtitle {
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.9;
   margin-top: 4px;
-}
-
-.visual-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .strip-pill {
@@ -214,266 +165,65 @@ h1 {
   border-radius: 999px;
   border: 1px solid var(--lb-border-soft);
   background: rgba(231, 228, 209, 0.06);
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.95;
-}
-
-.section {
-  padding: 46px 0 0;
-  position: relative;
-}
-
-.section-alt {
-  margin-top: 34px;
-  padding-top: 38px;
-  border-top: 1px solid var(--lb-border-soft);
 }
 
 .section-head h2 {
   margin: 0;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 29px;
   line-height: 1.2;
 }
 
 .subhead {
   margin: 10px 0 0;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.55;
   opacity: 0.9;
   max-width: 68ch;
 }
 
-.journey {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.journey-step {
-  background: var(--lb-card);
-  border: 1px solid var(--lb-border-soft);
-  border-radius: 18px;
-  padding: 18px 16px;
-}
-
-.step-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(231, 228, 209, 0.14);
-  border: 1px solid rgba(231, 228, 209, 0.25);
-  margin-bottom: 10px;
-}
-
-.journey-step h3 {
-  margin: 0 0 6px;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.journey-step p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.55;
-  opacity: 0.9;
-}
-
-.cards {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.card {
-  background: rgba(0, 0, 0, 0.16);
-  border: 1px solid var(--lb-border-soft);
-  border-radius: 20px;
-  padding: 18px 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background:
-    radial-gradient(circle at 35% 35%, rgba(231, 228, 209, 0.14), transparent 45%),
-    radial-gradient(circle at 75% 45%, rgba(161, 191, 170, 0.12), transparent 48%);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.card-top {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.card-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  border: 1px solid rgba(231, 228, 209, 0.25);
-  background: rgba(231, 228, 209, 0.10);
-}
-
-.card-tag {
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  opacity: 0.88;
-}
-
-.card h3 {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 6px;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.card p {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.55;
-  opacity: 0.9;
-}
-
-.how {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.how-item {
-  background: var(--lb-card);
-  border: 1px solid var(--lb-border-soft);
-  border-radius: 18px;
-  padding: 18px 16px;
-}
-
-.how-line {
-  width: 54px;
-  height: 2px;
-  background: rgba(231, 228, 209, 0.55);
-  border-radius: 999px;
-  margin-bottom: 10px;
-}
-
+.journey-step h3,
+.card h3,
 .how-item h3 {
-  margin: 0 0 6px;
-  font-weight: 500;
-  font-size: 20px;
+  font-size: 21px;
 }
 
+.journey-step p,
+.card p,
 .how-item p {
-  margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.55;
-  opacity: 0.9;
-}
-
-.cta-bar {
-  margin-top: 18px;
-  border-radius: 22px;
-  border: 1px solid rgba(231, 228, 209, 0.22);
-  background: linear-gradient(135deg, rgba(231, 228, 209, 0.10), rgba(161, 191, 170, 0.10));
-  box-shadow: var(--lb-shadow);
-  padding: 16px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
 }
 
 .cta-title {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
 }
 
 .cta-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.9;
   margin-top: 4px;
 }
 
-.brand-note {
-  padding-top: 36px;
-}
-
 .brand-note p {
   margin: 0;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   opacity: 0.92;
   max-width: 78ch;
 }
 
-/* Footer */
-.site-footer {
-  padding: 44px 18px;
-  border-top: 1px solid var(--lb-border-soft);
-  margin-top: 28px;
-}
-
-.footer-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-social a {
-  width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  border: 1px solid var(--lb-border-soft);
-  background: rgba(231, 228, 209, 0.06);
-  transition: opacity 140ms ease, transform 140ms ease;
-}
-
-.footer-social a:hover { opacity: 0.9; }
-.footer-social a:active { transform: translateY(1px); }
-
-.footer-social img {
-  width: 22px;
-  height: 22px;
-}
-
 .footer-copy {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
 /* Mobile */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 38px; }
-  .visual-card { height: 280px; }
-  .journey, .cards, .how { grid-template-columns: 1fr; }
-  .cta-bar { align-items: flex-start; }
+  h1 { font-size: 39px; }
 }
