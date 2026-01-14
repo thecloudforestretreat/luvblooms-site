@@ -1,156 +1,853 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>LuvBlooms – Mobile Demo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine's Collection - FlowerMarketplace</title>
+  <meta name="description" content="Shop our Valentine's Collection. Farm-direct flowers with nationwide delivery." />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    background: #f6dfe4;
-    color: #4b4b4b;
-    padding-bottom: 80px;
-  }
-
-  .page {
-    padding: 22px 18px 30px;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  /* Hero button */
-  .learn-btn {
-    display: block;
-    margin: 10px auto 24px;
-    padding: 14px 26px;
-    border-radius: 999px;
-    background: #fff;
-    color: #d48397;
-    text-align: center;
-    font-size: 20px;
-    text-decoration: none;
-    width: fit-content;
-  }
-
-  /* Image grid */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .grid img {
-    width: 100%;
-    border-radius: 14px;
-    object-fit: cover;
-  }
-
-  .grid .large {
-    grid-column: span 2;
-  }
-
-  /* Tag text */
-  .tag {
-    text-align: center;
-    margin: 32px 0 10px;
-    font-size: 22px;
-  }
-
-  .tag span {
-    display: block;
-    font-size: 42px;
-    color: #e58fa4;
-    font-weight: 600;
-  }
-
-  /* Bottom action bar */
-  .action-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 68px;
-    background: #ffffff;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    z-index: 999;
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-
-  .action-bar a {
-    text-decoration: none;
-    color: #444;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    gap: 4px;
-  }
-
-  .icon {
-    font-size: 20px;
-  }
-
-  /* Desktop preview helper */
-  @media (min-width: 768px) {
-    body {
-      background: #e8e8e8;
+  <style>
+    :root{
+      --bg: #ffffff;
+      --ink: #141414;
+      --muted: #5b5b5b;
+      --subtle: #8a8a8a;
+      --line: #e9e9ea;
+      --panel: #f6f6f7;
+      --panel2: #f2f2f4;
+      --accent: #5b2a86;     /* soft plum */
+      --accent2:#2b6cb0;     /* accessible blue */
+      --radius: 18px;
+      --shadow: 0 10px 24px rgba(0,0,0,.07);
+      --max: 1120px;
     }
-    .page {
-      background: #f6dfe4;
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.35;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+    }
+
+    /* Announcement */
+    .announce{
+      background: #fbf7ff;
+      border-bottom: 1px solid #efe7fb;
+    }
+    .announce .wrap{
+      padding: 10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .announce p{
+      margin:0;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#3b2451;
+      font-weight:800;
+      text-align:center;
+    }
+
+    /* Header */
+    header{
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 160px;
+    }
+    .logoBox{
+      width: 120px;
+      height: 34px;
+      border: 1px dashed #cfcfd6;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #ffffff, #fafafa);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#8b8b95;
+      font-size:12px;
+      letter-spacing:.02em;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .nav a{
+      font-size:14px;
+      font-weight:800;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: #1c1c1c;
+    }
+    .nav a:hover{
+      border-color: #dfdfe4;
+      background: #fafafa;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 18px 0 10px;
+    }
+    .heroFrame{
       border-radius: 22px;
-      margin-top: 20px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: #f4f4f6;
+      box-shadow: var(--shadow);
     }
-  }
-</style>
+    .ratio-3x2{
+      aspect-ratio: 3 / 2;
+      width:100%;
+      position:relative;
+    }
+    .ph{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#8f8f98;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:12px;
+      background:
+        radial-gradient(1200px 450px at 20% 20%, rgba(91,42,134,.18), transparent 60%),
+        radial-gradient(900px 380px at 80% 30%, rgba(43,108,176,.14), transparent 60%),
+        linear-gradient(180deg, #fbfbfd, #f1f1f4);
+    }
+
+    /* Section spacing */
+    .section{
+      padding: 26px 0;
+    }
+    .sectionTitleRow{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 14px;
+    }
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.02em;
+    }
+    .smallLink{
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent2);
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    .smallLink:hover{
+      background:#f2f7ff;
+    }
+
+    /* Product grid */
+    .grid9{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow:hidden;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+      border-color: #dcdce2;
+    }
+    .cardMedia{
+      aspect-ratio: 1 / 1;
+      background: #f1f1f4;
+      border-bottom: 1px solid var(--line);
+      position:relative;
+    }
+    .cardMedia .ph{
+      font-size:11px;
+      letter-spacing:.12em;
+      background:
+        radial-gradient(900px 300px at 30% 20%, rgba(91,42,134,.15), transparent 55%),
+        linear-gradient(180deg, #fbfbfd, #f0f0f3);
+    }
+    .cardBody{
+      padding: 12px 12px 14px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .pname{
+      font-weight: 900;
+      font-size: 14px;
+      margin:0;
+    }
+    .psub{
+      margin:4px 0 0;
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    /* Why section */
+    .why{
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .whyGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .whyLeft{
+      background:#fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+    .kicker{
+      margin:0 0 10px;
+      font-size: 12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: #3a3a3a;
+      font-weight: 900;
+    }
+    .whyItem{
+      display:grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+    .whyItem:first-of-type{
+      border-top: none;
+      padding-top: 6px;
+    }
+    .iconPh{
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      border: 1px solid #dcdce2;
+      background: linear-gradient(180deg, #ffffff, #f5f5f7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 12px;
+      font-weight: 900;
+      color:#6c6c76;
+    }
+    .whyItem h3{
+      margin:0;
+      font-size: 13px;
+      font-weight: 950;
+    }
+    .whyItem p{
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+    .whyRight{
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+    .ratio-1x1{ aspect-ratio:1/1; }
+
+    /* Delivery & Care */
+    .centerTitle{
+      text-align:center;
+      margin-bottom: 14px;
+    }
+    .centerTitle h2{
+      font-size: 20px;
+      letter-spacing:.02em;
+    }
+    .careGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items:stretch;
+    }
+    .panelCard{
+      background:#fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+    .panelCard h3{
+      margin:0 0 8px;
+      font-size: 15px;
+      font-weight: 950;
+    }
+    .panelCard .block{
+      padding-top: 10px;
+      margin-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .panelCard .label{
+      margin:0;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .panelCard .txt{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .btnRow{
+      margin-top: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid #dcdce2;
+      background: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+      border-color:#cfcfd6;
+      background:#fafafa;
+    }
+
+    /* 4-image strip */
+    .strip{
+      background: var(--panel2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .grid4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .shot{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 22px rgba(0,0,0,.05);
+    }
+    .ratio-3x4{ aspect-ratio: 3 / 4; }
+
+    /* Community */
+    .community{
+      padding: 26px 0 36px;
+    }
+    .communityGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .communityCopy{
+      padding: 4px 0;
+    }
+    .communityCopy p{
+      margin:0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #222;
+      white-space: pre-line;
+    }
+    .emailCard{
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(91,42,134,.92), rgba(58,22,94,.92));
+      padding: 16px;
+      box-shadow: 0 18px 36px rgba(0,0,0,.14);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .emailCard h3{
+      margin:0 0 10px;
+      font-size: 16px;
+      font-weight: 950;
+    }
+    .field{
+      display:grid;
+      gap: 8px;
+    }
+    .field label{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255,255,255,.85);
+    }
+    .inputRow{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .fakeInput{
+      flex:1;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      display:flex;
+      align-items:center;
+      padding: 0 12px;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+    }
+    .fakeBtn{
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 12px;
+      background: #fff;
+      color: #2a0f44;
+      font-weight: 950;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+    }
+    .fineprint{
+      margin: 10px 0 0;
+      font-size: 12px;
+      color: rgba(255,255,255,.80);
+      line-height: 1.45;
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 18px 0 26px;
+      background: #fff;
+    }
+    .footRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .footNote{
+      font-size: 12px;
+      color: var(--subtle);
+      margin:0;
+    }
+    .social{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .sbtn{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid #dcdce2;
+      background: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 950;
+      color: #2b2b2b;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .sbtn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(0,0,0,.08);
+      background: #fafafa;
+    }
+    .sbtn span{
+      font-size: 12px;
+      letter-spacing:.02em;
+    }
+
+    /* Helpers */
+    .muted{ color: var(--muted); }
+    .mt8{ margin-top:8px; }
+    .mt12{ margin-top:12px; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .whyGrid{ grid-template-columns: 1fr; }
+      .communityGrid{ grid-template-columns: 1fr; }
+      .grid4{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 860px){
+      .grid9{ grid-template-columns: repeat(2, 1fr); }
+      .careGrid{ grid-template-columns: 1fr; }
+      .topbar{ padding: 12px 0; }
+    }
+    @media (max-width: 520px){
+      .announce p{ font-size: 11px; }
+      .logoBox{ width: 100px; }
+      .grid9{ grid-template-columns: 1fr; }
+      .grid4{ grid-template-columns: 1fr; }
+      .hero{ padding-top: 14px; }
+      .section{ padding: 22px 0; }
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="page">
-
-  <a class="learn-btn" href="#">Learn About Us</a>
-
-  <div class="grid">
-    <img src="https://via.placeholder.com/400x400?text=Flowers" alt="">
-    <img src="https://via.placeholder.com/400x400?text=Bouquet" alt="">
-    <img class="large" src="https://via.placeholder.com/800x500?text=Signature+Arrangement" alt="">
+  <!-- Announcement -->
+  <div class="announce">
+    <div class="wrap">
+      <p>SHOP OUR VALENTINE'S COLLECTION - ORDER BY FEB 10TH FOR VALENTINES DELIVERY</p>
+    </div>
   </div>
 
-  <div class="tag">
-    Please
-    <span>Tag Us!</span>
-  </div>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand" aria-label="Brand">
+          <div class="logoBox" aria-hidden="true">LOGO</div>
+        </div>
+        <nav class="nav" aria-label="Header navigation">
+          <a href="#collection">View all</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-</div>
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="heroFrame">
+          <div class="ratio-3x2">
+            <div class="ph">HERO IMAGE (3:2)</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Fixed Bottom Actions -->
-<nav class="action-bar">
-  <a href="#">
-    <div class="icon">✉️</div>
-    Email
-  </a>
-  <a href="#">
-    <div class="icon">📞</div>
-    Phone
-  </a>
-  <a href="#">
-    <div class="icon">📸</div>
-    Instagram
-  </a>
-  <a href="#">
-    <div class="icon">💬</div>
-    Chat
-  </a>
-</nav>
+    <!-- Collection -->
+    <section class="section" id="collection">
+      <div class="wrap">
+        <div class="sectionTitleRow">
+          <h2>Valentine's Collection</h2>
+          <a class="smallLink" href="#collection">Shop all</a>
+        </div>
 
+        <div class="grid9" aria-label="Product grid">
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 1</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 2</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 3</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 4</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 5</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 6</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 7</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 8</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="cardMedia"><div class="ph">ITEM IMAGE</div></div>
+            <div class="cardBody">
+              <div>
+                <p class="pname">Product Name 9</p>
+                <p class="psub">Short detail (optional)</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section why">
+      <div class="wrap">
+        <div class="whyGrid">
+          <div class="whyLeft">
+            <p class="kicker">WHY FLOWERMARKETPLACE?</p>
+
+            <div class="whyItem">
+              <div class="iconPh" aria-hidden="true">IC</div>
+              <div>
+                <h3>Direct from Source</h3>
+                <p>Consistent inventory, clear stems specs, and dependable delivery
+becausebecause your designs depend on it.</p>
+              </div>
+            </div>
+
+            <div class="whyItem">
+              <div class="iconPh" aria-hidden="true">IC</div>
+              <div>
+                <h3>Supply you can trust</h3>
+                <p>Professional-grade flowers with transparent pricing and dependable availability.</p>
+              </div>
+            </div>
+
+            <div class="whyItem">
+              <div class="iconPh" aria-hidden="true">IC</div>
+              <div>
+                <h3>Nationwide delivery</h3>
+                <p>Local and National options. Strategically located for efficient shipping across the U.S., ensuring freshness from box to vase.</p>
+              </div>
+            </div>
+
+            <div class="whyItem">
+              <div class="iconPh" aria-hidden="true">IC</div>
+              <div>
+                <h3>Designed for Creators</h3>
+                <p>Ideal for florists, small businesses, event designers, and at-home creatives who care about quality and consistency.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="whyRight" aria-label="Why image">
+            <div class="ratio-1x1">
+              <div class="ph">IMAGE (1:1)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery & Care -->
+    <section class="section">
+      <div class="wrap">
+        <div class="centerTitle">
+          <h2>Delivery &amp; Care</h2>
+        </div>
+
+        <div class="careGrid">
+          <div class="panelCard">
+            <h3>Delivery</h3>
+
+            <div class="block">
+              <p class="label">Farm-direct shipping</p>
+              <p class="txt">Shipped from our growers for peak freshness.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Handled with precision</p>
+              <p class="txt">Carefully packed to protect and hydrate.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Timed for freshness</p>
+              <p class="txt">Schedule aligned with harvest time.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Nationwide delivery</p>
+              <p class="txt">Reliable shipping across the U.S.</p>
+            </div>
+
+            <div class="btnRow">
+              <button class="btn" type="button">View delivery details</button>
+            </div>
+          </div>
+
+          <div class="panelCard">
+            <h3>Care Upon Arrival</h3>
+
+            <div class="block">
+              <p class="label">Immediate hydration recommended</p>
+              <p class="txt">Recut stems and place in water.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Condition before design</p>
+              <p class="txt">Allow to hydrate fully before arranging.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Temperature matters</p>
+              <p class="txt">Keep in a cool, shaded space.</p>
+            </div>
+
+            <div class="block">
+              <p class="label">Quality you can see</p>
+              <p class="txt">Selected for consistency and longevity.</p>
+            </div>
+
+            <div class="btnRow">
+              <button class="btn" type="button">Care guidelines</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-image strip -->
+    <section class="section strip">
+      <div class="wrap">
+        <div class="grid4" aria-label="Image strip">
+          <div class="shot"><div class="ratio-3x4"><div class="ph">IMAGE (3:4)</div></div></div>
+          <div class="shot"><div class="ratio-3x4"><div class="ph">IMAGE (3:4)</div></div></div>
+          <div class="shot"><div class="ratio-3x4"><div class="ph">IMAGE (3:4)</div></div></div>
+          <div class="shot"><div class="ratio-3x4"><div class="ph">IMAGE (3:4)</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="community">
+      <div class="wrap">
+        <div class="communityGrid">
+          <div class="communityCopy">
+            <p>At FlowerMarketplace, we see our customers as part
+of our community.
+
+Join our mailing list and receive 10% of your first
+order:</p>
+          </div>
+
+          <div class="emailCard" aria-label="Mailing list signup placeholder">
+            <h3>Let's keep in touch!</h3>
+            <div class="field">
+              <label for="email">Enter your email</label>
+              <div class="inputRow">
+                <div class="fakeInput" id="email" aria-hidden="true">you@email.com</div>
+                <button class="fakeBtn" type="button">Join</button>
+              </div>
+              <p class="fineprint">Template only. You can replace this with your email provider embed later.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footRow">
+        <p class="footNote">Placeholder footer. Social links below (replace with real URLs later).</p>
+        <div class="social" aria-label="Social links">
+          <a class="sbtn" href="#" aria-label="Instagram"><span>IG</span></a>
+          <a class="sbtn" href="#" aria-label="Facebook"><span>FB</span></a>
+          <a class="sbtn" href="#" aria-label="TikTok"><span>TT</span></a>
+          <a class="sbtn" href="#" aria-label="YouTube"><span>YT</span></a>
+          <a class="sbtn" href="#" aria-label="Pinterest"><span>PT</span></a>
+          <a class="sbtn" href="#" aria-label="X"><span>X</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
