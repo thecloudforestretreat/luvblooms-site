@@ -1123,7 +1123,58 @@ var wcap_mailchimp_setting = {"wcap_popup_setting":"","wcap_form_classes":"","wc
 			}
 			});
 			</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js?ver=1769719554" id="mask_js-js"></script><script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script><script src="https://capi-automation.s3.us-east-2.amazonaws.com/public/client_js/capiParamBuilder/clientParamBuilder.bundle.js" id="facebook-capi-param-builder-js"></script><script defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=6.9#038;render=explicit" id="gform_recaptcha-js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js?ver=1769719554" id="mask_js-js"></script><script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script><script src="https://capi-automation.s3.us-east-2.amazonaws.com/public/client_js/capiParamBuilder/clientParamBuilder.bundle.js" id="facebook-capi-param-builder-js"></script><script defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=6.9#038;render=explicit" id="gform_recaptcha-js"></script>
+<style id="preview-ui-overrides">
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+a.button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.elementor-button,
+.wp-element-button {
+  border-radius: 8px !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18) !important;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+a.button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.elementor-button:hover,
+.wp-element-button:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22) !important;
+  transform: translateY(-1px);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+a.button:active,
+.woocommerce a.button:active,
+.woocommerce button.button:active,
+.woocommerce input.button:active,
+.elementor-button:active,
+.wp-element-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.20) !important;
+}
+
+.elementor-social-icon {
+  border-radius: 10px !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.20) !important;
+}
+</style>
+
+</head>
 <body class="home wp-singular page-template page-template-elementor_header_footer page page-id-2193356 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-fmi-farms-elementor theme-hello-elementor page-fmi-farms-wholesale-flowermarketplace woocommerce-no-js hello-elementor-default elementor-default elementor-template-full-width elementor-kit-2281548 elementor-page elementor-page-2193356">
 
 
@@ -2729,7 +2780,29 @@ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', 
 <script type='application/javascript' >
 gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5b987d0db02fa9',t:'MTc2OTcxOTc2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5b987d0db02fa9',t:'MTc2OTcxOTc2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script id="preview-phone-mask">
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInputs = document.querySelectorAll(
+    'input[type="tel"], input[name*="phone"], input[id*="phone"], input[autocomplete="tel"]'
+  );
+
+  phoneInputs.forEach(function (input) {
+    input.addEventListener("input", function (e) {
+      let numbers = (e.target.value || "").replace(/\D/g, "").substring(0, 10);
+      let formatted = "";
+
+      if (numbers.length > 0) formatted = "(" + numbers.substring(0, 3);
+      if (numbers.length >= 4) formatted += ") " + numbers.substring(3, 6);
+      if (numbers.length >= 7) formatted += "-" + numbers.substring(6, 10);
+
+      e.target.value = formatted;
+    });
+  });
+});
+</script>
+
+</body>
 </html>
 
 <!-- Cache served by breeze CACHE (Desktop) - Last modified: Thu, 29 Jan 2026 20:45:54 GMT -->
