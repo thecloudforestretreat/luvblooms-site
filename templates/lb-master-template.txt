@@ -1,0 +1,636 @@
+LUVBLOOMS MASTER PAGE BUILD TEMPLATE
+Version: Consolidated Launch System
+
+Use this template when creating or updating pages for LuvBlooms.us so the site stays consistent, premium, SEO-strong, conversion-ready, and fully trackable.
+
+PURPOSE
+This single template consolidates the build system for:
+- homepage and flagship landing pages
+- weddings and events service pages
+- local SEO pages
+- collection/category pages
+- product detail pages
+- blog posts
+- contact and inquiry pages
+- global QA
+- analytics tracking
+- schema coverage
+- global CSS and JS rules
+
+CORE RULE
+When building or updating any LuvBlooms page, produce complete ready-to-upload files only unless partial snippets are explicitly requested.
+
+============================================================
+MASTER SITE CONTEXT
+============================================================
+
+Site: LuvBlooms
+Domain: https://luvblooms.us
+Primary goal: inquiry_submit
+Secondary goals: shop_click, wedding_lead, event_lead, phone_click, email_click
+Business type: florist, floral design studio, wedding florist, event florist
+Likely market: premium floral design, gifting, weddings, styled events, branded activations
+Language: English unless otherwise requested
+
+Global CSS:
+<link rel="stylesheet" href="/assets/css/site.css">
+
+Global JS:
+<script src="/assets/js/site.js"></script>
+
+IMPORTANT GA4 ID NOTE
+The live GA4 Web Stream Measurement ID is:
+G-T3XJE3NV2Y
+
+Use this ID only inside /assets/js/site.js.
+Do not paste manual gtag scripts inside page files.
+Do not add duplicate Tag Manager or duplicate GA snippets at page level.
+
+Suggested body baseline:
+<body data-page-type="PAGE_TYPE" data-primary-goal="PRIMARY_GOAL">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="siteHeader"></div>
+  <main id="main" class="site-main">
+    ...
+  </main>
+  <div id="siteFooter"></div>
+  <script src="/assets/js/site.js"></script>
+</body>
+
+Header include placeholder:
+<div id="siteHeader"></div>
+
+Footer include placeholder:
+<div id="siteFooter"></div>
+
+Never hardcode header or footer inside individual page files if the global system is using includes.
+Never include /assets/js/site.js more than once.
+Never add page-level analytics scripts.
+Avoid page-level CSS unless absolutely necessary.
+Use global CSS classes and tokens whenever possible.
+
+============================================================
+RECOMMENDED INFORMATION ARCHITECTURE
+============================================================
+
+Core pages:
+Home: /
+Shop: /shop
+Weddings: /weddings
+Events: /events
+About: /about
+Lookbook / Portfolio: /lookbook
+Contact / Inquiry: /contact
+FAQ: /faq
+Flower Care: /flower-care
+Blog / Journal: /blog
+
+Local SEO pages:
+Florist in [Primary City]
+Wedding Florist in [Primary City]
+Event Florist in [Primary City]
+Flower Delivery in [Primary City]
+
+High-intent collection pages:
+Same-Day Flower Delivery
+Birthday Flowers
+Sympathy Flowers
+Luxury Bouquets
+Wedding Flowers
+Event Centerpieces
+Corporate Floral Design
+
+============================================================
+PAGE REQUEST INPUT FORMAT
+============================================================
+
+For future requests, provide as much as possible:
+
+Page name:
+Page type:
+URL slug:
+Canonical URL:
+Primary keyword:
+Secondary keywords:
+Primary audience:
+Primary goal:
+Related internal links:
+Location target, if any:
+Collection or service target:
+Hero image:
+Hero image alt:
+Main content notes:
+CTA priority:
+Any special requirements:
+
+If details are missing, build the strongest version possible using this master system.
+
+============================================================
+GLOBAL PAGE TYPES
+============================================================
+
+Use these consistently in body data attributes and analytics:
+
+- homepage
+- money_page
+- local_seo_page
+- collection_page
+- product_page
+- portfolio_page
+- blog_post
+- contact_page
+- faq_page
+
+Example:
+<body data-page-type="money_page" data-primary-goal="inquiry_submit">
+
+============================================================
+GLOBAL ANALYTICS STANDARD
+============================================================
+
+All analytics execution must be centralized in:
+/assets/js/site.js
+
+Page files should not add duplicate analytics engines.
+
+Use these attributes for manually tracked CTAs and elements:
+- data-analytics-event
+- data-analytics-label
+- data-analytics-location
+- data-analytics-section
+- data-analytics-page-type
+- data-analytics-page-category
+- data-analytics-form
+- data-analytics-product
+- data-analytics-service
+- data-analytics-collection
+- data-analytics-location-name
+
+Key events to support sitewide:
+- page_view_enhanced
+- scroll_depth
+- internal_link_click
+- outbound_link_click
+- whatsapp_click
+- email_click
+- phone_click
+- cta_click_shop
+- cta_click_inquire
+- cta_click_weddings
+- cta_click_events
+- cta_click_same_day_delivery
+- service_interest_click
+- product_click
+- collection_click
+- faq_expand
+- form_start
+- form_submit_attempt
+- form_submit_success
+- form_submit_error
+
+If a normal link has no explicit analytics attributes, rely on /assets/js/site.js inferred link tracking.
+
+============================================================
+GLOBAL CSS SYSTEM STANDARD
+============================================================
+
+Use one global stylesheet:
+/assets/css/site.css
+
+Prefer reusable class systems over page-specific CSS.
+
+Recommended global sections/components:
+- site-main
+- section
+- section--light
+- section--dark
+- section--accent
+- section--cream
+- section--blush
+- container
+- stack
+- cluster
+- split
+- grid-2
+- grid-3
+- grid-4
+- hero
+- hero__grid
+- hero__copy
+- hero__title
+- hero__lead
+- hero__media
+- hero__image
+- hero__note
+- eyebrow
+- breadcrumbs
+- section-title
+- section-lead
+- card-grid
+- card
+- feature-list
+- check-list
+- stats-grid
+- trust-strip
+- logo-row
+- testimonial-grid
+- testimonial-card
+- portfolio-grid
+- product-grid
+- product-card
+- collection-grid
+- faq-list
+- faq-item
+- final-cta
+- button-row
+- button
+- button--primary
+- button--secondary
+- button--ghost
+- form-card
+- form-row
+- info-list
+
+Global CSS should also define:
+- color tokens
+- type scale
+- spacing scale
+- border radius rules
+- focus states
+- button states
+- card spacing
+- responsive breakpoints
+- mobile stacking behavior
+
+============================================================
+SEO MAXIMIZATION STANDARD
+============================================================
+
+Every page must include:
+- unique title
+- unique meta description
+- canonical URL
+- Open Graph tags
+- Twitter tags
+- favicon links if used globally
+- global stylesheet include
+
+Primary keyword should appear naturally in:
+- title
+- meta description
+- H1
+- first 100 words
+- one H2
+- schema where appropriate
+- image alt where natural
+
+Secondary keywords should appear naturally across body copy.
+Avoid stuffing.
+
+Each page should:
+- answer intent clearly
+- include internal links to adjacent pages
+- include meaningful descriptive anchor text
+- use crawlable text, not image-only explanations
+- include alt text for meaningful images
+- avoid duplicate H1s
+- keep heading order clean
+
+============================================================
+SCHEMA STANDARD
+============================================================
+
+Use the most appropriate JSON-LD for the page type:
+
+Sitewide candidates:
+- WebSite
+- Organization
+- LocalBusiness
+
+Homepage:
+- WebPage
+- Florist or LocalBusiness
+
+Service pages:
+- WebPage
+- Service
+- BreadcrumbList
+- FAQPage when FAQs are present
+
+Collection pages:
+- CollectionPage
+- BreadcrumbList
+
+Product pages:
+- Product
+- Offer
+- BreadcrumbList
+- FAQPage if relevant
+
+Blog posts:
+- BlogPosting
+- BreadcrumbList
+
+Contact page:
+- ContactPage
+- LocalBusiness
+
+Schema must match visible content exactly, especially FAQs.
+
+============================================================
+HOMEPAGE TEMPLATE
+============================================================
+
+GOAL
+Create a homepage that feels premium and artistic but still answers the business questions fast.
+
+Required homepage order:
+1. SEO head
+2. Schema
+3. Skip link
+4. Header placeholder
+5. Hero with clear positioning
+6. Service split section
+7. Trust / proof section
+8. Featured floral collections or offerings
+9. Weddings section
+10. Events / brand activations section
+11. Portfolio / lookbook preview
+12. Testimonials
+13. Local relevance block
+14. FAQ
+15. Final CTA
+16. Footer placeholder
+17. Global JS include
+
+Homepage hero must answer:
+- what the business is
+- who it serves
+- where it serves
+- what to do next
+
+Strong homepage H1 examples:
+- Luxury Florist in [City] for Weddings, Events, and Everyday Flowers
+- Artful Floral Design for Gifting, Gatherings, Weddings, and Brand Moments
+
+Required homepage CTAs:
+- Shop Flowers
+- Inquire for Weddings
+- Inquire for Events
+
+============================================================
+SERVICE PAGE TEMPLATE
+============================================================
+
+Use for Weddings, Events, Brand Activations, Corporate Florals, etc.
+
+Required service page order:
+1. SEO head
+2. Schema
+3. Hero
+4. Problem / need recognition
+5. What is included
+6. Process / how it works
+7. Signature style / differentiators
+8. Portfolio proof
+9. Testimonials or trust proof
+10. FAQ
+11. Final CTA
+
+Service page goals:
+- clarify fit
+- build confidence
+- show aesthetic proof
+- reduce friction around inquiry
+
+Suggested body example:
+<body data-page-type="money_page" data-primary-goal="inquiry_submit" data-service="weddings">
+
+Recommended CTA events:
+- cta_click_weddings
+- cta_click_events
+- service_interest_click
+
+============================================================
+LOCAL SEO PAGE TEMPLATE
+============================================================
+
+Use for pages like:
+- Miami florist
+- Fort Lauderdale wedding florist
+- Boca Raton event florist
+
+Required local SEO order:
+1. SEO head with city modifier
+2. Local schema
+3. Hero with city + service phrase
+4. What the business offers in that city
+5. Who it’s for
+6. Process or delivery/service area notes
+7. Why choose LuvBlooms
+8. Related local/internal links
+9. FAQ
+10. Final CTA
+
+Required local signals:
+- city in title
+- city in meta description
+- city in H1
+- city in first paragraph
+- city in one H2
+- city in schema areaServed when appropriate
+
+============================================================
+COLLECTION / CATEGORY PAGE TEMPLATE
+============================================================
+
+Use for:
+- same-day delivery
+- sympathy flowers
+- luxury bouquets
+- birthday flowers
+
+Required collection page order:
+1. SEO head
+2. Schema
+3. Hero / intro copy
+4. Product grid
+5. Short buying guidance block
+6. Delivery or service notes
+7. FAQ
+8. Final CTA or support block
+
+Collection pages should not be just product grids.
+They need crawlable intro copy and support copy to rank well.
+
+============================================================
+PRODUCT PAGE TEMPLATE
+============================================================
+
+Required product page elements:
+- unique product title
+- unique meta description
+- Product schema with Offer data
+- product image gallery
+- short emotionally clear description
+- practical purchase details
+- delivery / pickup notes
+- care notes if relevant
+- related products
+- FAQ if useful
+
+Track:
+- product_click from collection pages
+- form events if custom inquiry or custom order forms exist
+
+============================================================
+BLOG TEMPLATE
+============================================================
+
+Use for educational, inspirational, and search-targeted posts.
+
+Blog post structure:
+1. SEO head
+2. BlogPosting schema
+3. Hero image
+4. H1
+5. Intro with primary keyword
+6. Clear subheads
+7. Helpful internal links
+8. CTA block
+9. Footer placeholder
+
+Blog goals:
+- capture long-tail search
+- support service pages
+- reinforce expertise and style
+- feed internal linking
+
+Suggested blog topics:
+- how to choose wedding flowers
+- what flowers are in season in [region]
+- how same-day flower delivery works
+- floral trends for weddings and events
+- flower care guides
+
+============================================================
+CONTACT / INQUIRY PAGE TEMPLATE
+============================================================
+
+Required sections:
+1. SEO head
+2. ContactPage or LocalBusiness schema
+3. Hero
+4. What to inquire about
+5. Contact form
+6. Business info block
+7. Hours / service area
+8. FAQ
+9. Footer placeholder
+
+Forms should use:
+- data-analytics-form
+- data-analytics-section
+
+Success and error states should be visible to /assets/js/site.js.
+
+============================================================
+MOBILE / DESKTOP UX STANDARD
+============================================================
+
+Every page must:
+- stack cleanly on mobile
+- avoid horizontal overflow
+- keep buttons full-width on narrow screens if needed
+- preserve legible text over photography
+- use stable card/image dimensions
+- avoid decorative clutter that hurts scanning
+- keep hero copy short enough to fit well
+- make forms simple and tappable
+
+Do not:
+- rely on image-only text
+- hide core business information beneath excessive scroll
+- use weak CTA labels everywhere
+- build pages that feel like mood boards without purchase/inquiry pathways
+
+============================================================
+ACCESSIBILITY STANDARD
+============================================================
+
+Every page must:
+- include a skip link
+- use one H1
+- preserve heading order
+- use meaningful alt text
+- use descriptive links
+- keep buttons clearly labeled
+- ensure focus states are visible
+- avoid empty anchors
+- label form fields
+- ensure FAQ controls are keyboard accessible
+
+============================================================
+GLOBAL QA + SEO + ANALYTICS CHECKLIST
+============================================================
+
+Before finalizing any page, verify:
+
+- [ ] unique title
+- [ ] unique meta description
+- [ ] canonical URL is correct
+- [ ] Open Graph tags are correct
+- [ ] primary keyword appears naturally in the right places
+- [ ] one H1 only
+- [ ] no heading order issues
+- [ ] all meaningful images have alt text
+- [ ] schema matches visible content
+- [ ] FAQ schema matches visible FAQs exactly
+- [ ] internal links are present and useful
+- [ ] page has a clear CTA path
+- [ ] mobile layout is clean
+- [ ] no horizontal overflow
+- [ ] buttons are clear and consistent
+- [ ] /assets/css/site.css is loaded
+- [ ] /assets/js/site.js is loaded exactly once
+- [ ] no duplicate page-level analytics scripts
+- [ ] tracked CTAs use data-analytics-event attributes where needed
+- [ ] ordinary links can rely on inferred internal/outbound tracking
+- [ ] forms expose visible success/error states
+
+============================================================
+PROMPT TEMPLATE FOR FUTURE LUVBLOOMS PAGE BUILDS
+============================================================
+
+Use this prompt structure when asking for a new page:
+
+Create a complete ready-to-publish LuvBlooms page as a downloadable .txt file.
+
+Page name:
+Page type:
+URL slug:
+Canonical URL:
+Primary keyword:
+Secondary keywords:
+Primary audience:
+Primary goal:
+Location target:
+Related internal links:
+Hero image path:
+Hero image alt:
+Main content notes:
+Required CTA:
+Special requirements:
+
+Use the LuvBlooms master system:
+- global CSS only
+- global JS only
+- no duplicate analytics
+- premium floral brand voice
+- SEO-maximized structure
+- correct schema
+- mobile-first UX
+- accessible markup
+- tracked CTAs
+
+Deliver complete head, body, schema, content structure, and final script include.
