@@ -10,7 +10,7 @@
   >
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://luvblooms.us/">
-  <meta name="theme-color" content="#2d393d">
+  <meta name="theme-color" content="#2e3a3e">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="LuvBlooms | Miami Floral Design Studio">
@@ -32,6 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
   <script type="application/ld+json">
   {
@@ -50,33 +51,33 @@
 
   <style>
     :root {
-      --bg: #2f3b3f;
-      --bg-deep: #243034;
-      --panel: rgba(245, 238, 224, 0.08);
-      --panel-strong: rgba(245, 238, 224, 0.11);
-      --line: rgba(245, 238, 224, 0.16);
-      --line-strong: rgba(245, 238, 224, 0.24);
-      --text: #f3eddc;
-      --muted: rgba(243, 237, 220, 0.8);
-      --soft: rgba(243, 237, 220, 0.64);
-      --accent: #f1e7cf;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-      --radius-sm: 12px;
-      --radius-md: 18px;
-      --radius-lg: 28px;
-      --radius-xl: 42px;
-      --container: 1240px;
+      --lbv3-bg: #2e3a3e;
+      --lbv3-bg-deep: #233035;
+      --lbv3-panel: rgba(245, 239, 226, 0.08);
+      --lbv3-panel-strong: rgba(245, 239, 226, 0.12);
+      --lbv3-line: rgba(245, 239, 226, 0.16);
+      --lbv3-line-strong: rgba(245, 239, 226, 0.26);
+      --lbv3-text: #f3eddc;
+      --lbv3-muted: rgba(243, 237, 220, 0.82);
+      --lbv3-soft: rgba(243, 237, 220, 0.64);
+      --lbv3-accent: #efe3c6;
+      --lbv3-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+      --lbv3-radius-xs: 10px;
+      --lbv3-radius-sm: 14px;
+      --lbv3-radius-md: 18px;
+      --lbv3-radius-lg: 24px;
+      --lbv3-container: 1220px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       background:
-        radial-gradient(900px 600px at 80% 10%, rgba(255,255,255,0.04), transparent 60%),
-        radial-gradient(700px 520px at 10% 30%, rgba(255,255,255,0.03), transparent 60%),
-        linear-gradient(180deg, #344246 0%, #2f3b3f 40%, #2a3539 100%);
-      color: var(--text);
+        radial-gradient(820px 560px at 82% 8%, rgba(255,255,255,0.04), transparent 62%),
+        radial-gradient(640px 460px at 12% 30%, rgba(255,255,255,0.03), transparent 58%),
+        linear-gradient(180deg, #334045 0%, #2e3a3e 38%, #29353a 100%);
+      color: var(--lbv3-text);
       font-family: "Cormorant Garamond", serif;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -97,786 +98,661 @@
       position: absolute;
       left: 16px;
       top: 16px;
+      z-index: 1000;
       padding: 10px 14px;
       border-radius: 999px;
-      background: var(--accent);
-      color: #253136;
+      background: var(--lbv3-accent);
+      color: #263237;
       transform: translateY(-180%);
       transition: transform 140ms ease;
-      z-index: 1000;
       font: 600 14px/1 "Inter", sans-serif;
     }
 
     .skip-link:focus { transform: translateY(0); }
 
-    .container {
-      width: min(var(--container), calc(100% - 40px));
+    .lbv3-shell {
+      width: min(var(--lbv3-container), calc(100% - 44px));
       margin: 0 auto;
     }
 
-    .site-header {
-      position: absolute;
-      inset: 0 0 auto 0;
-      z-index: 20;
+    .lbv3-main {
+      overflow: clip;
     }
 
-    .site-header__inner {
-      width: min(var(--container), calc(100% - 40px));
-      margin: 0 auto;
-      padding: 24px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img {
-      width: auto;
-      max-height: 34px;
-    }
-
-    .brand span {
-      font: 600 14px/1.1 "Inter", sans-serif;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--soft);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      font: 500 13px/1.2 "Inter", sans-serif;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .nav a:last-child {
-      padding: 12px 16px;
-      border: 1px solid rgba(243, 237, 220, 0.22);
-      border-radius: 999px;
-      background: rgba(243, 237, 220, 0.06);
-    }
-
-    .hero {
+    .lbv3-hero {
       position: relative;
-      min-height: 100svh;
+      min-height: min(920px, 100svh);
+      padding: 120px 0 42px;
       display: grid;
       align-items: end;
-      overflow: clip;
-      padding-bottom: 48px;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(19, 25, 28, 0.72) 0%, rgba(19, 25, 28, 0.34) 46%, rgba(19, 25, 28, 0.18) 100%),
-        linear-gradient(180deg, rgba(19, 25, 28, 0.22) 0%, rgba(19, 25, 28, 0.48) 100%);
-      z-index: 1;
-    }
-
-    .hero__media {
+    .lbv3-hero__media {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
 
-    .hero__media img {
+    .lbv3-hero__media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 34%;
-      transform: scale(1.02);
+      object-position: center 30%;
+      transform: scale(1);
+      filter: saturate(0.92) contrast(0.94);
     }
 
-    .hero__grid {
+    .lbv3-hero__wash {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(17, 22, 25, 0.68) 0%, rgba(17, 22, 25, 0.34) 48%, rgba(17, 22, 25, 0.2) 100%),
+        linear-gradient(180deg, rgba(17, 22, 25, 0.18) 0%, rgba(17, 22, 25, 0.46) 100%);
+    }
+
+    .lbv3-hero__grid {
       position: relative;
       z-index: 2;
-      width: min(var(--container), calc(100% - 40px));
+      width: min(var(--lbv3-container), calc(100% - 44px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.8fr);
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+      gap: 34px;
       align-items: end;
     }
 
-    .hero__copy {
-      max-width: 760px;
-      padding-top: 120px;
+    .lbv3-hero__copy {
+      max-width: 660px;
     }
 
-    .eyebrow {
-      margin: 0 0 18px;
+    .lbv3-eyebrow {
+      margin: 0 0 14px;
       font: 500 12px/1.2 "Inter", sans-serif;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(243, 237, 220, 0.76);
+      color: rgba(243, 237, 220, 0.78);
     }
 
-    .hero h1 {
+    .lbv3-hero h1 {
       margin: 0;
-      font-size: clamp(3.4rem, 8vw, 7.15rem);
-      line-height: 0.94;
+      max-width: 8.8ch;
+      font-size: clamp(3rem, 7.2vw, 6rem);
+      line-height: 0.93;
       font-weight: 500;
-      max-width: 10.3ch;
       text-wrap: balance;
     }
 
-    .hero__lead {
-      margin: 24px 0 0;
-      max-width: 36ch;
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      line-height: 1.55;
-      color: var(--muted);
+    .lbv3-hero__lede {
+      margin: 22px 0 0;
+      max-width: 30ch;
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      line-height: 1.7;
+      color: var(--lbv3-muted);
     }
 
-    .hero__actions {
+    .lbv3-hero__actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .btn {
+    .lbv3-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      font: 600 14px/1 "Inter", sans-serif;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--lbv3-line-strong);
+      border-radius: var(--lbv3-radius-sm);
+      font: 600 13px/1 "Inter", sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, opacity 140ms ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .lbv3-btn:hover { transform: translateY(-1px); }
 
-    .btn--primary {
-      background: var(--accent);
-      color: #283338;
-      border-color: rgba(243, 237, 220, 0.65);
+    .lbv3-btn--primary {
+      background: var(--lbv3-accent);
+      color: #263237;
+      border-color: rgba(243, 237, 220, 0.7);
     }
 
-    .btn--ghost {
+    .lbv3-btn--ghost {
       background: rgba(255,255,255,0.03);
-      color: var(--text);
+      color: var(--lbv3-text);
     }
 
-    .hero__aside {
+    .lbv3-hero__aside {
       display: grid;
-      gap: 16px;
+      gap: 14px;
+      width: min(100%, 360px);
       justify-self: end;
-      width: min(100%, 390px);
     }
 
-    .hero-note,
-    .hero-proof {
-      border: 1px solid var(--line);
+    .lbv3-panel {
+      border: 1px solid var(--lbv3-line);
+      border-radius: var(--lbv3-radius-lg);
       background: rgba(15, 20, 23, 0.28);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
+      box-shadow: var(--lbv3-shadow);
     }
 
-    .hero-note {
-      border-radius: var(--radius-xl) var(--radius-md) var(--radius-xl) var(--radius-md);
+    .lbv3-note {
       padding: 22px 22px 24px;
     }
 
-    .hero-note__label {
+    .lbv3-note__label {
       margin: 0 0 14px;
       font: 500 12px/1.2 "Inter", sans-serif;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--soft);
+      color: var(--lbv3-soft);
     }
 
-    .hero-note__quote {
+    .lbv3-note__quote {
       margin: 0;
-      font-size: clamp(1.55rem, 2.9vw, 2.35rem);
-      line-height: 1.05;
-      max-width: 12ch;
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      line-height: 1.02;
+      max-width: 10.5ch;
     }
 
-    .hero-proof {
-      border-radius: var(--radius-md);
+    .lbv3-proof {
       padding: 18px 18px 20px;
     }
 
-    .hero-proof__row {
+    .lbv3-proof__item {
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      font-size: 1rem;
-      line-height: 1.5;
-      color: var(--muted);
+      color: var(--lbv3-muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
     }
 
-    .hero-proof__row + .hero-proof__row {
+    .lbv3-proof__item + .lbv3-proof__item {
       margin-top: 12px;
       padding-top: 12px;
       border-top: 1px solid rgba(243, 237, 220, 0.08);
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
+    .lbv3-dot {
+      width: 9px;
+      height: 9px;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--lbv3-accent);
       flex: 0 0 auto;
-      margin-top: 8px;
+      margin-top: 7px;
     }
 
-    .section {
+    .lbv3-section {
       position: relative;
-      padding: 110px 0;
+      padding: 92px 0;
     }
 
-    .section--veil {
+    .lbv3-section--veil {
       background:
-        linear-gradient(180deg, rgba(245, 238, 224, 0.03), rgba(245, 238, 224, 0.01)),
-        rgba(0, 0, 0, 0.05);
+        linear-gradient(180deg, rgba(245, 239, 226, 0.03), rgba(245, 239, 226, 0.01)),
+        rgba(0, 0, 0, 0.04);
     }
 
-    .section__head {
+    .lbv3-section__head {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
       gap: 28px;
       align-items: end;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
-    .section__eyebrow {
-      margin: 0 0 14px;
-      font: 500 12px/1.2 "Inter", sans-serif;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--soft);
-    }
-
-    .section__title {
+    .lbv3-section__title {
       margin: 0;
-      font-size: clamp(2.25rem, 4vw, 4rem);
+      max-width: 12ch;
+      font-size: clamp(2.1rem, 4vw, 3.7rem);
       line-height: 0.98;
       font-weight: 500;
-      max-width: 12ch;
     }
 
-    .section__lead {
+    .lbv3-section__lead {
       margin: 0;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: var(--muted);
       max-width: 40ch;
+      font-size: 1.08rem;
+      line-height: 1.72;
+      color: var(--lbv3-muted);
     }
 
-    .experience-grid {
+    .lbv3-experience {
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
       align-items: stretch;
     }
 
-    .experience-media {
+    .lbv3-image-card {
       position: relative;
-      min-height: 680px;
-      border-radius: var(--radius-xl);
+      min-height: 600px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      border-radius: var(--lbv3-radius-lg);
+      box-shadow: var(--lbv3-shadow);
     }
 
-    .experience-media img {
+    .lbv3-image-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
 
-    .experience-media::after {
+    .lbv3-image-card::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 40%;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(16, 21, 24, 0.7) 100%);
+      height: 42%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(17, 22, 25, 0.76) 100%);
     }
 
-    .experience-caption {
+    .lbv3-image-card__caption {
       position: absolute;
-      inset: auto 28px 28px 28px;
+      inset: auto 22px 22px 22px;
       z-index: 2;
-      max-width: 30ch;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(243, 237, 220, 0.12);
+      border-radius: var(--lbv3-radius-md);
+      background: rgba(17, 22, 25, 0.34);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
-    .experience-caption h3 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+    .lbv3-image-card__caption h3 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
       line-height: 1;
       font-weight: 500;
     }
 
-    .experience-caption p {
+    .lbv3-image-card__caption p {
       margin: 0;
-      font-size: 1.06rem;
+      color: var(--lbv3-muted);
+      font-size: 1rem;
       line-height: 1.6;
-      color: var(--muted);
     }
 
-    .experience-panels {
+    .lbv3-stack {
       display: grid;
-      grid-template-rows: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 16px;
     }
 
-    .experience-panel {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(245, 238, 224, 0.08), rgba(245, 238, 224, 0.04));
-      padding: 24px 22px 22px;
-      min-height: 180px;
+    .lbv3-stack__card {
+      min-height: 184px;
+      padding: 22px 22px 20px;
+      border: 1px solid var(--lbv3-line);
+      border-radius: var(--lbv3-radius-md);
+      background: linear-gradient(180deg, rgba(245, 239, 226, 0.08), rgba(245, 239, 226, 0.04));
     }
 
-    .experience-panel::before {
-      content: attr(data-number);
-      position: absolute;
-      top: 18px;
-      right: 20px;
-      font: 500 11px/1 "Inter", sans-serif;
-      letter-spacing: 0.18em;
+    .lbv3-stack__kicker {
+      margin: 0 0 12px;
+      font: 500 11px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(243, 237, 220, 0.34);
+      color: var(--lbv3-soft);
     }
 
-    .experience-panel h3 {
+    .lbv3-stack__card h3 {
       margin: 0 0 10px;
-      font-size: 1.7rem;
+      max-width: 12ch;
+      font-size: 1.65rem;
       line-height: 1;
       font-weight: 500;
-      max-width: 12ch;
     }
 
-    .experience-panel p {
+    .lbv3-stack__card p {
       margin: 0;
-      font-size: 1.04rem;
-      line-height: 1.65;
-      color: var(--muted);
       max-width: 28ch;
+      color: var(--lbv3-muted);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
-    .manifesto {
+    .lbv3-manifesto {
       display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
       gap: 34px;
       align-items: start;
     }
 
-    .manifesto-quote {
-      position: sticky;
-      top: 32px;
-      border-left: 1px solid rgba(243, 237, 220, 0.22);
-      padding-left: 22px;
+    .lbv3-manifesto__quote {
+      border-left: 1px solid rgba(243, 237, 220, 0.2);
+      padding-left: 20px;
     }
 
-    .manifesto-quote p {
+    .lbv3-manifesto__quote p {
       margin: 0;
-      font-size: clamp(2rem, 3.3vw, 3.35rem);
-      line-height: 1.02;
+      font-size: clamp(1.9rem, 3.1vw, 3.1rem);
+      line-height: 1.03;
       font-weight: 500;
       text-wrap: balance;
     }
 
-    .manifesto-copy {
+    .lbv3-manifesto__copy {
       display: grid;
-      gap: 20px;
+      gap: 18px;
     }
 
-    .manifesto-copy p {
+    .lbv3-manifesto__copy p {
       margin: 0;
-      font-size: 1.12rem;
-      line-height: 1.8;
-      color: var(--muted);
       max-width: 52ch;
+      color: var(--lbv3-muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
     }
 
-    .services {
+    .lbv3-services {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
-    .service-card {
-      position: relative;
-      min-height: 260px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      background: rgba(13, 18, 21, 0.18);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    .lbv3-service {
+      min-height: 250px;
+      padding: 22px;
+      border: 1px solid var(--lbv3-line);
+      border-radius: var(--lbv3-radius-md);
+      background: rgba(14, 19, 22, 0.18);
+      box-shadow: var(--lbv3-shadow);
     }
 
-    .service-card:nth-child(1) {
-      border-radius: 28px 28px 18px 28px;
-    }
-
-    .service-card:nth-child(2) {
-      border-radius: 18px 34px 18px 18px;
-      transform: translateY(28px);
-    }
-
-    .service-card:nth-child(3) {
-      border-radius: 18px 18px 34px 18px;
-    }
-
-    .service-card__tag {
-      margin: 0 0 24px;
+    .lbv3-service__tag {
+      margin: 0 0 20px;
       font: 500 12px/1.2 "Inter", sans-serif;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--soft);
+      color: var(--lbv3-soft);
     }
 
-    .service-card h3 {
+    .lbv3-service h3 {
       margin: 0 0 12px;
-      font-size: 2rem;
+      max-width: 11ch;
+      font-size: 1.9rem;
       line-height: 0.98;
       font-weight: 500;
-      max-width: 11ch;
     }
 
-    .service-card p {
+    .lbv3-service p {
       margin: 0;
       max-width: 24ch;
-      font-size: 1.04rem;
+      color: var(--lbv3-muted);
+      font-size: 1rem;
       line-height: 1.68;
-      color: var(--muted);
     }
 
-    .proof-band {
+    .lbv3-proofband {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      padding: 22px 0 0;
+      gap: 16px;
+      padding-top: 20px;
       border-top: 1px solid rgba(243, 237, 220, 0.12);
     }
 
-    .proof-item {
-      padding-top: 8px;
-    }
-
-    .proof-item strong {
+    .lbv3-proofband__item strong {
       display: block;
       margin-bottom: 8px;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 500;
     }
 
-    .proof-item span {
+    .lbv3-proofband__item span {
       display: block;
-      font: 500 13px/1.5 "Inter", sans-serif;
-      letter-spacing: 0.06em;
+      font: 500 13px/1.55 "Inter", sans-serif;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--soft);
+      color: var(--lbv3-soft);
     }
 
-    .closing {
+    .lbv3-closing {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 28px;
       align-items: center;
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 34px;
+      padding: 30px;
+      border: 1px solid var(--lbv3-line);
+      border-radius: var(--lbv3-radius-lg);
       background:
-        linear-gradient(145deg, rgba(245, 238, 224, 0.08), rgba(245, 238, 224, 0.03)),
+        linear-gradient(145deg, rgba(245, 239, 226, 0.08), rgba(245, 239, 226, 0.03)),
         rgba(7, 10, 12, 0.08);
-      box-shadow: var(--shadow);
+      box-shadow: var(--lbv3-shadow);
     }
 
-    .closing h2 {
+    .lbv3-closing h2 {
       margin: 0 0 14px;
-      font-size: clamp(2.3rem, 4vw, 4.2rem);
-      line-height: 0.96;
-      font-weight: 500;
       max-width: 12ch;
+      font-size: clamp(2.2rem, 3.8vw, 3.9rem);
+      line-height: 0.97;
+      font-weight: 500;
     }
 
-    .closing p {
+    .lbv3-closing p {
       margin: 0;
       max-width: 34ch;
-      font-size: 1.12rem;
-      line-height: 1.75;
-      color: var(--muted);
+      color: var(--lbv3-muted);
+      font-size: 1.08rem;
+      line-height: 1.76;
     }
 
-    .closing__actions {
+    .lbv3-closing__actions {
       display: flex;
       justify-content: flex-end;
-      align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    .concept-note {
+    .lbv3-note-footer {
       padding: 28px 0 12px;
       text-align: center;
     }
 
-    .concept-note p {
+    .lbv3-note-footer p {
       width: min(820px, 100%);
       margin: 0 auto;
-      font: 500 0.97rem/1.8 "Inter", sans-serif;
-      color: var(--soft);
+      color: var(--lbv3-soft);
+      font: 500 0.96rem/1.8 "Inter", sans-serif;
     }
 
     @media (max-width: 1100px) {
-      .hero__grid,
-      .experience-grid,
-      .manifesto,
-      .section__head,
-      .closing {
+      .lbv3-hero__grid,
+      .lbv3-experience,
+      .lbv3-manifesto,
+      .lbv3-section__head,
+      .lbv3-closing {
         grid-template-columns: 1fr;
       }
 
-      .hero__aside {
+      .lbv3-hero__aside {
+        width: min(100%, 620px);
         justify-self: start;
-        width: min(100%, 640px);
       }
 
-      .experience-panels,
-      .services,
-      .proof-band {
+      .lbv3-services,
+      .lbv3-proofband {
         grid-template-columns: 1fr;
-      }
-
-      .experience-panels {
-        grid-template-rows: none;
-      }
-
-      .service-card:nth-child(2) {
-        transform: none;
-      }
-
-      .manifesto-quote {
-        position: static;
-      }
-
-      .closing__actions {
-        justify-content: flex-start;
       }
     }
 
     @media (max-width: 720px) {
-      .site-header__inner,
-      .container,
-      .hero__grid {
-        width: min(var(--container), calc(100% - 28px));
+      .lbv3-shell,
+      .lbv3-hero__grid {
+        width: min(var(--lbv3-container), calc(100% - 28px));
       }
 
-      .nav {
-        display: none;
+      .lbv3-hero {
+        min-height: 84svh;
+        padding: 112px 0 28px;
       }
 
-      .hero {
-        min-height: 92svh;
-        padding-bottom: 28px;
+      .lbv3-section {
+        padding: 74px 0;
       }
 
-      .hero__copy {
-        padding-top: 120px;
+      .lbv3-image-card {
+        min-height: 440px;
       }
 
-      .hero h1 {
-        max-width: 9.5ch;
-      }
-
-      .section {
-        padding: 78px 0;
-      }
-
-      .experience-media {
-        min-height: 480px;
-      }
-
-      .closing {
+      .lbv3-closing {
         padding: 24px;
       }
     }
   </style>
 </head>
-
 <body data-page-type="homepage" data-primary-goal="inquiry_submit">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div id="siteHeader"></div>
 
-  <header class="site-header" aria-label="LuvBlooms concept header">
-    <div class="site-header__inner">
-      <a class="brand" href="/" aria-label="LuvBlooms home">
-        <img src="/assets/images/logo_square_transparent.png" alt="LuvBlooms">
-        <span>Miami Floral Design Studio</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/weddings">Weddings</a>
-        <a href="/events">Events</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/inquire">Inquire</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="hero__media">
+  <main id="main" class="lbv3-main">
+    <section class="lbv3-hero">
+      <div class="lbv3-hero__media">
         <img src="/assets/images/pages/lb_home_01.jpg" alt="LuvBlooms luxury floral arrangement">
       </div>
+      <div class="lbv3-hero__wash"></div>
 
-      <div class="hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow">For the main character, the host, and the quietly obsessed observer</p>
+      <div class="lbv3-hero__grid">
+        <div class="lbv3-hero__copy">
+          <p class="lbv3-eyebrow">For the main character, the host, and the quietly obsessed observer</p>
           <h1>Some florals decorate. Others change the room.</h1>
-          <p class="hero__lead">
+          <p class="lbv3-hero__lede">
             LuvBlooms is a Miami floral design studio shaping weddings, intimate celebrations,
             brand moments, and custom arrangements with a romantic editorial eye and a level of
             care that feels deeply personal.
           </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="/inquire">Start Your Inquiry</a>
-            <a class="btn btn--ghost" href="/portfolio">View Portfolio</a>
-            <a class="btn btn--ghost" href="/request-an-arrangement">Request an Arrangement</a>
+          <div class="lbv3-hero__actions">
+            <a class="lbv3-btn lbv3-btn--primary" href="/inquire">Start Your Inquiry</a>
+            <a class="lbv3-btn lbv3-btn--ghost" href="/portfolio">View Portfolio</a>
+            <a class="lbv3-btn lbv3-btn--ghost" href="/request-an-arrangement">Request an Arrangement</a>
           </div>
         </div>
 
-        <aside class="hero__aside">
-          <div class="hero-note">
-            <p class="hero-note__label">The feeling</p>
-            <p class="hero-note__quote">Soft enough to feel cinematic. Sharp enough to feel considered.</p>
+        <aside class="lbv3-hero__aside">
+          <div class="lbv3-panel lbv3-note">
+            <p class="lbv3-note__label">The feeling</p>
+            <p class="lbv3-note__quote">Soft enough to feel cinematic. Sharp enough to feel considered.</p>
           </div>
 
-          <div class="hero-proof">
-            <div class="hero-proof__row">
-              <span class="dot" aria-hidden="true"></span>
+          <div class="lbv3-panel lbv3-proof">
+            <div class="lbv3-proof__item">
+              <span class="lbv3-dot" aria-hidden="true"></span>
               <span>Wedding florals, intimate events, installations, and custom arrangements all live under one elegant visual language.</span>
             </div>
-            <div class="hero-proof__row">
-              <span class="dot" aria-hidden="true"></span>
-              <span>This direction is meant to feel less like a florist website and more like an invitation into a world.</span>
+            <div class="lbv3-proof__item">
+              <span class="lbv3-dot" aria-hidden="true"></span>
+              <span>This direction keeps the image immersive but gives the text enough backdrop and breathing room to feel refined, not overwhelming.</span>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
+    <section class="lbv3-section">
+      <div class="lbv3-shell">
+        <div class="lbv3-section__head">
           <div>
-            <p class="section__eyebrow">What the brand can become</p>
-            <h2 class="section__title">A homepage with atmosphere, confidence, and desire built in.</h2>
+            <p class="lbv3-eyebrow">What the brand can become</p>
+            <h2 class="lbv3-section__title">A homepage with atmosphere, confidence, and desire built in.</h2>
           </div>
-          <p class="section__lead">
+          <p class="lbv3-section__lead">
             The client should feel instantly that this is not a template florist. It should feel cultivated,
             art-directed, and emotionally expensive in the best way.
           </p>
         </div>
 
-        <div class="experience-grid">
-          <div class="experience-media">
+        <div class="lbv3-experience">
+          <div class="lbv3-image-card">
             <img src="/assets/images/pages/lb_home_01.jpg" alt="LuvBlooms floral art direction concept">
-            <div class="experience-caption">
+            <div class="lbv3-image-card__caption">
               <h3>Made to hold attention.</h3>
               <p>Not because it shouts, but because it feels composed enough that you want to keep looking.</p>
             </div>
           </div>
 
-          <div class="experience-panels">
-            <article class="experience-panel" data-number="01">
-              <h3>Main character energy</h3>
-              <p>For clients who want their dinner, wedding, launch, or gift to feel emotionally memorable and visually undeniable.</p>
+          <div class="lbv3-stack">
+            <article class="lbv3-stack__card">
+              <p class="lbv3-stack__kicker">Main character energy</p>
+              <h3>For clients who want a room to feel unforgettable.</h3>
+              <p>Weddings, dinners, launches, and gifts that feel emotionally memorable and visually undeniable.</p>
             </article>
-            <article class="experience-panel" data-number="02">
-              <h3>Viewer energy</h3>
-              <p>For the audience, guests, and passersby who may not know why a room feels special, only that it does.</p>
+            <article class="lbv3-stack__card">
+              <p class="lbv3-stack__kicker">Viewer energy</p>
+              <h3>For the guest who may not know why it feels special.</h3>
+              <p>They just know it does. The atmosphere lands before anyone has to explain it.</p>
             </article>
-            <article class="experience-panel" data-number="03">
-              <h3>Service that earns the look</h3>
-              <p>Luxury visuals only work when the process beneath them feels organized, warm, and highly dependable.</p>
+            <article class="lbv3-stack__card">
+              <p class="lbv3-stack__kicker">Service underneath</p>
+              <h3>Luxury visuals need luxury steadiness.</h3>
+              <p>The process has to feel organized, warm, detail-aware, and deeply dependable to earn the aesthetic.</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--veil">
-      <div class="container">
-        <div class="manifesto">
-          <div class="manifesto-quote">
+    <section class="lbv3-section lbv3-section--veil">
+      <div class="lbv3-shell">
+        <div class="lbv3-manifesto">
+          <div class="lbv3-manifesto__quote">
             <p>
               The goal is not more cards, more blur, or more rounded corners.
               The goal is tension, rhythm, texture, and confidence.
             </p>
           </div>
 
-          <div class="manifesto-copy">
+          <div class="lbv3-manifesto__copy">
             <p>
-              Rounded edges are not “wrong,” but when every surface uses the same soft radius, the site starts
-              to feel generic. For a higher-end floral studio, edge treatment should be selective: sharper where
-              structure matters, softer where intimacy or editorial softness helps the brand breathe.
+              Rounded corners are not the problem. Overusing one identical shape everywhere is. For this brand,
+              the higher-end move is a disciplined system: softly rounded edges for buttons and panels, cleaner rectangles
+              for image fields, and only enough softness to feel romantic without slipping into generic.
             </p>
             <p>
-              The same is true of cards. Instead of evenly repeating one card style across every section, a stronger
-              concept mixes section moods: one immersive full-bleed image field, one restrained typography-led band,
-              one staggered service row, one elegant CTA moment. Luxury comes from composition, not just polish.
+              For the buttons specifically, the most premium direction here is not fully pill-rounded and not fully square.
+              It’s square with softened corners: architectural, clean, and more aligned with an artsy, detail-sensitive audience.
             </p>
             <p>
-              Backgrounds should also do more than sit there. Tonal veils, directional light, shallow gradients,
-              shadowed image crops, and negative space can create depth while staying within the calm LuvBlooms palette.
+              Symmetry and alignment matter because this audience notices composition. When the structure feels intentional,
+              the work itself feels more trustworthy and more worth investing in.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
+    <section class="lbv3-section">
+      <div class="lbv3-shell">
+        <div class="lbv3-section__head">
           <div>
-            <p class="section__eyebrow">Service pathways</p>
-            <h2 class="section__title">The site should make premium work feel obvious.</h2>
+            <p class="lbv3-eyebrow">Service pathways</p>
+            <h2 class="lbv3-section__title">The site should make premium work feel obvious.</h2>
           </div>
-          <p class="section__lead">
+          <p class="lbv3-section__lead">
             People should immediately recognize whether they’re here for a wedding, a private event, a branded activation,
             or a custom arrangement, without the page becoming cluttered.
           </p>
         </div>
 
-        <div class="services">
-          <article class="service-card">
-            <p class="service-card__tag">Weddings</p>
+        <div class="lbv3-services">
+          <article class="lbv3-service">
+            <p class="lbv3-service__tag">Weddings</p>
             <h3>Florals that can carry a whole day.</h3>
             <p>Personal flowers, ceremony moments, reception atmosphere, and an experience that feels intentional from start to finish.</p>
           </article>
 
-          <article class="service-card">
-            <p class="service-card__tag">Private events</p>
+          <article class="lbv3-service">
+            <p class="lbv3-service__tag">Private events</p>
             <h3>Beauty that changes how a gathering feels.</h3>
             <p>Dinners, birthdays, showers, and celebrations where atmosphere matters as much as the guest list.</p>
           </article>
 
-          <article class="service-card">
-            <p class="service-card__tag">Brand moments</p>
+          <article class="lbv3-service">
+            <p class="lbv3-service__tag">Brand moments</p>
             <h3>Floral styling that photographs like part of the campaign.</h3>
             <p>Launches, content shoots, hospitality moments, and installations designed to hold attention in person and online.</p>
           </article>
@@ -884,33 +760,33 @@
       </div>
     </section>
 
-    <section class="section section--veil">
-      <div class="container">
-        <div class="section__head">
+    <section class="lbv3-section lbv3-section--veil">
+      <div class="lbv3-shell">
+        <div class="lbv3-section__head">
           <div>
-            <p class="section__eyebrow">What makes it feel expensive</p>
-            <h2 class="section__title">Luxury online is mostly about editing.</h2>
+            <p class="lbv3-eyebrow">What makes it feel expensive</p>
+            <h2 class="lbv3-section__title">Luxury online is mostly about editing.</h2>
           </div>
-          <p class="section__lead">
+          <p class="lbv3-section__lead">
             Better spacing. Fewer repeated shapes. More deliberate contrast. Richer copy. Stronger photography treatment.
             Less “website,” more point of view.
           </p>
         </div>
 
-        <div class="proof-band">
-          <div class="proof-item">
+        <div class="lbv3-proofband">
+          <div class="lbv3-proofband__item">
             <strong>01</strong>
-            <span>Selective radius system, not fully rounded everything</span>
+            <span>Selective radius system, not one shape repeated everywhere</span>
           </div>
-          <div class="proof-item">
+          <div class="lbv3-proofband__item">
             <strong>02</strong>
-            <span>Background depth inside the main palette, not flat color blocks</span>
+            <span>Background depth inside the main palette, not flat blocks alone</span>
           </div>
-          <div class="proof-item">
+          <div class="lbv3-proofband__item">
             <strong>03</strong>
             <span>Section variety with editorial pacing instead of repeated card grids</span>
           </div>
-          <div class="proof-item">
+          <div class="lbv3-proofband__item">
             <strong>04</strong>
             <span>Copy that sells emotion, trust, and seriousness at once</span>
           </div>
@@ -918,33 +794,37 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="closing">
+    <section class="lbv3-section">
+      <div class="lbv3-shell">
+        <div class="lbv3-closing">
           <div>
             <h2>Build the kind of homepage a client wants to linger on.</h2>
             <p>
-              This option is designed to feel more mesmerizing, more elevated, and more aligned with a studio that offers
-              high-touch service rather than commodity flowers.
+              This option keeps the big floral image but scales the site down into something more poised,
+              more legible, and more aligned with a high-touch luxury service.
             </p>
           </div>
 
-          <div class="closing__actions">
-            <a class="btn btn--primary" href="/inquire">Inquire</a>
-            <a class="btn btn--ghost" href="/portfolio">Portfolio</a>
+          <div class="lbv3-closing__actions">
+            <a class="lbv3-btn lbv3-btn--primary" href="/inquire">Inquire</a>
+            <a class="lbv3-btn lbv3-btn--ghost" href="/portfolio">Portfolio</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="concept-note">
-      <div class="container">
+    <section class="lbv3-note-footer">
+      <div class="lbv3-shell">
         <p>
           Concept reference for client presentation. Uses <code>/assets/images/pages/lb_home_01.jpg</code> as a placeholder
-          and is intentionally art-directed to show the upper range of what the LuvBlooms homepage could become.
+          and relies on the live shared header/footer include system. Shared header branding should use
+          <code>/lb-logo-lo-circle-transparent.png</code>.
         </p>
       </div>
     </section>
   </main>
+
+  <div id="siteFooter"></div>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
