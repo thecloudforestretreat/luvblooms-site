@@ -755,3 +755,234 @@ h1 {
     width: 100%;
   }
 }
+
+/* ==========================================================
+   LuvBlooms header + form symmetry fix
+   Added to restore consistent header layout and aligned fields
+   ========================================================== */
+
+/* Header shell */
+#siteHeader {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  border-bottom: 1px solid var(--lb-border-soft);
+  background: rgba(54, 68, 73, 0.96);
+}
+
+#siteHeader > header,
+#siteHeader .site-header,
+#siteHeader .header,
+#siteHeader .topbar {
+  width: 100%;
+}
+
+#siteHeader .header-inner,
+#siteHeader .site-header-inner,
+#siteHeader .topbar-inner,
+#siteHeader .nav-inner,
+#siteHeader > header > .page,
+#siteHeader > header > .container,
+#siteHeader > header > div:first-child {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+#siteHeader .brand,
+#siteHeader .logo,
+#siteHeader .site-logo,
+#siteHeader .brand-link,
+#siteHeader a[aria-label*="LuvBlooms"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+#siteHeader img,
+#siteHeader svg {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 82px;
+}
+
+#siteHeader .brand img,
+#siteHeader .logo img,
+#siteHeader .site-logo img,
+#siteHeader .brand-logo img {
+  max-height: 82px;
+}
+
+#siteHeader nav,
+#siteHeader .nav,
+#siteHeader .site-nav,
+#siteHeader .desktop-nav,
+#siteHeader .menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+#siteHeader nav a,
+#siteHeader .nav a,
+#siteHeader .site-nav a,
+#siteHeader .menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.94;
+}
+
+#siteHeader .menu-toggle,
+#siteHeader .hamburger,
+#siteHeader button[aria-label*="menu"],
+#siteHeader button[aria-label*="Menu"] {
+  display: none;
+}
+
+/* Form grid alignment */
+.form-grid {
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+.form-grid > .field {
+  margin-top: 0;
+}
+
+.form-grid-2 > .field,
+.form-grid-3 > .field,
+.form-grid-4 > .field {
+  width: 100%;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="tel"],
+.form-card input[type="url"],
+.form-card input[type="number"],
+.form-card input[type="date"],
+.form-card select {
+  min-height: 54px;
+}
+
+.form-card label {
+  min-height: 20px;
+}
+
+/* Keep paired fields visually symmetrical even when labels wrap */
+.form-grid-2.form-grid-align,
+.form-grid-3.form-grid-align,
+.form-grid-4.form-grid-align {
+  align-items: start;
+}
+
+.form-grid-2.form-grid-align > .field,
+.form-grid-3.form-grid-align > .field,
+.form-grid-4.form-grid-align > .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid-2.form-grid-align > .field > input,
+.form-grid-2.form-grid-align > .field > select,
+.form-grid-2.form-grid-align > .field > textarea,
+.form-grid-3.form-grid-align > .field > input,
+.form-grid-3.form-grid-align > .field > select,
+.form-grid-3.form-grid-align > .field > textarea,
+.form-grid-4.form-grid-align > .field > input,
+.form-grid-4.form-grid-align > .field > select,
+.form-grid-4.form-grid-align > .field > textarea {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  #siteHeader .header-inner,
+  #siteHeader .site-header-inner,
+  #siteHeader .topbar-inner,
+  #siteHeader .nav-inner,
+  #siteHeader > header > .page,
+  #siteHeader > header > .container,
+  #siteHeader > header > div:first-child {
+    padding: 16px 18px;
+    gap: 16px;
+  }
+
+  #siteHeader img,
+  #siteHeader svg,
+  #siteHeader .brand img,
+  #siteHeader .logo img,
+  #siteHeader .site-logo img,
+  #siteHeader .brand-logo img {
+    max-height: 64px;
+  }
+
+  #siteHeader nav,
+  #siteHeader .nav,
+  #siteHeader .site-nav,
+  #siteHeader .desktop-nav,
+  #siteHeader .menu {
+    display: none;
+  }
+
+  #siteHeader .menu-toggle,
+  #siteHeader .hamburger,
+  #siteHeader button[aria-label*="menu"],
+  #siteHeader button[aria-label*="Menu"] {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--lb-border-soft);
+    border-radius: 12px;
+    background: rgba(231, 228, 209, 0.08);
+    color: var(--lb-text);
+    flex: 0 0 auto;
+  }
+
+  #siteHeader nav.is-open,
+  #siteHeader .nav.is-open,
+  #siteHeader .site-nav.is-open,
+  #siteHeader .menu.is-open,
+  #siteHeader [data-menu].is-open {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: calc(100% + 8px);
+    display: grid;
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid var(--lb-border-soft);
+    border-radius: 16px;
+    background: rgba(54, 68, 73, 0.98);
+    box-shadow: var(--lb-shadow);
+  }
+
+  #siteHeader nav.is-open a,
+  #siteHeader .nav.is-open a,
+  #siteHeader .site-nav.is-open a,
+  #siteHeader .menu.is-open a,
+  #siteHeader [data-menu].is-open a {
+    justify-content: flex-start;
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
