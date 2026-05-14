@@ -48,7 +48,7 @@
 
       <section class="section section-alt">
         <div class="page">
-          <div class="hero-micro" style="margin-bottom: 24px;">
+          <div class="hero-micro inquiry-intro">
             <div class="micro-item">
               <span class="micro-dot" aria-hidden="true"></span>
               <span class="micro-text">Best for weddings, events, installations, and custom floral work</span>
@@ -61,7 +61,7 @@
 
           <form
             id="lbInquiryForm"
-            class="card"
+            class="card form-card inquiry-form"
             data-analytics-form="luvblooms_inquiry"
             data-analytics-section="inquire_page"
             novalidate
@@ -78,34 +78,34 @@
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="section-head" style="margin-bottom: 18px;">
+            <div class="section-head form-section-head">
               <h2>Contact details</h2>
               <p class="subhead">We’ll use this to follow up about your floral project.</p>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="first_name">First Name *</label>
                 <input id="first_name" name="first_name" type="text" required autocomplete="given-name">
               </div>
-              <div>
+              <div class="field">
                 <label for="last_name">Last Name *</label>
                 <input id="last_name" name="last_name" type="text" required autocomplete="family-name">
               </div>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="email">Email *</label>
                 <input id="email" name="email" type="email" required autocomplete="email">
               </div>
-              <div>
+              <div class="field">
                 <label for="phone">Phone</label>
                 <input id="phone" name="phone" type="tel" autocomplete="tel">
               </div>
             </div>
 
-            <div style="margin-top: 16px;">
+            <div class="field">
               <label for="preferred_contact_method">Preferred Contact Method</label>
               <select id="preferred_contact_method" name="preferred_contact_method">
                 <option value="">Select one</option>
@@ -115,13 +115,13 @@
               </select>
             </div>
 
-            <div class="section-head" style="margin: 34px 0 18px;">
+            <div class="section-head form-section-head form-section-head-lg">
               <h2>Event and service details</h2>
               <p class="subhead">This helps us understand fit, scale, and creative direction.</p>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="service_type">Which service are you inquiring about? *</label>
                 <select id="service_type" name="service_type" required>
                   <option value="">Select one</option>
@@ -134,7 +134,7 @@
                   <option value="other">Other</option>
                 </select>
               </div>
-              <div>
+              <div class="field">
                 <label for="inquiry_type">Inquiry Type *</label>
                 <select id="inquiry_type" name="inquiry_type" required>
                   <option value="">Select one</option>
@@ -147,12 +147,12 @@
               </div>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-3">
+              <div class="field">
                 <label for="event_date">Event Date *</label>
                 <input id="event_date" name="event_date" type="date" required>
               </div>
-              <div>
+              <div class="field">
                 <label for="event_flexibility">Date Flexibility</label>
                 <select id="event_flexibility" name="event_flexibility">
                   <option value="">Select one</option>
@@ -161,14 +161,14 @@
                   <option value="very_flexible">Very flexible</option>
                 </select>
               </div>
-              <div>
+              <div class="field">
                 <label for="event_type">Event Type *</label>
                 <input id="event_type" name="event_type" type="text" required placeholder="Wedding, shower, dinner, launch, etc.">
               </div>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-3">
+              <div class="field">
                 <label for="budget_range">Budget Range *</label>
                 <select id="budget_range" name="budget_range" required>
                   <option value="">Select one</option>
@@ -181,11 +181,11 @@
                   <option value="20000_plus">$20,000+</option>
                 </select>
               </div>
-              <div>
+              <div class="field">
                 <label for="guest_count">Guest Count</label>
                 <input id="guest_count" name="guest_count" type="number" min="0" step="1" placeholder="Approximate headcount">
               </div>
-              <div>
+              <div class="field">
                 <label for="timeline_urgency">Timeline</label>
                 <select id="timeline_urgency" name="timeline_urgency">
                   <option value="">Select one</option>
@@ -197,7 +197,7 @@
               </div>
             </div>
 
-            <div style="margin-top: 16px;">
+            <div class="field">
               <label for="event_details">Event Details *</label>
               <textarea
                 id="event_details"
@@ -208,7 +208,7 @@
               ></textarea>
             </div>
 
-            <div style="margin-top: 16px;">
+            <div class="field">
               <label for="floral_needs">Floral Needs</label>
               <textarea
                 id="floral_needs"
@@ -218,8 +218,8 @@
               ></textarea>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="design_style_notes">Design Style Notes</label>
                 <textarea
                   id="design_style_notes"
@@ -228,7 +228,7 @@
                   placeholder="Share the feeling, references, texture, shape, or floral language you want."
                 ></textarea>
               </div>
-              <div>
+              <div class="field">
                 <label for="color_palette">Color Palette</label>
                 <textarea
                   id="color_palette"
@@ -239,8 +239,8 @@
               </div>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="inspiration_links">Inspiration Links</label>
                 <textarea
                   id="inspiration_links"
@@ -249,107 +249,107 @@
                   placeholder="Paste Pinterest boards, Instagram posts, moodboards, or venue links."
                 ></textarea>
               </div>
-              <div>
+              <div class="field field-stack">
                 <label for="pinterest_board_url">Pinterest Board URL</label>
                 <input id="pinterest_board_url" name="pinterest_board_url" type="url" placeholder="https://">
-                <label for="instagram_handle" style="margin-top: 14px; display: block;">Instagram Handle</label>
+                <label for="instagram_handle">Instagram Handle</label>
                 <input id="instagram_handle" name="instagram_handle" type="text" placeholder="@yourhandle">
               </div>
             </div>
 
-            <div class="section-head" style="margin: 34px 0 18px;">
+            <div class="section-head form-section-head form-section-head-lg">
               <h2>Venue and logistics</h2>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
-              <div>
+            <div class="form-grid form-grid-2">
+              <div class="field">
                 <label for="venue_name">Venue Name</label>
                 <input id="venue_name" name="venue_name" type="text">
               </div>
-              <div>
+              <div class="field">
                 <label for="brand_or_company_name">Brand or Company Name</label>
                 <input id="brand_or_company_name" name="brand_or_company_name" type="text">
               </div>
             </div>
 
-            <div style="margin-top: 16px;">
+            <div class="field">
               <label for="event_address_line_1">Address Line 1</label>
               <input id="event_address_line_1" name="event_address_line_1" type="text" autocomplete="address-line1">
             </div>
 
-            <div style="margin-top: 16px;">
+            <div class="field">
               <label for="event_address_line_2">Address Line 2</label>
               <input id="event_address_line_2" name="event_address_line_2" type="text" autocomplete="address-line2">
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-4">
+              <div class="field">
                 <label for="event_city">City</label>
                 <input id="event_city" name="event_city" type="text" autocomplete="address-level2">
               </div>
-              <div>
+              <div class="field">
                 <label for="event_state">State</label>
                 <input id="event_state" name="event_state" type="text" autocomplete="address-level1">
               </div>
-              <div>
+              <div class="field">
                 <label for="event_zip">ZIP</label>
                 <input id="event_zip" name="event_zip" type="text" autocomplete="postal-code">
               </div>
-              <div>
+              <div class="field">
                 <label for="event_country">Country</label>
                 <input id="event_country" name="event_country" type="text" value="United States" autocomplete="country-name">
               </div>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
-              <div>
+            <div class="form-grid form-grid-3">
+              <div class="field">
                 <label for="setup_time">Setup Time</label>
                 <input id="setup_time" name="setup_time" type="text" placeholder="Example: 2:00 PM">
               </div>
-              <div>
+              <div class="field">
                 <label for="breakdown_time">Breakdown Time</label>
                 <input id="breakdown_time" name="breakdown_time" type="text" placeholder="Example: 11:30 PM">
               </div>
-              <div>
+              <div class="field">
                 <label for="referral_source">How did you hear about us?</label>
                 <input id="referral_source" name="referral_source" type="text" placeholder="Planner, friend, Instagram, Google, etc.">
               </div>
             </div>
 
-            <div class="section-head" style="margin: 34px 0 18px;">
+            <div class="section-head form-section-head form-section-head-lg">
               <h2>Scope checklist</h2>
               <p class="subhead">Check anything you already know you’ll need.</p>
             </div>
 
-            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
-              <label><input type="checkbox" name="delivery_or_installation_required" value="yes"> Delivery or installation required</label>
-              <label><input type="checkbox" name="rentals_needed" value="yes"> Rentals needed</label>
-              <label><input type="checkbox" name="backdrop_needed" value="yes"> Backdrop needed</label>
-              <label><input type="checkbox" name="custom_installation_needed" value="yes"> Custom installation needed</label>
-              <label><input type="checkbox" name="personal_flowers_needed" value="yes"> Personal flowers needed</label>
-              <label><input type="checkbox" name="centerpieces_needed" value="yes"> Centerpieces needed</label>
-              <label><input type="checkbox" name="ceremony_florals_needed" value="yes"> Ceremony florals needed</label>
-              <label><input type="checkbox" name="reception_florals_needed" value="yes"> Reception florals needed</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="delivery_or_installation_required" value="yes"> <span>Delivery or installation required</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="rentals_needed" value="yes"> <span>Rentals needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="backdrop_needed" value="yes"> <span>Backdrop needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="custom_installation_needed" value="yes"> <span>Custom installation needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="personal_flowers_needed" value="yes"> <span>Personal flowers needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="centerpieces_needed" value="yes"> <span>Centerpieces needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="ceremony_florals_needed" value="yes"> <span>Ceremony florals needed</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reception_florals_needed" value="yes"> <span>Reception florals needed</span></label>
             </div>
 
-            <div style="margin-top: 22px;">
-              <label style="display:flex; gap:10px; align-items:flex-start;">
+            <div class="consent-row">
+              <label class="checkbox-item checkbox-item-consent">
                 <input type="checkbox" name="consent_to_contact" value="yes" required>
                 <span>I agree to be contacted by LuvBlooms regarding this inquiry. *</span>
               </label>
             </div>
 
-            <div style="margin-top: 22px;">
+            <div class="turnstile-wrap">
               <div
                 class="cf-turnstile"
-                data-sitekey="0x4AAAAAADOtXOriiveud1Pw"
+                data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
                 data-callback="onTurnstileSuccess"
                 data-expired-callback="onTurnstileExpired"
                 data-error-callback="onTurnstileError"
               ></div>
             </div>
 
-            <div class="button-row" style="margin-top: 24px;">
+            <div class="button-row form-actions">
               <button
                 type="submit"
                 class="btn btn-primary"
@@ -362,7 +362,7 @@
               </button>
             </div>
 
-            <p id="formStatus" class="micro-text" style="margin-top: 16px;" aria-live="polite"></p>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
             <p class="form-success" hidden></p>
             <p class="form-error" hidden></p>
           </form>
