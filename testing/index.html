@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LuvBlooms | Miami Floral Design Studio for Events, Gatherings, and Custom Arrangements</title>
+  <title>LuvBlooms | Miami Floral Design for Weddings, Gatherings, and Brand Moments</title>
   <meta
     name="description"
-    content="LuvBlooms is a Miami floral design studio creating romantic wedding flowers, intimate event florals, branded floral activations, and custom arrangements with a modern editorial eye."
+    content="LuvBlooms is a Miami floral design studio creating romantic wedding flowers, intimate event florals, branded activations, and custom arrangements with an editorial eye and a luxury level of service."
   >
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://luvblooms.us/">
-  <meta name="theme-color" content="#364449">
+  <meta name="theme-color" content="#2d393d">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="LuvBlooms | Miami Floral Design Studio">
   <meta
     property="og:description"
-    content="A more elevated floral experience for weddings, intimate events, brand moments, and custom arrangements."
+    content="A more elevated floral experience for weddings, intimate events, brand activations, and custom arrangements."
   >
   <meta property="og:url" content="https://luvblooms.us/">
   <meta property="og:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
@@ -29,10 +29,9 @@
   >
   <meta name="twitter:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -45,267 +44,907 @@
     "areaServed": {
       "@type": "City",
       "name": "Miami"
-    },
-    "sameAs": [
-      "https://www.instagram.com/luvblooms.us/",
-      "https://www.tiktok.com/@luvblooms.us",
-      "https://www.facebook.com/profile.php?id=61577783327957",
-      "https://www.youtube.com/@luv.blooms",
-      "https://pin.it/5zvyJXQce",
-      "https://x.com/LuvBloomsUs",
-      "https://www.linkedin.com/company/luvblooms/"
-    ]
+    }
   }
   </script>
+
+  <style>
+    :root {
+      --bg: #2f3b3f;
+      --bg-deep: #243034;
+      --panel: rgba(245, 238, 224, 0.08);
+      --panel-strong: rgba(245, 238, 224, 0.11);
+      --line: rgba(245, 238, 224, 0.16);
+      --line-strong: rgba(245, 238, 224, 0.24);
+      --text: #f3eddc;
+      --muted: rgba(243, 237, 220, 0.8);
+      --soft: rgba(243, 237, 220, 0.64);
+      --accent: #f1e7cf;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-xl: 42px;
+      --container: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 600px at 80% 10%, rgba(255,255,255,0.04), transparent 60%),
+        radial-gradient(700px 520px at 10% 30%, rgba(255,255,255,0.03), transparent 60%),
+        linear-gradient(180deg, #344246 0%, #2f3b3f 40%, #2a3539 100%);
+      color: var(--text);
+      font-family: "Cormorant Garamond", serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #253136;
+      transform: translateY(-180%);
+      transition: transform 140ms ease;
+      z-index: 1000;
+      font: 600 14px/1 "Inter", sans-serif;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: 20;
+    }
+
+    .site-header__inner {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: auto;
+      max-height: 34px;
+    }
+
+    .brand span {
+      font: 600 14px/1.1 "Inter", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font: 500 13px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav a:last-child {
+      padding: 12px 16px;
+      border: 1px solid rgba(243, 237, 220, 0.22);
+      border-radius: 999px;
+      background: rgba(243, 237, 220, 0.06);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      overflow: clip;
+      padding-bottom: 48px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(19, 25, 28, 0.72) 0%, rgba(19, 25, 28, 0.34) 46%, rgba(19, 25, 28, 0.18) 100%),
+        linear-gradient(180deg, rgba(19, 25, 28, 0.22) 0%, rgba(19, 25, 28, 0.48) 100%);
+      z-index: 1;
+    }
+
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 34%;
+      transform: scale(1.02);
+    }
+
+    .hero__grid {
+      position: relative;
+      z-index: 2;
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.8fr);
+      gap: 36px;
+      align-items: end;
+    }
+
+    .hero__copy {
+      max-width: 760px;
+      padding-top: 120px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font: 500 12px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(243, 237, 220, 0.76);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(3.4rem, 8vw, 7.15rem);
+      line-height: 0.94;
+      font-weight: 500;
+      max-width: 10.3ch;
+      text-wrap: balance;
+    }
+
+    .hero__lead {
+      margin: 24px 0 0;
+      max-width: 36ch;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      font: 600 14px/1 "Inter", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, opacity 140ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn--primary {
+      background: var(--accent);
+      color: #283338;
+      border-color: rgba(243, 237, 220, 0.65);
+    }
+
+    .btn--ghost {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .hero__aside {
+      display: grid;
+      gap: 16px;
+      justify-self: end;
+      width: min(100%, 390px);
+    }
+
+    .hero-note,
+    .hero-proof {
+      border: 1px solid var(--line);
+      background: rgba(15, 20, 23, 0.28);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-note {
+      border-radius: var(--radius-xl) var(--radius-md) var(--radius-xl) var(--radius-md);
+      padding: 22px 22px 24px;
+    }
+
+    .hero-note__label {
+      margin: 0 0 14px;
+      font: 500 12px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .hero-note__quote {
+      margin: 0;
+      font-size: clamp(1.55rem, 2.9vw, 2.35rem);
+      line-height: 1.05;
+      max-width: 12ch;
+    }
+
+    .hero-proof {
+      border-radius: var(--radius-md);
+      padding: 18px 18px 20px;
+    }
+
+    .hero-proof__row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .hero-proof__row + .hero-proof__row {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(243, 237, 220, 0.08);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex: 0 0 auto;
+      margin-top: 8px;
+    }
+
+    .section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section--veil {
+      background:
+        linear-gradient(180deg, rgba(245, 238, 224, 0.03), rgba(245, 238, 224, 0.01)),
+        rgba(0, 0, 0, 0.05);
+    }
+
+    .section__head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section__eyebrow {
+      margin: 0 0 14px;
+      font: 500 12px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .section__title {
+      margin: 0;
+      font-size: clamp(2.25rem, 4vw, 4rem);
+      line-height: 0.98;
+      font-weight: 500;
+      max-width: 12ch;
+    }
+
+    .section__lead {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 40ch;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .experience-media {
+      position: relative;
+      min-height: 680px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .experience-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .experience-media::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(16, 21, 24, 0.7) 100%);
+    }
+
+    .experience-caption {
+      position: absolute;
+      inset: auto 28px 28px 28px;
+      z-index: 2;
+      max-width: 30ch;
+    }
+
+    .experience-caption h3 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .experience-caption p {
+      margin: 0;
+      font-size: 1.06rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .experience-panels {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .experience-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(245, 238, 224, 0.08), rgba(245, 238, 224, 0.04));
+      padding: 24px 22px 22px;
+      min-height: 180px;
+    }
+
+    .experience-panel::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font: 500 11px/1 "Inter", sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(243, 237, 220, 0.34);
+    }
+
+    .experience-panel h3 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      line-height: 1;
+      font-weight: 500;
+      max-width: 12ch;
+    }
+
+    .experience-panel p {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 28ch;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .manifesto-quote {
+      position: sticky;
+      top: 32px;
+      border-left: 1px solid rgba(243, 237, 220, 0.22);
+      padding-left: 22px;
+    }
+
+    .manifesto-quote p {
+      margin: 0;
+      font-size: clamp(2rem, 3.3vw, 3.35rem);
+      line-height: 1.02;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .manifesto-copy {
+      display: grid;
+      gap: 20px;
+    }
+
+    .manifesto-copy p {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: rgba(13, 18, 21, 0.18);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .service-card:nth-child(1) {
+      border-radius: 28px 28px 18px 28px;
+    }
+
+    .service-card:nth-child(2) {
+      border-radius: 18px 34px 18px 18px;
+      transform: translateY(28px);
+    }
+
+    .service-card:nth-child(3) {
+      border-radius: 18px 18px 34px 18px;
+    }
+
+    .service-card__tag {
+      margin: 0 0 24px;
+      font: 500 12px/1.2 "Inter", sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+      line-height: 0.98;
+      font-weight: 500;
+      max-width: 11ch;
+    }
+
+    .service-card p {
+      margin: 0;
+      max-width: 24ch;
+      font-size: 1.04rem;
+      line-height: 1.68;
+      color: var(--muted);
+    }
+
+    .proof-band {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      padding: 22px 0 0;
+      border-top: 1px solid rgba(243, 237, 220, 0.12);
+    }
+
+    .proof-item {
+      padding-top: 8px;
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .proof-item span {
+      display: block;
+      font: 500 13px/1.5 "Inter", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .closing {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(245, 238, 224, 0.08), rgba(245, 238, 224, 0.03)),
+        rgba(7, 10, 12, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .closing h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 4vw, 4.2rem);
+      line-height: 0.96;
+      font-weight: 500;
+      max-width: 12ch;
+    }
+
+    .closing p {
+      margin: 0;
+      max-width: 34ch;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .closing__actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .concept-note {
+      padding: 28px 0 12px;
+      text-align: center;
+    }
+
+    .concept-note p {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      font: 500 0.97rem/1.8 "Inter", sans-serif;
+      color: var(--soft);
+    }
+
+    @media (max-width: 1100px) {
+      .hero__grid,
+      .experience-grid,
+      .manifesto,
+      .section__head,
+      .closing {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__aside {
+        justify-self: start;
+        width: min(100%, 640px);
+      }
+
+      .experience-panels,
+      .services,
+      .proof-band {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-panels {
+        grid-template-rows: none;
+      }
+
+      .service-card:nth-child(2) {
+        transform: none;
+      }
+
+      .manifesto-quote {
+        position: static;
+      }
+
+      .closing__actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-header__inner,
+      .container,
+      .hero__grid {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92svh;
+        padding-bottom: 28px;
+      }
+
+      .hero__copy {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        max-width: 9.5ch;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .experience-media {
+        min-height: 480px;
+      }
+
+      .closing {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body data-page-type="homepage" data-primary-goal="inquiry_submit">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div id="siteHeader"></div>
 
-  <main id="main" class="site-main page">
+  <header class="site-header" aria-label="LuvBlooms concept header">
+    <div class="site-header__inner">
+      <a class="brand" href="/" aria-label="LuvBlooms home">
+        <img src="/assets/images/logo_square_transparent.png" alt="LuvBlooms">
+        <span>Miami Floral Design Studio</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/weddings">Weddings</a>
+        <a href="/events">Events</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/inquire">Inquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
     <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">Miami Floral Design Studio</p>
-          <h1>Florals that turn gatherings into atmosphere.</h1>
-          <p class="lead">
-            LuvBlooms creates romantic, modern floral experiences for weddings,
-            intimate celebrations, brand activations, and custom arrangements that
-            feel artful from the first impression to the last detail.
+      <div class="hero__media">
+        <img src="/assets/images/pages/lb_home_01.jpg" alt="LuvBlooms luxury floral arrangement">
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">For the main character, the host, and the quietly obsessed observer</p>
+          <h1>Some florals decorate. Others change the room.</h1>
+          <p class="hero__lead">
+            LuvBlooms is a Miami floral design studio shaping weddings, intimate celebrations,
+            brand moments, and custom arrangements with a romantic editorial eye and a level of
+            care that feels deeply personal.
           </p>
 
-          <div class="hero-actions">
-            <a
-              href="/inquire"
-              class="btn btn-primary"
-              data-analytics-event="cta_click_inquire"
-              data-analytics-label="Hero Inquire"
-              data-analytics-location="hero"
-              data-analytics-section="homepage_option"
-            >Start Your Inquiry</a>
-            <a
-              href="/portfolio"
-              class="btn btn-ghost"
-              data-analytics-event="cta_click_portfolio"
-              data-analytics-label="Hero Portfolio"
-              data-analytics-location="hero"
-              data-analytics-section="homepage_option"
-            >View Portfolio</a>
-            <a
-              href="/request-an-arrangement"
-              class="btn btn-ghost"
-              data-analytics-event="cta_click_arrangement"
-              data-analytics-label="Hero Arrangement"
-              data-analytics-location="hero"
-              data-analytics-section="homepage_option"
-            >Request an Arrangement</a>
-          </div>
-
-          <div class="hero-micro">
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">Designed for weddings, dinners, showers, launches, and custom gifting</div>
-            </div>
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">Concept, styling, florals, and install support shaped around your vision</div>
-            </div>
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">Rooted in Miami with a warm, editorial, detail-driven point of view</div>
-            </div>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/inquire">Start Your Inquiry</a>
+            <a class="btn btn--ghost" href="/portfolio">View Portfolio</a>
+            <a class="btn btn--ghost" href="/request-an-arrangement">Request an Arrangement</a>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="visual-card" aria-label="LuvBlooms floral arrangement hero image">
-            <img
-              src="/assets/images/pages/lb_home_01.jpg"
-              alt="LuvBlooms floral arrangement placeholder image"
-              style="width:100%;height:100%;object-fit:cover;display:block;"
-              loading="eager"
-              decoding="async"
-            >
-            <div class="visual-overlay">
-              <div class="visual-title">Signature LuvBlooms feeling</div>
-              <div class="visual-subtitle">Soft romance, sculptural movement, and a memorable sense of occasion.</div>
+        <aside class="hero__aside">
+          <div class="hero-note">
+            <p class="hero-note__label">The feeling</p>
+            <p class="hero-note__quote">Soft enough to feel cinematic. Sharp enough to feel considered.</p>
+          </div>
+
+          <div class="hero-proof">
+            <div class="hero-proof__row">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Wedding florals, intimate events, installations, and custom arrangements all live under one elegant visual language.</span>
+            </div>
+            <div class="hero-proof__row">
+              <span class="dot" aria-hidden="true"></span>
+              <span>This direction is meant to feel less like a florist website and more like an invitation into a world.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section__eyebrow">What the brand can become</p>
+            <h2 class="section__title">A homepage with atmosphere, confidence, and desire built in.</h2>
+          </div>
+          <p class="section__lead">
+            The client should feel instantly that this is not a template florist. It should feel cultivated,
+            art-directed, and emotionally expensive in the best way.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-media">
+            <img src="/assets/images/pages/lb_home_01.jpg" alt="LuvBlooms floral art direction concept">
+            <div class="experience-caption">
+              <h3>Made to hold attention.</h3>
+              <p>Not because it shouts, but because it feels composed enough that you want to keep looking.</p>
             </div>
           </div>
 
-          <div class="visual-strip">
-            <div class="strip-pill">Weddings</div>
-            <div class="strip-pill">Private Events</div>
-            <div class="strip-pill">Brand Activations</div>
-            <div class="strip-pill">Custom Arrangements</div>
+          <div class="experience-panels">
+            <article class="experience-panel" data-number="01">
+              <h3>Main character energy</h3>
+              <p>For clients who want their dinner, wedding, launch, or gift to feel emotionally memorable and visually undeniable.</p>
+            </article>
+            <article class="experience-panel" data-number="02">
+              <h3>Viewer energy</h3>
+              <p>For the audience, guests, and passersby who may not know why a room feels special, only that it does.</p>
+            </article>
+            <article class="experience-panel" data-number="03">
+              <h3>Service that earns the look</h3>
+              <p>Luxury visuals only work when the process beneath them feels organized, warm, and highly dependable.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--veil">
+      <div class="container">
+        <div class="manifesto">
+          <div class="manifesto-quote">
+            <p>
+              The goal is not more cards, more blur, or more rounded corners.
+              The goal is tension, rhythm, texture, and confidence.
+            </p>
+          </div>
+
+          <div class="manifesto-copy">
+            <p>
+              Rounded edges are not “wrong,” but when every surface uses the same soft radius, the site starts
+              to feel generic. For a higher-end floral studio, edge treatment should be selective: sharper where
+              structure matters, softer where intimacy or editorial softness helps the brand breathe.
+            </p>
+            <p>
+              The same is true of cards. Instead of evenly repeating one card style across every section, a stronger
+              concept mixes section moods: one immersive full-bleed image field, one restrained typography-led band,
+              one staggered service row, one elegant CTA moment. Luxury comes from composition, not just polish.
+            </p>
+            <p>
+              Backgrounds should also do more than sit there. Tonal veils, directional light, shallow gradients,
+              shadowed image crops, and negative space can create depth while staying within the calm LuvBlooms palette.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-head">
-        <h2>What LuvBlooms Can Hold</h2>
-        <p class="subhead">
-          A stronger homepage should show range without losing the brand point of view.
-          These pathways let visitors quickly see themselves in the experience.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <div class="card-icon" aria-hidden="true"></div>
-            <div class="card-tag">Celebratory</div>
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section__eyebrow">Service pathways</p>
+            <h2 class="section__title">The site should make premium work feel obvious.</h2>
           </div>
-          <h3>Weddings</h3>
-          <p>Personal flowers, ceremony florals, reception moments, and elevated floral storytelling for the full day.</p>
-        </article>
+          <p class="section__lead">
+            People should immediately recognize whether they’re here for a wedding, a private event, a branded activation,
+            or a custom arrangement, without the page becoming cluttered.
+          </p>
+        </div>
 
-        <article class="card">
-          <div class="card-top">
-            <div class="card-icon" aria-hidden="true"></div>
-            <div class="card-tag">Intentional</div>
-          </div>
-          <h3>Intimate Events</h3>
-          <p>Birthdays, bridal showers, dinners, and gatherings that deserve beauty without feeling overdone.</p>
-        </article>
+        <div class="services">
+          <article class="service-card">
+            <p class="service-card__tag">Weddings</p>
+            <h3>Florals that can carry a whole day.</h3>
+            <p>Personal flowers, ceremony moments, reception atmosphere, and an experience that feels intentional from start to finish.</p>
+          </article>
 
-        <article class="card">
-          <div class="card-top">
-            <div class="card-icon" aria-hidden="true"></div>
-            <div class="card-tag">Editorial</div>
-          </div>
-          <h3>Brand Activations</h3>
-          <p>Installations and floral styling for launches, campaigns, hospitality moments, and visually led experiences.</p>
-        </article>
+          <article class="service-card">
+            <p class="service-card__tag">Private events</p>
+            <h3>Beauty that changes how a gathering feels.</h3>
+            <p>Dinners, birthdays, showers, and celebrations where atmosphere matters as much as the guest list.</p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-card__tag">Brand moments</p>
+            <h3>Floral styling that photographs like part of the campaign.</h3>
+            <p>Launches, content shoots, hospitality moments, and installations designed to hold attention in person and online.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="section-head">
-        <h2>Why It Feels Different</h2>
-        <p class="subhead">
-          The opportunity here is not just to sell flowers. It’s to sell confidence, atmosphere,
-          and the feeling that every detail is being handled with taste.
-        </p>
-      </div>
+    <section class="section section--veil">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section__eyebrow">What makes it feel expensive</p>
+            <h2 class="section__title">Luxury online is mostly about editing.</h2>
+          </div>
+          <p class="section__lead">
+            Better spacing. Fewer repeated shapes. More deliberate contrast. Richer copy. Stronger photography treatment.
+            Less “website,” more point of view.
+          </p>
+        </div>
 
-      <div class="journey">
-        <div class="journey-step">
-          <div class="step-badge">1</div>
-          <h3>Clear creative direction</h3>
-          <p>Clients should feel guided from the first click, with language that helps them imagine what’s possible.</p>
-        </div>
-        <div class="journey-step">
-          <div class="step-badge">2</div>
-          <h3>Proof of taste</h3>
-          <p>The homepage should look polished enough that people trust the brand with a wedding, event, or premium gift.</p>
-        </div>
-        <div class="journey-step">
-          <div class="step-badge">3</div>
-          <h3>Easy next step</h3>
-          <p>Every major section should naturally lead into an inquiry, arrangement request, or deeper portfolio view.</p>
+        <div class="proof-band">
+          <div class="proof-item">
+            <strong>01</strong>
+            <span>Selective radius system, not fully rounded everything</span>
+          </div>
+          <div class="proof-item">
+            <strong>02</strong>
+            <span>Background depth inside the main palette, not flat color blocks</span>
+          </div>
+          <div class="proof-item">
+            <strong>03</strong>
+            <span>Section variety with editorial pacing instead of repeated card grids</span>
+          </div>
+          <div class="proof-item">
+            <strong>04</strong>
+            <span>Copy that sells emotion, trust, and seriousness at once</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="hero-grid">
-        <div class="hero-visual">
-          <div class="visual-card" aria-label="LuvBlooms floral styling placeholder image">
-            <img
-              src="/assets/images/pages/lb_home_01.jpg"
-              alt="LuvBlooms floral styling placeholder image"
-              style="width:100%;height:100%;object-fit:cover;display:block;"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="visual-overlay">
-              <div class="visual-title">Built for premium work</div>
-              <div class="visual-subtitle">A homepage option that makes LuvBlooms feel more established, more desirable, and more referable.</div>
-            </div>
+      <div class="container">
+        <div class="closing">
+          <div>
+            <h2>Build the kind of homepage a client wants to linger on.</h2>
+            <p>
+              This option is designed to feel more mesmerizing, more elevated, and more aligned with a studio that offers
+              high-touch service rather than commodity flowers.
+            </p>
           </div>
-        </div>
 
-        <div class="hero-copy">
-          <p class="kicker">For the right client</p>
-          <h2>Soft enough to feel romantic. Clear enough to convert.</h2>
-          <p class="lead">
-            This direction leans into the emotional pull of the reference sites, but adds more
-            business clarity: stronger service pathways, cleaner calls to action, and richer SEO language
-            around Miami floral design, weddings, events, and custom arrangements.
-          </p>
-          <div class="hero-micro">
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">Homepage copy can carry both mood and search intent</div>
-            </div>
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">Editorial visuals can support premium positioning without sacrificing clarity</div>
-            </div>
-            <div class="micro-item">
-              <div class="micro-dot"></div>
-              <div class="micro-text">The client sees an aspirational brand, while search engines see a relevant business</div>
-            </div>
+          <div class="closing__actions">
+            <a class="btn btn--primary" href="/inquire">Inquire</a>
+            <a class="btn btn--ghost" href="/portfolio">Portfolio</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="section-head">
-        <h2>How We Work</h2>
-        <p class="subhead">A refined process makes premium creative work feel easier to say yes to.</p>
+    <section class="concept-note">
+      <div class="container">
+        <p>
+          Concept reference for client presentation. Uses <code>/assets/images/pages/lb_home_01.jpg</code> as a placeholder
+          and is intentionally art-directed to show the upper range of what the LuvBlooms homepage could become.
+        </p>
       </div>
-
-      <div class="how">
-        <div class="how-item">
-          <div class="how-line"></div>
-          <h3>You share the vision</h3>
-          <p>Date, setting, budget, feeling, floral priorities, and the kind of experience you want people to remember.</p>
-        </div>
-        <div class="how-item">
-          <div class="how-line"></div>
-          <h3>We shape the concept</h3>
-          <p>We translate your references into a floral approach that feels aligned, cohesive, and elevated.</p>
-        </div>
-        <div class="how-item">
-          <div class="how-line"></div>
-          <h3>We bring it to life</h3>
-          <p>From custom arrangements to full event florals and installations, the execution stays thoughtful and polished.</p>
-        </div>
-      </div>
-
-      <div class="cta-bar">
-        <div class="cta-copy">
-          <div class="cta-title">A better homepage should make the next step feel obvious.</div>
-          <div class="cta-subtitle">Point them toward inquiry, portfolio, or a high-intent service page without making them hunt.</div>
-        </div>
-        <div class="cta-actions">
-          <a
-            class="btn btn-primary"
-            href="/inquire"
-            data-analytics-event="cta_click_inquire"
-            data-analytics-label="Final CTA Inquire"
-            data-analytics-location="final_cta"
-            data-analytics-section="homepage_option"
-          >Inquire Now</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section brand-note">
-      <p>
-        LuvBlooms has room to become more than a floral brand. It can feel like a Miami floral design studio
-        with a distinct emotional language: romantic, modern, calm, and highly intentional. This concept is meant
-        to show the client what that next level could look like on the homepage.
-      </p>
     </section>
   </main>
-
-  <div id="siteFooter"></div>
-  <script src="/assets/js/site.js"></script>
 </body>
 </html>
