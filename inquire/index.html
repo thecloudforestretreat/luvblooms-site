@@ -1,1 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inquire | LuvBlooms</title>
+    <meta
+      name="description"
+      content="Inquire with LuvBlooms for weddings, events, floral installations, and custom floral design. Share your date, budget, venue, and inspiration to start your project."
+    >
+    <link rel="canonical" href="https://luvblooms.us/inquire">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inquire | LuvBlooms">
+    <meta
+      property="og:description"
+      content="Tell LuvBlooms about your event, floral needs, style, and timeline to begin your inquiry."
+    >
+    <meta property="og:url" content="https://luvblooms.us/inquire">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inquire | LuvBlooms">
+    <meta
+      name="twitter:description"
+      content="Start your LuvBlooms inquiry for weddings, events, and custom floral design."
+    >
+
+    <link rel="stylesheet" href="/assets/css/site.css">
+  </head>
+  <body data-page-type="contact_page" data-primary-goal="inquiry_submit">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div id="siteHeader"></div>
+
+    <main id="main" class="site-main">
+      <section class="section">
+        <div class="page">
+          <div class="section-head">
+            <p class="kicker">LuvBlooms Inquiry</p>
+            <h1>Let’s talk flowers, feeling, and scope.</h1>
+            <p class="lead">
+              Use this form for weddings, private events, brand moments, custom floral
+              installs, and larger floral requests. Share as much detail as you can and
+              we’ll follow up with the right next step.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="page">
+          <div class="hero-micro" style="margin-bottom: 24px;">
+            <div class="micro-item">
+              <span class="micro-dot" aria-hidden="true"></span>
+              <span class="micro-text">Best for weddings, events, installations, and custom floral work</span>
+            </div>
+            <div class="micro-item">
+              <span class="micro-dot" aria-hidden="true"></span>
+              <span class="micro-text">The more detail you share, the more tailored our reply can be</span>
+            </div>
+          </div>
+
+          <form
+            id="lbInquiryForm"
+            class="card"
+            data-analytics-form="luvblooms_inquiry"
+            data-analytics-section="inquire_page"
+            novalidate
+          >
+            <input type="hidden" name="lead_source" value="website">
+            <input type="hidden" name="page_slug" value="/inquire">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="submission_timestamp" value="">
+            <input type="hidden" name="user_agent" value="">
+            <input type="hidden" name="turnstile_token" id="turnstile_token" value="">
+
+            <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+              <label for="website">Leave this field empty</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="section-head" style="margin-bottom: 18px;">
+              <h2>Contact details</h2>
+              <p class="subhead">We’ll use this to follow up about your floral project.</p>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+              <div>
+                <label for="first_name">First Name *</label>
+                <input id="first_name" name="first_name" type="text" required autocomplete="given-name">
+              </div>
+              <div>
+                <label for="last_name">Last Name *</label>
+                <input id="last_name" name="last_name" type="text" required autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <label for="preferred_contact_method">Preferred Contact Method</label>
+              <select id="preferred_contact_method" name="preferred_contact_method">
+                <option value="">Select one</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="text">Text</option>
+              </select>
+            </div>
+
+            <div class="section-head" style="margin: 34px 0 18px;">
+              <h2>Event and service details</h2>
+              <p class="subhead">This helps us understand fit, scale, and creative direction.</p>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+              <div>
+                <label for="service_type">Which service are you inquiring about? *</label>
+                <select id="service_type" name="service_type" required>
+                  <option value="">Select one</option>
+                  <option value="weddings">Weddings</option>
+                  <option value="private_events">Private Events</option>
+                  <option value="brand_events">Brand Events / Corporate</option>
+                  <option value="editorial">Editorial / Content</option>
+                  <option value="custom_installation">Custom Floral Installation</option>
+                  <option value="custom_order">Custom Floral Order</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="inquiry_type">Inquiry Type *</label>
+                <select id="inquiry_type" name="inquiry_type" required>
+                  <option value="">Select one</option>
+                  <option value="event_project">Event Project</option>
+                  <option value="custom_design">Custom Design</option>
+                  <option value="delivery_request">Delivery Request</option>
+                  <option value="installation_request">Installation Request</option>
+                  <option value="general_inquiry">General Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="event_date">Event Date *</label>
+                <input id="event_date" name="event_date" type="date" required>
+              </div>
+              <div>
+                <label for="event_flexibility">Date Flexibility</label>
+                <select id="event_flexibility" name="event_flexibility">
+                  <option value="">Select one</option>
+                  <option value="fixed">Date is fixed</option>
+                  <option value="slightly_flexible">Some flexibility</option>
+                  <option value="very_flexible">Very flexible</option>
+                </select>
+              </div>
+              <div>
+                <label for="event_type">Event Type *</label>
+                <input id="event_type" name="event_type" type="text" required placeholder="Wedding, shower, dinner, launch, etc.">
+              </div>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="budget_range">Budget Range *</label>
+                <select id="budget_range" name="budget_range" required>
+                  <option value="">Select one</option>
+                  <option value="under_1000">Under $1,000</option>
+                  <option value="1000_2999">$1,000 - $2,999</option>
+                  <option value="3000_4999">$3,000 - $4,999</option>
+                  <option value="5000_7999">$5,000 - $7,999</option>
+                  <option value="8000_14999">$8,000 - $14,999</option>
+                  <option value="15000_19999">$15,000 - $19,999</option>
+                  <option value="20000_plus">$20,000+</option>
+                </select>
+              </div>
+              <div>
+                <label for="guest_count">Guest Count</label>
+                <input id="guest_count" name="guest_count" type="number" min="0" step="1" placeholder="Approximate headcount">
+              </div>
+              <div>
+                <label for="timeline_urgency">Timeline</label>
+                <select id="timeline_urgency" name="timeline_urgency">
+                  <option value="">Select one</option>
+                  <option value="asap">Need help ASAP</option>
+                  <option value="within_2_weeks">Within 2 weeks</option>
+                  <option value="within_1_month">Within 1 month</option>
+                  <option value="planning_ahead">Planning ahead</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <label for="event_details">Event Details *</label>
+              <textarea
+                id="event_details"
+                name="additional_notes"
+                rows="6"
+                required
+                placeholder="Tell us about the occasion, venue, overall feeling, what matters most, and anything else you want us to know."
+              ></textarea>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <label for="floral_needs">Floral Needs</label>
+              <textarea
+                id="floral_needs"
+                name="floral_needs"
+                rows="5"
+                placeholder="Examples: personal flowers, ceremony florals, centerpieces, bar florals, entry moment, stage, hanging install, delivery bouquets, etc."
+              ></textarea>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="design_style_notes">Design Style Notes</label>
+                <textarea
+                  id="design_style_notes"
+                  name="design_style_notes"
+                  rows="5"
+                  placeholder="Share the feeling, references, texture, shape, or floral language you want."
+                ></textarea>
+              </div>
+              <div>
+                <label for="color_palette">Color Palette</label>
+                <textarea
+                  id="color_palette"
+                  name="color_palette"
+                  rows="5"
+                  placeholder="List colors, tones, neutrals, metallics, or color combinations."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="inspiration_links">Inspiration Links</label>
+                <textarea
+                  id="inspiration_links"
+                  name="inspiration_links"
+                  rows="4"
+                  placeholder="Paste Pinterest boards, Instagram posts, moodboards, or venue links."
+                ></textarea>
+              </div>
+              <div>
+                <label for="pinterest_board_url">Pinterest Board URL</label>
+                <input id="pinterest_board_url" name="pinterest_board_url" type="url" placeholder="https://">
+                <label for="instagram_handle" style="margin-top: 14px; display: block;">Instagram Handle</label>
+                <input id="instagram_handle" name="instagram_handle" type="text" placeholder="@yourhandle">
+              </div>
+            </div>
+
+            <div class="section-head" style="margin: 34px 0 18px;">
+              <h2>Venue and logistics</h2>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+              <div>
+                <label for="venue_name">Venue Name</label>
+                <input id="venue_name" name="venue_name" type="text">
+              </div>
+              <div>
+                <label for="brand_or_company_name">Brand or Company Name</label>
+                <input id="brand_or_company_name" name="brand_or_company_name" type="text">
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <label for="event_address_line_1">Address Line 1</label>
+              <input id="event_address_line_1" name="event_address_line_1" type="text" autocomplete="address-line1">
+            </div>
+
+            <div style="margin-top: 16px;">
+              <label for="event_address_line_2">Address Line 2</label>
+              <input id="event_address_line_2" name="event_address_line_2" type="text" autocomplete="address-line2">
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="event_city">City</label>
+                <input id="event_city" name="event_city" type="text" autocomplete="address-level2">
+              </div>
+              <div>
+                <label for="event_state">State</label>
+                <input id="event_state" name="event_state" type="text" autocomplete="address-level1">
+              </div>
+              <div>
+                <label for="event_zip">ZIP</label>
+                <input id="event_zip" name="event_zip" type="text" autocomplete="postal-code">
+              </div>
+              <div>
+                <label for="event_country">Country</label>
+                <input id="event_country" name="event_country" type="text" value="United States" autocomplete="country-name">
+              </div>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px;">
+              <div>
+                <label for="setup_time">Setup Time</label>
+                <input id="setup_time" name="setup_time" type="text" placeholder="Example: 2:00 PM">
+              </div>
+              <div>
+                <label for="breakdown_time">Breakdown Time</label>
+                <input id="breakdown_time" name="breakdown_time" type="text" placeholder="Example: 11:30 PM">
+              </div>
+              <div>
+                <label for="referral_source">How did you hear about us?</label>
+                <input id="referral_source" name="referral_source" type="text" placeholder="Planner, friend, Instagram, Google, etc.">
+              </div>
+            </div>
+
+            <div class="section-head" style="margin: 34px 0 18px;">
+              <h2>Scope checklist</h2>
+              <p class="subhead">Check anything you already know you’ll need.</p>
+            </div>
+
+            <div class="journey" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+              <label><input type="checkbox" name="delivery_or_installation_required" value="yes"> Delivery or installation required</label>
+              <label><input type="checkbox" name="rentals_needed" value="yes"> Rentals needed</label>
+              <label><input type="checkbox" name="backdrop_needed" value="yes"> Backdrop needed</label>
+              <label><input type="checkbox" name="custom_installation_needed" value="yes"> Custom installation needed</label>
+              <label><input type="checkbox" name="personal_flowers_needed" value="yes"> Personal flowers needed</label>
+              <label><input type="checkbox" name="centerpieces_needed" value="yes"> Centerpieces needed</label>
+              <label><input type="checkbox" name="ceremony_florals_needed" value="yes"> Ceremony florals needed</label>
+              <label><input type="checkbox" name="reception_florals_needed" value="yes"> Reception florals needed</label>
+            </div>
+
+            <div style="margin-top: 22px;">
+              <label style="display:flex; gap:10px; align-items:flex-start;">
+                <input type="checkbox" name="consent_to_contact" value="yes" required>
+                <span>I agree to be contacted by LuvBlooms regarding this inquiry. *</span>
+              </label>
+            </div>
+
+            <div style="margin-top: 22px;">
+              <div
+                class="cf-turnstile"
+                data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
+                data-callback="onTurnstileSuccess"
+                data-expired-callback="onTurnstileExpired"
+                data-error-callback="onTurnstileError"
+              ></div>
+            </div>
+
+            <div class="button-row" style="margin-top: 24px;">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-analytics-event="cta_click_inquire_submit"
+                data-analytics-label="Submit Inquiry"
+                data-analytics-location="inquire_form"
+                data-analytics-section="inquire_page"
+              >
+                Send Inquiry
+              </button>
+            </div>
+
+            <p id="formStatus" class="micro-text" style="margin-top: 16px;" aria-live="polite"></p>
+            <p class="form-success" hidden></p>
+            <p class="form-error" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="siteFooter"></div>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="/assets/js/site.js"></script>
+    <script>
+      (function () {
+        var WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzLvL3-Lw5T2GFBkypn45toSleU5cjz85IV1-GskYPD0NGKpbtmxHcn0ZlUp5G9mP3l/exec";
+        var form = document.getElementById("lbInquiryForm");
+        var statusEl = document.getElementById("formStatus");
+        var successEl = document.querySelector(".form-success");
+        var errorEl = document.querySelector(".form-error");
+        var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+        if (!form) return;
+
+        form.elements.page_url.value = window.location.href;
+        form.elements.user_agent.value = navigator.userAgent || "";
+        form.elements.submission_timestamp.value = new Date().toISOString();
+
+        function showMessage(type, message) {
+          if (statusEl) statusEl.textContent = message || "";
+          if (successEl) {
+            successEl.hidden = type !== "success";
+            successEl.textContent = type === "success" ? message : "";
+          }
+          if (errorEl) {
+            errorEl.hidden = type !== "error";
+            errorEl.textContent = type === "error" ? message : "";
+          }
+        }
+
+        function serialize(formEl) {
+          var fd = new FormData(formEl);
+          var params = new URLSearchParams();
+
+          fd.forEach(function (value, key) {
+            if (params.has(key)) {
+              var existing = params.get(key);
+              params.set(key, existing + ", " + value);
+            } else {
+              params.append(key, value);
+            }
+          });
+
+          return params;
+        }
+
+        window.onTurnstileSuccess = function (token) {
+          var field = document.getElementById("turnstile_token");
+          if (field) field.value = token || "";
+        };
+
+        window.onTurnstileExpired = function () {
+          var field = document.getElementById("turnstile_token");
+          if (field) field.value = "";
+        };
+
+        window.onTurnstileError = function () {
+          var field = document.getElementById("turnstile_token");
+          if (field) field.value = "";
+        };
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!form.reportValidity()) return;
+
+          if (!form.elements.turnstile_token.value) {
+            showMessage("error", "Please complete the security check before submitting.");
+            document.dispatchEvent(new CustomEvent("luvblooms:form-error", {
+              detail: {
+                form_name: "luvblooms_inquiry",
+                error_message: "Turnstile not completed"
+              }
+            }));
+            return;
+          }
+
+          showMessage("", "Sending your inquiry...");
+          if (submitBtn) submitBtn.disabled = true;
+          form.elements.submission_timestamp.value = new Date().toISOString();
+
+          fetch(WEB_APP_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: serialize(form).toString()
+          })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
+              if (data && data.ok) {
+                showMessage("success", "Your inquiry was sent. We’ll be in touch soon.");
+                form.reset();
+                form.elements.page_url.value = window.location.href;
+                form.elements.user_agent.value = navigator.userAgent || "";
+                form.elements.submission_timestamp.value = new Date().toISOString();
+                document.dispatchEvent(new CustomEvent("luvblooms:form-success", {
+                  detail: {
+                    form_name: "luvblooms_inquiry"
+                  }
+                }));
+              } else {
+                throw new Error((data && data.message) || "Unable to send inquiry.");
+              }
+            })
+            .catch(function (error) {
+              showMessage("error", error.message || "Something went wrong. Please try again.");
+              document.dispatchEvent(new CustomEvent("luvblooms:form-error", {
+                detail: {
+                  form_name: "luvblooms_inquiry",
+                  error_message: error.message || "Submission failed"
+                }
+              }));
+            })
+            .finally(function () {
+              if (submitBtn) submitBtn.disabled = false;
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
