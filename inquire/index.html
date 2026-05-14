@@ -83,31 +83,31 @@
               <p class="subhead">We’ll use this to follow up about your floral project.</p>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="first_name">First Name *</label>
-                <input id="first_name" name="first_name" type="text" required autocomplete="given-name">
+                <input id="first_name" name="first_name" type="text" required autocomplete="given-name" data-auto-capitalize="words">
               </div>
               <div class="field">
                 <label for="last_name">Last Name *</label>
-                <input id="last_name" name="last_name" type="text" required autocomplete="family-name">
+                <input id="last_name" name="last_name" type="text" required autocomplete="family-name" data-auto-capitalize="words">
               </div>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="email">Email *</label>
                 <input id="email" name="email" type="email" required autocomplete="email">
               </div>
               <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel">
+                <label for="phone">Phone *</label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" placeholder="(555) 555-5555" data-mask="phone-us">
               </div>
             </div>
 
             <div class="field">
-              <label for="preferred_contact_method">Preferred Contact Method</label>
-              <select id="preferred_contact_method" name="preferred_contact_method">
+              <label for="preferred_contact_method">Preferred Contact Method *</label>
+              <select id="preferred_contact_method" name="preferred_contact_method" required>
                 <option value="">Select one</option>
                 <option value="email">Email</option>
                 <option value="phone">Phone</option>
@@ -120,7 +120,7 @@
               <p class="subhead">This helps us understand fit, scale, and creative direction.</p>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="service_type">Which service are you inquiring about? *</label>
                 <select id="service_type" name="service_type" required>
@@ -147,7 +147,7 @@
               </div>
             </div>
 
-            <div class="form-grid form-grid-3">
+            <div class="form-grid form-grid-3 form-grid-align">
               <div class="field">
                 <label for="event_date">Event Date *</label>
                 <input id="event_date" name="event_date" type="date" required>
@@ -167,7 +167,7 @@
               </div>
             </div>
 
-            <div class="form-grid form-grid-3">
+            <div class="form-grid form-grid-3 form-grid-align">
               <div class="field">
                 <label for="budget_range">Budget Range *</label>
                 <select id="budget_range" name="budget_range" required>
@@ -218,7 +218,7 @@
               ></textarea>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="design_style_notes">Design Style Notes</label>
                 <textarea
@@ -239,7 +239,7 @@
               </div>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="inspiration_links">Inspiration Links</label>
                 <textarea
@@ -261,7 +261,7 @@
               <h2>Venue and logistics</h2>
             </div>
 
-            <div class="form-grid form-grid-2">
+            <div class="form-grid form-grid-2 form-grid-align">
               <div class="field">
                 <label for="venue_name">Venue Name</label>
                 <input id="venue_name" name="venue_name" type="text">
@@ -282,7 +282,7 @@
               <input id="event_address_line_2" name="event_address_line_2" type="text" autocomplete="address-line2">
             </div>
 
-            <div class="form-grid form-grid-4">
+            <div class="form-grid form-grid-4 form-grid-align">
               <div class="field">
                 <label for="event_city">City</label>
                 <input id="event_city" name="event_city" type="text" autocomplete="address-level2">
@@ -301,7 +301,7 @@
               </div>
             </div>
 
-            <div class="form-grid form-grid-3">
+            <div class="form-grid form-grid-3 form-grid-align">
               <div class="field">
                 <label for="setup_time">Setup Time</label>
                 <input id="setup_time" name="setup_time" type="text" placeholder="Example: 2:00 PM">
