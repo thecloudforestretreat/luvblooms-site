@@ -3,6 +3,7 @@
    GA4 measurement ID: G-T3XJE3NV2Y
 
    Responsibilities:
+   - Load shared header and footer includes
    - Load and initialize GA4 once
    - Expose window.gtag and window.lbAnalyticsTrack
    - Send a native page_view plus page_view_enhanced once per page load
@@ -10,6 +11,7 @@
    - Listen globally for clicks on [data-analytics-event]
    - Infer analytics for ordinary internal, outbound, WhatsApp, email, and phone links
    - Track FAQ expansion and form engagement
+   - Apply lightweight form enhancements such as name capitalization and phone masking
    - Preserve the current LuvBlooms mobile menu behavior
 */
 
@@ -25,6 +27,31 @@
   function ready(fn) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
     else fn();
+  }
+
+  function loadIncludes() {
+    var targets = [
+      { id: "siteHeader", url: "/assets/includes/header.html" },
+      { id: "siteFooter", url: "/assets/includes/footer.html" }
+    ];
+
+    targets.forEach(function (item) {
+      var el = document.getElementById(item.id);
+      if (!el || el.getAttribute("data-include-loaded") === "true") return;
+
+      fetch(item.url, { credentials: "same-origin" })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Include failed: " + item.url);
+          return response.text();
+        })
+        .then(function (html) {
+          el.innerHTML = html;
+          el.setAttribute("data-include-loaded", "true");
+        })
+        .catch(function () {
+          el.setAttribute("data-include-loaded", "error");
+        });
+    });
   }
 
   function absUrl(value) {
@@ -531,9 +558,69 @@
     }
   }
 
+  function toTitleCase(value) {
+    return (value || "")
+      .toLowerCase()
+      .replace(/(^|[\s'-])([a-z])/g, function (match, prefix, letter) {
+        return prefix + letter.toUpperCase();
+      });
+  }
+
+  function formatUsPhone(value) {
+    var digits = (value || "").replace(/\D/g, "").slice(0, 10);
+    var a = digits.slice(0, 3);
+    var b = digits.slice(3, 6);
+    var c = digits.slice(6, 10);
+
+    if (digits.length <= 3) return a;
+    if (digits.length <= 6) return "(" + a + ") " + b;
+    return "(" + a + ") " + b + "-" + c;
+  }
+
+  function initFormEnhancements() {
+    if (!document.__lbFormEnhancementsBound) {
+      document.__lbFormEnhancementsBound = true;
+
+      document.addEventListener("input", function (e) {
+        var target = e.target;
+        if (!target || !target.matches) return;
+
+        if (target.matches("[data-auto-capitalize='words']")) {
+          var start = target.selectionStart;
+          var nextValue = toTitleCase(target.value);
+          if (nextValue !== target.value) {
+            target.value = nextValue;
+            if (typeof start === "number" && target.setSelectionRange) {
+              target.setSelectionRange(start, start);
+            }
+          }
+        }
+
+        if (target.matches("[data-mask='phone-us']")) {
+          target.value = formatUsPhone(target.value);
+        }
+      });
+
+      document.addEventListener("blur", function (e) {
+        var target = e.target;
+        if (!target || !target.matches) return;
+
+        if (target.matches("[data-auto-capitalize='words']")) {
+          target.value = toTitleCase(target.value);
+        }
+
+        if (target.matches("[data-mask='phone-us']")) {
+          target.value = formatUsPhone(target.value);
+        }
+      }, true);
+    }
+  }
+
   function boot() {
+    loadIncludes();
     initAnalytics();
     initMenu();
+    initFormEnhancements();
   }
 
   ready(boot);
