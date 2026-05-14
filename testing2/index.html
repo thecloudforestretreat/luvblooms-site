@@ -7,385 +7,217 @@
 
   <meta
     name="description"
-    content="Contact LuvBlooms for intimate event florals, brand activations, custom arrangements, and floral design consultations."
+    content="Contact LuvBlooms for intimate event florals, custom arrangements, brand activations, and floral consultations."
   >
 
-  <link rel="canonical" href="https://luvblooms.us/contact">
+  <link rel="canonical" href="https://luvblooms.us/contact.html">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#2e3a3e">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact LuvBlooms">
-  <meta
-    property="og:description"
-    content="Begin your floral inquiry with LuvBlooms."
-  >
-  <meta property="og:url" content="https://luvblooms.us/contact">
-  <meta property="og:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact LuvBlooms">
-  <meta
-    name="twitter:description"
-    content="Begin your floral inquiry with LuvBlooms."
-  >
-  <meta name="twitter:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
+  <meta name="theme-color" content="#364449">
 
   <link rel="stylesheet" href="/assets/css/site.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact LuvBlooms",
-    "url": "https://luvblooms.us/contact",
-    "description": "Contact LuvBlooms for arrangements, intimate events, floral consultations, and brand floral design."
-  }
-  </script>
 </head>
 
 <body data-page-type="contact_page" data-primary-goal="inquiry_submit">
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div id="siteHeader"></div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <main id="main" class="site-main">
+<div id="siteHeader"></div>
 
-    <section class="lb-contact-hero">
-      <div class="container">
-        <div class="lb-contact-hero__inner">
+<main id="main" class="site-main">
 
-          <div class="lb-contact-copy">
-            <p class="eyebrow">Contact LuvBlooms</p>
+  <section class="hero">
+    <div class="page">
 
-            <h1 class="hero-title">
-              Let’s create something beautiful and considered.
-            </h1>
+      <div style="max-width:760px;margin:0 auto;text-align:center;">
 
-            <p class="hero-lead">
-              Brand moments, intimate gatherings, arrangements,
-              and floral direction with a softer editorial approach.
-            </p>
+        <p class="kicker">Contact LuvBlooms</p>
+
+        <h1>
+          Let’s create something beautiful and considered.
+        </h1>
+
+        <p class="lead" style="margin:0 auto;">
+          Brand moments, intimate gatherings, arrangements,
+          and floral direction with a softer editorial approach.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="contact-form">
+    <div class="page">
+
+      <div class="hero-micro inquiry-intro" style="max-width:820px;margin:0 auto 24px;">
+
+        <div class="micro-item">
+          <span class="micro-dot" aria-hidden="true"></span>
+          <span class="micro-text">
+            Best for arrangements, intimate events, activations, and consultations
+          </span>
+        </div>
+
+        <div class="micro-item">
+          <span class="micro-dot" aria-hidden="true"></span>
+          <span class="micro-text">
+            The more detail you share, the more tailored our reply can be
+          </span>
+        </div>
+
+      </div>
+
+      <form
+        id="lbContactForm"
+        class="card form-card inquiry-form"
+        autocomplete="on"
+        novalidate
+      >
+
+        <input type="hidden" name="page" value="/contact">
+        <input type="hidden" name="client_timestamp" id="client_timestamp" value="">
+        <input type="hidden" name="user_agent" id="user_agent" value="">
+        <input type="hidden" name="ip" value="">
+        <input type="hidden" name="turnstile_token" id="turnstile_token" value="">
+
+        <div class="form-grid form-grid-2 form-grid-align">
+
+          <div class="field">
+            <label for="first_name">First Name *</label>
+
+            <input
+              id="first_name"
+              name="first_name"
+              type="text"
+              required
+              autocomplete="given-name"
+              placeholder="Your first name"
+            >
+          </div>
+
+          <div class="field">
+            <label for="last_name">Last Name *</label>
+
+            <input
+              id="last_name"
+              name="last_name"
+              type="text"
+              required
+              autocomplete="family-name"
+              placeholder="Your last name"
+            >
           </div>
 
         </div>
-      </div>
-    </section>
 
-    <section class="lb-contact-form-section">
-      <div class="container">
+        <div class="form-grid form-grid-2 form-grid-align">
 
-        <div class="lb-contact-form-wrap">
+          <div class="field">
+            <label for="email">Email *</label>
 
-          <div class="lb-contact-form-intro">
-            <div class="intro-line">
-              <span class="intro-dot"></span>
-              <span>Best for arrangements, intimate events, activations, and consultations</span>
-            </div>
-
-            <div class="intro-line">
-              <span class="intro-dot"></span>
-              <span>The more detail you share, the more tailored our reply can be</span>
-            </div>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+            >
           </div>
 
-          <form
-            id="lbContactForm"
-            class="lb-contact-form"
-            autocomplete="on"
-            novalidate
+          <div class="field">
+            <label for="phone">Phone *</label>
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              autocomplete="tel"
+              inputmode="numeric"
+              placeholder="(555) 555-5555"
+              maxlength="14"
+            >
+          </div>
+
+        </div>
+
+        <div class="form-grid form-grid-2 form-grid-align">
+
+          <div class="field">
+            <label for="interest_type">What are you interested in? *</label>
+
+            <select id="interest_type" name="interest_type" required>
+              <option value="">Select one</option>
+              <option value="Brand Events and Activations">Brand Events and Activations</option>
+              <option value="Florals for Intimate Events">Florals for Intimate Events</option>
+              <option value="Request an Arrangement">Request an Arrangement</option>
+              <option value="Floral Design Consultation">Floral Design Consultation</option>
+              <option value="Curated At Home Experiences">Curated At Home Experiences</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="heard_from">How did you hear about us? *</label>
+
+            <select id="heard_from" name="heard_from" required>
+              <option value="">Select one</option>
+              <option value="Instagram">Instagram</option>
+              <option value="TikTok">TikTok</option>
+              <option value="Pinterest">Pinterest</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Referral">Referral</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <label for="message">Tell us about your vision *</label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            placeholder="Share the occasion, floral direction, inspiration, timing, or anything else we should know."
+          ></textarea>
+        </div>
+
+        <div class="turnstile-wrap">
+          <div
+            class="cf-turnstile"
+            data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
+            data-callback="onTurnstileSuccess"
+            data-expired-callback="onTurnstileExpired"
+            data-error-callback="onTurnstileError"
+          ></div>
+        </div>
+
+        <div class="button-row form-actions">
+          <button
+            id="submitBtn"
+            type="submit"
+            class="btn btn-primary"
           >
-
-            <input type="hidden" name="page" value="/contact">
-            <input type="hidden" name="client_timestamp" id="client_timestamp" value="">
-            <input type="hidden" name="user_agent" id="user_agent" value="">
-            <input type="hidden" name="ip" value="">
-            <input type="hidden" name="turnstile_token" id="turnstile_token" value="">
-
-            <div class="form-grid form-grid-2">
-
-              <div class="field">
-                <label for="first_name">First Name *</label>
-                <input
-                  id="first_name"
-                  name="first_name"
-                  type="text"
-                  required
-                  autocomplete="given-name"
-                  placeholder="Your first name"
-                >
-              </div>
-
-              <div class="field">
-                <label for="last_name">Last Name *</label>
-                <input
-                  id="last_name"
-                  name="last_name"
-                  type="text"
-                  required
-                  autocomplete="family-name"
-                  placeholder="Your last name"
-                >
-              </div>
-
-            </div>
-
-            <div class="form-grid form-grid-2">
-
-              <div class="field">
-                <label for="email">Email *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autocomplete="email"
-                  placeholder="you@example.com"
-                >
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone *</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  autocomplete="tel"
-                  inputmode="numeric"
-                  placeholder="(555) 555-5555"
-                  maxlength="14"
-                >
-              </div>
-
-            </div>
-
-            <div class="form-grid form-grid-2">
-
-              <div class="field">
-                <label for="interest_type">What are you interested in? *</label>
-
-                <select id="interest_type" name="interest_type" required>
-                  <option value="">Select one</option>
-                  <option value="Brand Events and Activations">Brand Events and Activations</option>
-                  <option value="Florals for Intimate Events">Florals for Intimate Events</option>
-                  <option value="Request an Arrangement">Request an Arrangement</option>
-                  <option value="Floral Design Consultation">Floral Design Consultation</option>
-                  <option value="Curated At Home Experiences">Curated At Home Experiences</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="heard_from">How did you hear about us? *</label>
-
-                <select id="heard_from" name="heard_from" required>
-                  <option value="">Select one</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="TikTok">TikTok</option>
-                  <option value="Pinterest">Pinterest</option>
-                  <option value="Google Search">Google Search</option>
-                  <option value="Referral">Referral</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-            </div>
-
-            <div class="field">
-              <label for="message">Tell us about your vision *</label>
-
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                placeholder="Share the occasion, timing, floral direction, inspiration, or anything else we should know."
-              ></textarea>
-            </div>
-
-            <div class="turnstile-wrap">
-              <div
-                class="cf-turnstile"
-                data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
-                data-callback="onTurnstileSuccess"
-                data-expired-callback="onTurnstileExpired"
-                data-error-callback="onTurnstileError"
-              ></div>
-            </div>
-
-            <div class="button-row">
-              <button
-                id="submitBtn"
-                type="submit"
-                class="button button--primary"
-              >
-                Send Inquiry
-              </button>
-            </div>
-
-            <p id="formStatus" class="form-status" aria-live="polite"></p>
-
-          </form>
-
+            Send Inquiry
+          </button>
         </div>
 
-      </div>
-    </section>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
 
-  </main>
+      </form>
 
-  <div id="siteFooter"></div>
+    </div>
+  </section>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <script src="/assets/js/site.js"></script>
+</main>
 
-  <script>
-    (function () {
+<div id="siteFooter"></div>
 
-      var APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL";
-
-      var form = document.getElementById("lbContactForm");
-      var submitBtn = document.getElementById("submitBtn");
-      var statusEl = document.getElementById("formStatus");
-
-      if (!form) return;
-
-      function setInitialHiddenFields() {
-        var timestamp = document.getElementById("client_timestamp");
-        var userAgent = document.getElementById("user_agent");
-
-        if (timestamp) timestamp.value = new Date().toISOString();
-        if (userAgent) userAgent.value = navigator.userAgent || "";
-      }
-
-      function showMessage(message) {
-        if (statusEl) {
-          statusEl.textContent = message || "";
-        }
-      }
-
-      function formatPhone(value) {
-
-        var digits = (value || "").replace(/\D/g, "").slice(0, 10);
-
-        if (digits.length <= 3) {
-          return digits ? "(" + digits : "";
-        }
-
-        if (digits.length <= 6) {
-          return "(" + digits.slice(0, 3) + ") " + digits.slice(3);
-        }
-
-        return "(" + digits.slice(0, 3) + ") " + digits.slice(3, 6) + "-" + digits.slice(6);
-      }
-
-      function setupPhoneMask() {
-
-        var phone = document.getElementById("phone");
-
-        if (!phone) return;
-
-        phone.addEventListener("input", function () {
-          phone.value = formatPhone(phone.value);
-        });
-      }
-
-      function serialize(formEl) {
-
-        var fd = new FormData(formEl);
-        var params = new URLSearchParams();
-
-        fd.forEach(function (value, key) {
-          params.append(key, value);
-        });
-
-        return params;
-      }
-
-      window.onTurnstileSuccess = function (token) {
-
-        var field = document.getElementById("turnstile_token");
-
-        if (field) field.value = token || "";
-      };
-
-      window.onTurnstileExpired = function () {
-
-        var field = document.getElementById("turnstile_token");
-
-        if (field) field.value = "";
-      };
-
-      window.onTurnstileError = function () {
-
-        var field = document.getElementById("turnstile_token");
-
-        if (field) field.value = "";
-      };
-
-      setInitialHiddenFields();
-      setupPhoneMask();
-
-      form.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        if (!form.reportValidity()) return;
-
-        if (!form.elements.turnstile_token.value) {
-          showMessage("Please complete the security check.");
-          return;
-        }
-
-        showMessage("Sending your inquiry...");
-
-        if (submitBtn) {
-          submitBtn.disabled = true;
-        }
-
-        fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-          },
-          body: serialize(form).toString()
-        })
-
-        .then(function (response) {
-          return response.json();
-        })
-
-        .then(function (data) {
-
-          if (!data.ok) {
-            throw new Error(data.message || "Something went wrong.");
-          }
-
-          form.reset();
-
-          if (window.turnstile) {
-            window.turnstile.reset();
-          }
-
-          showMessage("Your inquiry was sent successfully.");
-        })
-
-        .catch(function (error) {
-          showMessage(error.message || "Submission failed.");
-        })
-
-        .finally(function () {
-
-          if (submitBtn) {
-            submitBtn.disabled = false;
-          }
-        });
-
-      });
-
-    })();
-  </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="/assets/js/site.js"></script>
 
 </body>
 </html>
