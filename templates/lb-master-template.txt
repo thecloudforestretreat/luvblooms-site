@@ -1,21 +1,18 @@
 LUVBLOOMS MASTER PAGE BUILD TEMPLATE
-Version: Consolidated Launch System
+Version: Standardized Luxury System
 
-Use this template when creating or updating pages for LuvBlooms.us so the site stays consistent, premium, SEO-strong, conversion-ready, and fully trackable.
+Use this template when creating or updating pages for LuvBlooms.us so the site stays visually elevated, SEO-strong, conversion-ready, and consistent with the more refined brand direction established in the latest concept work.
 
 PURPOSE
-This single template consolidates the build system for:
-- homepage and flagship landing pages
-- weddings and events service pages
-- local SEO pages
-- collection/category pages
-- product detail pages
-- blog posts
-- contact and inquiry pages
-- global QA
-- analytics tracking
-- schema coverage
-- global CSS and JS rules
+This template now standardizes:
+- page structure
+- SEO requirements
+- analytics requirements
+- schema requirements
+- shared header/footer usage
+- visual design principles
+- tone and copy standards
+- global CSS and JS usage
 
 CORE RULE
 When building or updating any LuvBlooms page, produce complete ready-to-upload files only unless partial snippets are explicitly requested.
@@ -27,9 +24,9 @@ MASTER SITE CONTEXT
 Site: LuvBlooms
 Domain: https://luvblooms.us
 Primary goal: inquiry_submit
-Secondary goals: shop_click, wedding_lead, event_lead, phone_click, email_click
-Business type: florist, floral design studio, wedding florist, event florist
-Likely market: premium floral design, gifting, weddings, styled events, branded activations
+Secondary goals: shop_click, event_lead, arrangement_request, phone_click, email_click
+Business type: florist, floral design studio, event florist, brand floral styling studio
+Likely market: premium floral design, gifting, intimate events, styled gatherings, branded activations, custom arrangements
 Language: English unless otherwise requested
 
 Global CSS:
@@ -76,29 +73,32 @@ RECOMMENDED INFORMATION ARCHITECTURE
 Core pages:
 Home: /
 Shop: /shop
-Weddings: /weddings
 Events: /events
+Brand Events & Activations: /brand-events-activations
+Request an Arrangement: /request-an-arrangement
+Floral Design Consultations: /floral-design-consultations
 About: /about
-Lookbook / Portfolio: /lookbook
-Contact / Inquiry: /contact
+Portfolio: /portfolio
+Inquiry: /inquire
 FAQ: /faq
 Flower Care: /flower-care
-Blog / Journal: /blog
+Journal: /journal
 
 Local SEO pages:
-Florist in [Primary City]
-Wedding Florist in [Primary City]
-Event Florist in [Primary City]
-Flower Delivery in [Primary City]
+Miami Floral Design Studio
+Miami Event Florist
+Luxury Flower Delivery Miami
+Floral Installations Miami
+Corporate Florals Miami
 
-High-intent collection pages:
-Same-Day Flower Delivery
+High-intent category ideas:
+Same-Day Luxury Flowers
 Birthday Flowers
 Sympathy Flowers
 Luxury Bouquets
-Wedding Flowers
 Event Centerpieces
-Corporate Floral Design
+Corporate Floral Styling
+Seasonal Collections
 
 ============================================================
 PAGE REQUEST INPUT FORMAT
@@ -129,11 +129,13 @@ If details are missing, build the strongest version possible using this master s
 GLOBAL PAGE TYPES
 ============================================================
 
-Use these consistently in body data attributes and analytics:
+Standardize on these page categories:
 
 - homepage
 - money_page
-- local_seo_page
+- utility_page
+- seo_page
+- utility_content_page
 - collection_page
 - product_page
 - portfolio_page
@@ -143,6 +145,146 @@ Use these consistently in body data attributes and analytics:
 
 Example:
 <body data-page-type="money_page" data-primary-goal="inquiry_submit">
+
+IMPORTANT NOTE
+Later we will build more explicit templates for these page families:
+- Money Page
+- Utility Page
+- SEO Page
+- Utility + Content
+
+For now, all page builds must already adhere to the design and structural standards below.
+
+============================================================
+GLOBAL VISUAL DIRECTION STANDARD
+============================================================
+
+LuvBlooms should not feel like a generic florist template.
+The site should feel:
+- art-directed
+- emotionally composed
+- quiet but expensive
+- romantic without being overly soft
+- immersive without becoming cluttered
+- editorial rather than modular
+
+The visual goal is not "pretty."
+The visual goal is desirability, trust, and atmosphere.
+
+============================================================
+DESIGN PRINCIPLES TO STANDARDIZE
+============================================================
+
+1. IMAGE-LED, NOT BOX-LED
+- Let photography do major emotional work.
+- Use large, immersive image fields when appropriate.
+- Avoid over-framing every image in repeated boxes.
+- Favor cinematic crops, elegant negative space, and layered overlays.
+
+2. COMPOSITION OVER REPETITION
+- Do not build every section as the same card grid.
+- Vary rhythm between sections:
+  - immersive hero
+  - quieter text-led band
+  - asymmetrical feature split
+  - refined proof row
+  - elegant CTA moment
+- Luxury comes from pacing and restraint, not from stacking more components.
+
+3. CONSISTENT BUT DISCIPLINED CORNER SYSTEM
+- Do not make everything fully pill-rounded.
+- Do not mix corner radii randomly.
+- Preferred LuvBlooms direction:
+  - buttons: soft rectangular or lightly rounded, not overly pill-shaped unless justified
+  - cards/panels: restrained radius, consistent across equivalent modules
+  - image fields: cleaner rectangles or gently rounded large frames
+- If softness is used, it should feel intentional and architectural.
+
+4. TEXT LEGIBILITY IS NON-NEGOTIABLE
+- Any text over imagery must have enough contrast and backdrop support.
+- Use veils, tonal overlays, shallow glass panels, shadow gradients, or contained caption blocks when needed.
+- Never sacrifice readability for mood.
+
+5. SCALE WITH RESTRAINT
+- The site can feel bold, but should not feel zoomed in or overwhelming by default.
+- Desktop should feel spacious and poised.
+- Mobile should feel immersive without making type or imagery oppressive.
+- Large type should be used strategically, not everywhere.
+
+6. SYMMETRY AND ALIGNMENT MATTER
+- This audience notices composition.
+- Grids, image edges, baseline alignment, and consistent spacing are part of the brand perception.
+- Sloppy alignment lowers the perceived quality of the floral work.
+
+7. FEWER DEVELOPER EXPLANATIONS, MORE BRAND LANGUAGE
+- Never leave internal rationale on the page.
+- No copy like:
+  - "this direction..."
+  - "the client should feel..."
+  - "concept reference..."
+  - "luxury online is mostly about..."
+- All visible copy must sound client-facing, brand-facing, or conversion-facing.
+
+============================================================
+BUTTON STANDARD
+============================================================
+
+Preferred button direction for LuvBlooms:
+- primary buttons: softly rounded rectangular
+- secondary buttons: lightly filled with very low-opacity light background
+- avoid pure outline-only secondary buttons when they feel too cold or too generic
+- avoid overusing fully pill-shaped buttons unless the page specifically benefits from that softness
+
+Buttons should feel:
+- refined
+- confident
+- easy to click
+- not techy
+- not trendy for trend's sake
+
+============================================================
+BACKGROUND AND PANEL STANDARD
+============================================================
+
+Do not rely on one flat background color alone.
+
+Preferred background techniques:
+- tonal veils inside the brand palette
+- subtle radial light
+- soft dark-to-light transitions
+- shallow translucent panels
+- selective shadowing behind text blocks
+- layered material contrast between sections
+
+Do not use:
+- loud gradients
+- decorative clutter
+- random blurred blobs
+- generic SaaS-style floating cards
+
+============================================================
+COPY STANDARD
+============================================================
+
+All visible copy should:
+- feel emotionally intelligent
+- sound elevated but human
+- stay clear about what the business offers
+- blend atmosphere with commercial confidence
+- support trust and conversion
+
+Avoid:
+- internal/developer commentary
+- filler strategy language
+- excessive abstraction without clear business meaning
+- generic "we are passionate" copy
+
+Preferred tone:
+- romantic
+- composed
+- intentional
+- service-aware
+- visually literate
 
 ============================================================
 GLOBAL ANALYTICS STANDARD
@@ -176,9 +318,8 @@ Key events to support sitewide:
 - phone_click
 - cta_click_shop
 - cta_click_inquire
-- cta_click_weddings
 - cta_click_events
-- cta_click_same_day_delivery
+- cta_click_arrangement
 - service_interest_click
 - product_click
 - collection_click
@@ -204,9 +345,8 @@ Recommended global sections/components:
 - section
 - section--light
 - section--dark
+- section--veil
 - section--accent
-- section--cream
-- section--blush
 - container
 - stack
 - cluster
@@ -223,21 +363,14 @@ Recommended global sections/components:
 - hero__image
 - hero__note
 - eyebrow
-- breadcrumbs
 - section-title
 - section-lead
 - card-grid
 - card
 - feature-list
-- check-list
 - stats-grid
 - trust-strip
-- logo-row
-- testimonial-grid
-- testimonial-card
 - portfolio-grid
-- product-grid
-- product-card
 - collection-grid
 - faq-list
 - faq-item
@@ -261,6 +394,8 @@ Global CSS should also define:
 - card spacing
 - responsive breakpoints
 - mobile stacking behavior
+- text overlay / caption support
+- backdrop treatments for legibility
 
 ============================================================
 SEO MAXIMIZATION STANDARD
@@ -311,9 +446,15 @@ Homepage:
 - WebPage
 - Florist or LocalBusiness
 
-Service pages:
+Money pages:
 - WebPage
 - Service
+- BreadcrumbList
+- FAQPage when FAQs are present
+
+SEO pages:
+- WebPage
+- Service or LocalBusiness
 - BreadcrumbList
 - FAQPage when FAQs are present
 
@@ -331,37 +472,18 @@ Blog posts:
 - BlogPosting
 - BreadcrumbList
 
-Contact page:
+Contact or inquiry pages:
 - ContactPage
 - LocalBusiness
 
 Schema must match visible content exactly, especially FAQs.
 
 ============================================================
-HOMEPAGE TEMPLATE
+HOMEPAGE STANDARD
 ============================================================
 
 GOAL
-Create a homepage that feels premium and artistic but still answers the business questions fast.
-
-Required homepage order:
-1. SEO head
-2. Schema
-3. Skip link
-4. Header placeholder
-5. Hero with clear positioning
-6. Service split section
-7. Trust / proof section
-8. Featured floral collections or offerings
-9. Weddings section
-10. Events / brand activations section
-11. Portfolio / lookbook preview
-12. Testimonials
-13. Local relevance block
-14. FAQ
-15. Final CTA
-16. Footer placeholder
-17. Global JS include
+Create a homepage that feels premium and artistic while answering the business questions fast.
 
 Homepage hero must answer:
 - what the business is
@@ -369,170 +491,80 @@ Homepage hero must answer:
 - where it serves
 - what to do next
 
-Strong homepage H1 examples:
-- Luxury Florist in [City] for Weddings, Events, and Everyday Flowers
-- Artful Floral Design for Gifting, Gatherings, Weddings, and Brand Moments
+Homepage must feel:
+- image-led
+- emotionally magnetic
+- commercially clear
+- visually restrained
+- easy to inquire through
 
-Required homepage CTAs:
-- Shop Flowers
-- Inquire for Weddings
-- Inquire for Events
-
-============================================================
-SERVICE PAGE TEMPLATE
-============================================================
-
-Use for Weddings, Events, Brand Activations, Corporate Florals, etc.
-
-Required service page order:
-1. SEO head
-2. Schema
-3. Hero
-4. Problem / need recognition
-5. What is included
-6. Process / how it works
-7. Signature style / differentiators
-8. Portfolio proof
-9. Testimonials or trust proof
-10. FAQ
-11. Final CTA
-
-Service page goals:
-- clarify fit
-- build confidence
-- show aesthetic proof
-- reduce friction around inquiry
-
-Suggested body example:
-<body data-page-type="money_page" data-primary-goal="inquiry_submit" data-service="weddings">
-
-Recommended CTA events:
-- cta_click_weddings
-- cta_click_events
-- service_interest_click
+Recommended homepage CTAs:
+- Inquire
+- View Portfolio
+- Request an Arrangement
 
 ============================================================
-LOCAL SEO PAGE TEMPLATE
+INTERIM PAGE FAMILY GUIDANCE
 ============================================================
 
-Use for pages like:
-- Miami florist
-- Fort Lauderdale wedding florist
-- Boca Raton event florist
+MONEY PAGE
+Purpose:
+- convert a service lead
+- establish fit
+- build trust
+- reduce friction
 
-Required local SEO order:
-1. SEO head with city modifier
-2. Local schema
-3. Hero with city + service phrase
-4. What the business offers in that city
-5. Who it’s for
-6. Process or delivery/service area notes
-7. Why choose LuvBlooms
-8. Related local/internal links
-9. FAQ
-10. Final CTA
+Must include:
+- strong hero
+- service clarity
+- differentiators
+- process
+- proof
+- FAQ
+- final CTA
 
-Required local signals:
-- city in title
-- city in meta description
-- city in H1
-- city in first paragraph
-- city in one H2
-- city in schema areaServed when appropriate
+UTILITY PAGE
+Purpose:
+- support the user journey
+- answer practical questions
+- remove uncertainty
+- route users cleanly
 
-============================================================
-COLLECTION / CATEGORY PAGE TEMPLATE
-============================================================
+Examples:
+- FAQ
+- Flower Care
+- Contact or Inquiry
+- Policies
 
-Use for:
-- same-day delivery
-- sympathy flowers
-- luxury bouquets
-- birthday flowers
+Must feel simpler, cleaner, and more practical than a money page, but still aligned with the visual system.
 
-Required collection page order:
-1. SEO head
-2. Schema
-3. Hero / intro copy
-4. Product grid
-5. Short buying guidance block
-6. Delivery or service notes
-7. FAQ
-8. Final CTA or support block
+SEO PAGE
+Purpose:
+- rank for a high-intent location or service phrase
+- support internal linking
+- convert qualified search traffic
 
-Collection pages should not be just product grids.
-They need crawlable intro copy and support copy to rank well.
+Must include:
+- explicit keyword targeting
+- location/service clarity
+- useful crawlable content
+- natural internal links
+- no thin-page fluff
 
-============================================================
-PRODUCT PAGE TEMPLATE
-============================================================
+UTILITY + CONTENT PAGE
+Purpose:
+- provide value
+- support long-tail search
+- reinforce taste and expertise
+- create helpful pathways toward inquiry or shop actions
 
-Required product page elements:
-- unique product title
-- unique meta description
-- Product schema with Offer data
-- product image gallery
-- short emotionally clear description
-- practical purchase details
-- delivery / pickup notes
-- care notes if relevant
-- related products
-- FAQ if useful
+Examples:
+- Journal
+- Flower Care
+- Seasonal Guides
+- Process explainers
 
-Track:
-- product_click from collection pages
-- form events if custom inquiry or custom order forms exist
-
-============================================================
-BLOG TEMPLATE
-============================================================
-
-Use for educational, inspirational, and search-targeted posts.
-
-Blog post structure:
-1. SEO head
-2. BlogPosting schema
-3. Hero image
-4. H1
-5. Intro with primary keyword
-6. Clear subheads
-7. Helpful internal links
-8. CTA block
-9. Footer placeholder
-
-Blog goals:
-- capture long-tail search
-- support service pages
-- reinforce expertise and style
-- feed internal linking
-
-Suggested blog topics:
-- how to choose wedding flowers
-- what flowers are in season in [region]
-- how same-day flower delivery works
-- floral trends for weddings and events
-- flower care guides
-
-============================================================
-CONTACT / INQUIRY PAGE TEMPLATE
-============================================================
-
-Required sections:
-1. SEO head
-2. ContactPage or LocalBusiness schema
-3. Hero
-4. What to inquire about
-5. Contact form
-6. Business info block
-7. Hours / service area
-8. FAQ
-9. Footer placeholder
-
-Forms should use:
-- data-analytics-form
-- data-analytics-section
-
-Success and error states should be visible to /assets/js/site.js.
+These pages should still feel brand-aligned, not like generic blogs.
 
 ============================================================
 MOBILE / DESKTOP UX STANDARD
@@ -543,16 +575,18 @@ Every page must:
 - avoid horizontal overflow
 - keep buttons full-width on narrow screens if needed
 - preserve legible text over photography
-- use stable card/image dimensions
+- use stable card and image dimensions
 - avoid decorative clutter that hurts scanning
 - keep hero copy short enough to fit well
 - make forms simple and tappable
+- avoid oversized desktop scale that feels zoomed in
 
 Do not:
 - rely on image-only text
 - hide core business information beneath excessive scroll
 - use weak CTA labels everywhere
-- build pages that feel like mood boards without purchase/inquiry pathways
+- build pages that feel like mood boards without inquiry pathways
+- leave visible internal/developer notes on the page
 
 ============================================================
 ACCESSIBILITY STANDARD
@@ -591,6 +625,9 @@ Before finalizing any page, verify:
 - [ ] mobile layout is clean
 - [ ] no horizontal overflow
 - [ ] buttons are clear and consistent
+- [ ] design feels composed rather than repetitive
+- [ ] text over images is fully legible
+- [ ] visible copy contains no internal/developer commentary
 - [ ] /assets/css/site.css is loaded
 - [ ] /assets/js/site.js is loaded exactly once
 - [ ] no duplicate page-level analytics scripts
@@ -632,5 +669,7 @@ Use the LuvBlooms master system:
 - mobile-first UX
 - accessible markup
 - tracked CTAs
+- visually composed, not generic
+- no developer-facing copy in visible content
 
 Deliver complete head, body, schema, content structure, and final script include.
