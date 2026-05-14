@@ -101,11 +101,6 @@
             <input type="hidden" name="user_agent" id="user_agent" value="">
             <input type="hidden" name="ip" value="">
 
-            <div class="screen-reader-field" aria-hidden="true">
-              <label for="website">Leave this field empty</label>
-              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-            </div>
-
             <div class="section-head form-section-head">
               <h2>Contact details</h2>
               <p class="subhead">We will use this to reply to your message.</p>
@@ -128,21 +123,26 @@
                 <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
               </div>
               <div class="field">
-                <label for="heard_from">How did you hear about us? *</label>
-                <select id="heard_from" name="heard_from" required>
-                  <option value="">Select one</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="TikTok">TikTok</option>
-                  <option value="Facebook">Facebook</option>
-                  <option value="YouTube">YouTube</option>
-                  <option value="Pinterest">Pinterest</option>
-                  <option value="Google Search">Google Search</option>
-                  <option value="Google Reviews">Google Reviews</option>
-                  <option value="Friend or Family">Friend or Family</option>
-                  <option value="Event">Event</option>
-                  <option value="Other">Other</option>
-                </select>
+                <label for="phone">Phone *</label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" placeholder="(555) 555-5555" maxlength="14">
               </div>
+            </div>
+
+            <div class="field">
+              <label for="heard_from">How did you hear about us? *</label>
+              <select id="heard_from" name="heard_from" required>
+                <option value="">Select one</option>
+                <option value="Instagram">Instagram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Facebook">Facebook</option>
+                <option value="YouTube">YouTube</option>
+                <option value="Pinterest">Pinterest</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Google Reviews">Google Reviews</option>
+                <option value="Friend or Family">Friend or Family</option>
+                <option value="Event">Event</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
             <div class="field">
@@ -238,7 +238,31 @@
           return params;
         }
 
+        function formatPhone(value) {
+          var digits = (value || "").replace(/\D/g, "").slice(0, 10);
+
+          if (digits.length <= 3) {
+            return digits ? "(" + digits : "";
+          }
+
+          if (digits.length <= 6) {
+            return "(" + digits.slice(0, 3) + ") " + digits.slice(3);
+          }
+
+          return "(" + digits.slice(0, 3) + ") " + digits.slice(3, 6) + "-" + digits.slice(6);
+        }
+
+        function setupPhoneMask() {
+          var phone = document.getElementById("phone");
+          if (!phone) return;
+
+          phone.addEventListener("input", function () {
+            phone.value = formatPhone(phone.value);
+          });
+        }
+
         setInitialHiddenFields();
+        setupPhoneMask();
 
         form.addEventListener("submit", function (event) {
           event.preventDefault();
@@ -247,10 +271,12 @@
 
           if (!form.reportValidity()) return;
 
-          if ((form.elements.website.value || "").trim() !== "") {
-            showMessage("success", "Your message was sent. We will be in touch soon.");
-            form.reset();
-            setInitialHiddenFields();
+          var phoneField = document.getElementById("phone");
+          var phoneDigits = phoneField ? phoneField.value.replace(/\D/g, "") : "";
+
+          if (phoneDigits.length !== 10) {
+            showMessage("error", "Please enter a valid phone number in this format: (555) 555-5555.");
+            if (phoneField) phoneField.focus();
             return;
           }
 
