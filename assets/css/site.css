@@ -539,6 +539,11 @@ h1 {
   display: grid;
   gap: 16px;
   margin-top: 16px;
+  align-items: start;
+}
+
+.form-grid-align {
+  align-items: start;
 }
 
 .form-grid-2 {
@@ -599,6 +604,7 @@ h1 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
   transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
   appearance: none;
+  -webkit-appearance: none;
 }
 
 .form-card input[type="date"] {
@@ -615,6 +621,12 @@ h1 {
     calc(100% - 16px) calc(50% - 2px);
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
+}
+
+.form-card option {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #182024;
 }
 
 .form-card textarea {
@@ -679,6 +691,12 @@ h1 {
 .turnstile-wrap .cf-turnstile {
   display: inline-block;
   max-width: 100%;
+}
+
+.field > input,
+.field > select,
+.field > textarea {
+  margin-top: 0;
 }
 
 .form-actions {
