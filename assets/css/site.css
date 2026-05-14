@@ -996,39 +996,141 @@ h1 {
   }
 }
 
-
 /* ==========================================================
-   Form select typography refinement
-   Keeps dropdown fields aligned with LuvBlooms site typography.
-   Note: native option dropdown rendering varies by browser/OS.
+   CONTACT PAGE CINEMATIC HERO
    ========================================================== */
 
+.lb-contact-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--lb-border-soft);
+}
+
+.lb-contact-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/pages/lb_home_01.jpg");
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.03);
+}
+
+.lb-contact-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 28, 30, 0.76) 0%,
+      rgba(24, 28, 30, 0.54) 38%,
+      rgba(24, 28, 30, 0.24) 100%
+    );
+}
+
+.lb-contact-hero .page {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.lb-contact-content {
+  max-width: 560px;
+}
+
+.lb-contact-content .kicker {
+  margin-bottom: 18px;
+}
+
+.lb-contact-content h1 {
+  font-size: 82px;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  margin: 0 0 24px;
+  max-width: 9ch;
+}
+
+.lb-contact-content .lead {
+  font-size: 22px;
+  line-height: 1.6;
+  max-width: 28ch;
+}
+
+.lb-contact-form-section {
+  position: relative;
+  margin-top: -90px;
+  z-index: 3;
+}
+
+.lb-contact-micro {
+  max-width: 820px;
+  margin: 0 auto 24px;
+  background: rgba(20, 24, 26, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.lb-contact-form-section .form-card {
+  background: rgba(20, 24, 26, 0.56);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(231, 228, 209, 0.16);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+}
+
 .form-card select,
-.form-card option,
-.lb-contact-form select,
-.lb-contact-form option {
+.form-card option {
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   line-height: 1.35;
   font-weight: 500;
 }
 
-.form-card select,
-.lb-contact-form select {
-  min-height: 54px;
-}
-
-.form-card option,
-.lb-contact-form option {
+.form-card option {
   color: #182024;
   background: #E7E4D1;
 }
 
+.turnstile-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.turnstile-wrap iframe {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 @media (max-width: 900px) {
+
+  .lb-contact-hero {
+    min-height: 620px;
+  }
+
+  .lb-contact-hero .page {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .lb-contact-content h1 {
+    font-size: 56px;
+    max-width: 10ch;
+  }
+
+  .lb-contact-content .lead {
+    font-size: 20px;
+  }
+
+  .lb-contact-form-section {
+    margin-top: -50px;
+  }
+
   .form-card select,
-  .form-card option,
-  .lb-contact-form select,
-  .lb-contact-form option {
+  .form-card option {
     font-size: 15px;
   }
+
 }
