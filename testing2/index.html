@@ -94,6 +94,9 @@
               name="first_name"
               type="text"
               required
+              autocomplete="given-name"
+              autocapitalize="words"
+              data-auto-capitalize="words"
               placeholder="Your first name"
             >
           </div>
@@ -106,6 +109,9 @@
               name="last_name"
               type="text"
               required
+              autocomplete="family-name"
+              autocapitalize="words"
+              data-auto-capitalize="words"
               placeholder="Your last name"
             >
           </div>
@@ -134,6 +140,9 @@
               name="phone"
               type="tel"
               required
+              autocomplete="tel"
+              inputmode="numeric"
+              maxlength="14"
               placeholder="(555) 555-5555"
             >
           </div>
@@ -245,6 +254,84 @@
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="/assets/js/site.js"></script>
+
+
+<script>
+  (function () {
+    function capitalizeName(value) {
+      return (value || "")
+        .toLowerCase()
+        .replace(/\b([a-z])/g, function (match) {
+          return match.toUpperCase();
+        })
+        .replace(/\s+/g, " ")
+        .trimStart();
+    }
+
+    function setupNameAutoCapitalization() {
+      var fields = document.querySelectorAll('[data-auto-capitalize="words"]');
+
+      fields.forEach(function (field) {
+        field.addEventListener("input", function () {
+          var cursor = field.selectionStart;
+          field.value = capitalizeName(field.value);
+          field.setSelectionRange(cursor, cursor);
+        });
+
+        field.addEventListener("blur", function () {
+          field.value = capitalizeName(field.value).trim();
+        });
+      });
+    }
+
+    function formatPhone(value) {
+      var digits = (value || "").replace(/\D/g, "").slice(0, 10);
+
+      if (digits.length <= 3) {
+        return digits ? "(" + digits : "";
+      }
+
+      if (digits.length <= 6) {
+        return "(" + digits.slice(0, 3) + ") " + digits.slice(3);
+      }
+
+      return "(" + digits.slice(0, 3) + ") " + digits.slice(3, 6) + "-" + digits.slice(6);
+    }
+
+    function setupPhoneMask() {
+      var phone = document.getElementById("phone");
+
+      if (!phone) return;
+
+      phone.addEventListener("input", function () {
+        phone.value = formatPhone(phone.value);
+      });
+    }
+
+    window.onTurnstileSuccess = function (token) {
+      var field = document.getElementById("turnstile_token");
+
+      if (field) field.value = token || "";
+    };
+
+    window.onTurnstileExpired = function () {
+      var field = document.getElementById("turnstile_token");
+
+      if (field) field.value = "";
+    };
+
+    window.onTurnstileError = function () {
+      var field = document.getElementById("turnstile_token");
+
+      if (field) field.value = "";
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      setupNameAutoCapitalization();
+      setupPhoneMask();
+    });
+  })();
+</script>
 
 </body>
 </html>
