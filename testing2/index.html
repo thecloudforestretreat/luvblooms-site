@@ -1,23 +1,20 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact LuvBlooms | Floral Design Studio</title>
+  <title>Contact LuvBlooms</title>
 
   <meta
     name="description"
-    content="Contact LuvBlooms for intimate event florals, custom arrangements, brand activations, and floral consultations."
+    content="Contact LuvBlooms for intimate event florals, arrangements, floral consultations, and brand activations."
   >
-
-  <link rel="canonical" href="https://luvblooms.us/contact.html">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#364449">
 
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
-<body data-page-type="contact_page" data-primary-goal="inquiry_submit">
+<body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -25,41 +22,52 @@
 
 <main id="main" class="site-main">
 
-  <section class="hero">
+  <section class="lb-contact-hero">
+
+    <div class="lb-contact-hero-image"></div>
+
+    <div class="lb-contact-overlay"></div>
+
     <div class="page">
 
-      <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <div class="lb-contact-content">
 
-        <p class="kicker">Contact LuvBlooms</p>
+        <p class="kicker">
+          Contact LuvBlooms
+        </p>
 
         <h1>
           Let’s create something beautiful and considered.
         </h1>
 
-        <p class="lead" style="margin:0 auto;">
-          Brand moments, intimate gatherings, arrangements,
-          and floral direction with a softer editorial approach.
+        <p class="lead">
+          Arrangements, intimate events, floral direction,
+          and brand moments with a softer editorial approach.
         </p>
 
       </div>
 
     </div>
+
   </section>
 
-  <section class="section" id="contact-form">
+  <section class="lb-contact-form-section">
+
     <div class="page">
 
-      <div class="hero-micro inquiry-intro" style="max-width:820px;margin:0 auto 24px;">
+      <div class="hero-micro inquiry-intro lb-contact-micro">
 
         <div class="micro-item">
-          <span class="micro-dot" aria-hidden="true"></span>
+          <span class="micro-dot"></span>
+
           <span class="micro-text">
             Best for arrangements, intimate events, activations, and consultations
           </span>
         </div>
 
         <div class="micro-item">
-          <span class="micro-dot" aria-hidden="true"></span>
+          <span class="micro-dot"></span>
+
           <span class="micro-text">
             The more detail you share, the more tailored our reply can be
           </span>
@@ -74,10 +82,6 @@
         novalidate
       >
 
-        <input type="hidden" name="page" value="/contact">
-        <input type="hidden" name="client_timestamp" id="client_timestamp" value="">
-        <input type="hidden" name="user_agent" id="user_agent" value="">
-        <input type="hidden" name="ip" value="">
         <input type="hidden" name="turnstile_token" id="turnstile_token" value="">
 
         <div class="form-grid form-grid-2 form-grid-align">
@@ -90,7 +94,6 @@
               name="first_name"
               type="text"
               required
-              autocomplete="given-name"
               placeholder="Your first name"
             >
           </div>
@@ -103,7 +106,6 @@
               name="last_name"
               type="text"
               required
-              autocomplete="family-name"
               placeholder="Your last name"
             >
           </div>
@@ -120,7 +122,6 @@
               name="email"
               type="email"
               required
-              autocomplete="email"
               placeholder="you@example.com"
             >
           </div>
@@ -133,10 +134,7 @@
               name="phone"
               type="tel"
               required
-              autocomplete="tel"
-              inputmode="numeric"
               placeholder="(555) 555-5555"
-              maxlength="14"
             >
           </div>
 
@@ -145,36 +143,61 @@
         <div class="form-grid form-grid-2 form-grid-align">
 
           <div class="field">
-            <label for="interest_type">What are you interested in? *</label>
+
+            <label for="interest_type">
+              What are you interested in? *
+            </label>
 
             <select id="interest_type" name="interest_type" required>
+
               <option value="">Select one</option>
-              <option value="Brand Events and Activations">Brand Events and Activations</option>
-              <option value="Florals for Intimate Events">Florals for Intimate Events</option>
-              <option value="Request an Arrangement">Request an Arrangement</option>
-              <option value="Floral Design Consultation">Floral Design Consultation</option>
-              <option value="Curated At Home Experiences">Curated At Home Experiences</option>
+
+              <option value="Brand Events and Activations">
+                Brand Events and Activations
+              </option>
+
+              <option value="Florals for Intimate Events">
+                Florals for Intimate Events
+              </option>
+
+              <option value="Request an Arrangement">
+                Request an Arrangement
+              </option>
+
+              <option value="Floral Design Consultation">
+                Floral Design Consultation
+              </option>
+
             </select>
+
           </div>
 
           <div class="field">
-            <label for="heard_from">How did you hear about us? *</label>
+
+            <label for="heard_from">
+              How did you hear about us? *
+            </label>
 
             <select id="heard_from" name="heard_from" required>
+
               <option value="">Select one</option>
               <option value="Instagram">Instagram</option>
               <option value="TikTok">TikTok</option>
               <option value="Pinterest">Pinterest</option>
-              <option value="Google Search">Google Search</option>
+              <option value="Google">Google</option>
               <option value="Referral">Referral</option>
-              <option value="Other">Other</option>
+
             </select>
+
           </div>
 
         </div>
 
         <div class="field">
-          <label for="message">Tell us about your vision *</label>
+
+          <label for="message">
+            Tell us about your vision *
+          </label>
 
           <textarea
             id="message"
@@ -183,9 +206,11 @@
             required
             placeholder="Share the occasion, floral direction, inspiration, timing, or anything else we should know."
           ></textarea>
+
         </div>
 
         <div class="turnstile-wrap">
+
           <div
             class="cf-turnstile"
             data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
@@ -193,9 +218,11 @@
             data-expired-callback="onTurnstileExpired"
             data-error-callback="onTurnstileError"
           ></div>
+
         </div>
 
         <div class="button-row form-actions">
+
           <button
             id="submitBtn"
             type="submit"
@@ -203,13 +230,13 @@
           >
             Send Inquiry
           </button>
-        </div>
 
-        <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </div>
 
       </form>
 
     </div>
+
   </section>
 
 </main>
