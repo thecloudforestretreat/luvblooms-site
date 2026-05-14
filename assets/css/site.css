@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+
 :root {
   --lb-bg: #364449;
   --lb-text: #E7E4D1;
@@ -511,6 +513,16 @@ h1 {
   display: block;
 }
 
+
+.screen-reader-field {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* INQUIRY FORM SYSTEM */
 .inquiry-intro {
   margin-bottom: 24px;
@@ -563,9 +575,6 @@ h1 {
   min-width: 0;
 }
 
-.field:first-child {
-  margin-top: 0;
-}
 
 .field-stack {
   display: grid;
@@ -757,8 +766,8 @@ h1 {
 }
 
 /* ==========================================================
-   LuvBlooms header + form symmetry fix
-   Added to restore consistent header layout and aligned fields
+   LuvBlooms global header and form system
+   All page typography and form layout are controlled here.
    ========================================================== */
 
 /* Header shell */
