@@ -1193,3 +1193,104 @@ h1 {
 .form-status.is-error {
   color: #ffd1d1;
 }
+
+/* ==========================================================
+   TEMPORARY COMING SOON HOMEPAGE
+   ========================================================== */
+
+.lb-coming-soon-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lb-coming-soon-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/pages/lb_home_01.jpg");
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.03);
+}
+
+.lb-coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 22, 24, 0.78) 0%,
+      rgba(18, 22, 24, 0.56) 42%,
+      rgba(18, 22, 24, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(18, 22, 24, 0.22) 0%,
+      rgba(18, 22, 24, 0.62) 100%
+    );
+}
+
+.lb-coming-soon-hero .page {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.lb-coming-soon-content {
+  max-width: 680px;
+}
+
+.lb-coming-soon-content .kicker {
+  margin-bottom: 18px;
+}
+
+.lb-coming-soon-content h1 {
+  max-width: 9ch;
+  margin: 0 0 24px;
+  font-size: clamp(72px, 9vw, 128px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.lb-coming-soon-content .lead {
+  max-width: 34ch;
+  font-size: 24px;
+  line-height: 1.55;
+}
+
+.lb-coming-soon-note {
+  max-width: 620px;
+  margin-top: 34px;
+  background: rgba(20, 24, 26, 0.38);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 900px) {
+
+  .lb-coming-soon-hero {
+    min-height: 92svh;
+  }
+
+  .lb-coming-soon-hero .page {
+    padding-top: 74px;
+    padding-bottom: 74px;
+  }
+
+  .lb-coming-soon-content h1 {
+    font-size: clamp(58px, 16vw, 84px);
+    max-width: 8.5ch;
+  }
+
+  .lb-coming-soon-content .lead {
+    font-size: 20px;
+  }
+
+  .lb-coming-soon-note {
+    margin-top: 28px;
+  }
+
+}
