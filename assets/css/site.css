@@ -1195,10 +1195,385 @@ h1 {
 }
 
 /* ==========================================================
-   SITE CSS HEADER BOUNDARY
-   Header layout lives in /assets/css/header.css.
-   These safeguards prevent old drawer rules from site.css taking over.
+   GLOBAL FORM ALIGNMENT
    ========================================================== */
+
+.form-grid {
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+.form-grid > .field {
+  margin-top: 0;
+}
+
+.form-grid-2 > .field,
+.form-grid-3 > .field,
+.form-grid-4 > .field {
+  width: 100%;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="tel"],
+.form-card input[type="url"],
+.form-card input[type="number"],
+.form-card input[type="date"],
+.form-card select {
+  min-height: 54px;
+}
+
+.form-card label {
+  min-height: 20px;
+}
+
+.form-grid-2.form-grid-align,
+.form-grid-3.form-grid-align,
+.form-grid-4.form-grid-align {
+  align-items: start;
+}
+
+.form-grid-2.form-grid-align > .field,
+.form-grid-3.form-grid-align > .field,
+.form-grid-4.form-grid-align > .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid-2.form-grid-align > .field > input,
+.form-grid-2.form-grid-align > .field > select,
+.form-grid-2.form-grid-align > .field > textarea,
+.form-grid-3.form-grid-align > .field > input,
+.form-grid-3.form-grid-align > .field > select,
+.form-grid-3.form-grid-align > .field > textarea,
+.form-grid-4.form-grid-align > .field > input,
+.form-grid-4.form-grid-align > .field > select,
+.form-grid-4.form-grid-align > .field > textarea {
+  margin-top: auto;
+}
+
+/* ==========================================================
+   GLOBAL CINEMATIC HERO SYSTEM
+   ========================================================== */
+
+:root {
+  --lb-hero-title-size: clamp(72px, 8vw, 112px);
+  --lb-hero-title-size-mobile: clamp(48px, 14vw, 72px);
+  --lb-hero-title-line: 0.9;
+  --lb-hero-title-tracking: -0.055em;
+  --lb-hero-lead-size: 23px;
+  --lb-hero-lead-size-mobile: 19px;
+  --lb-hero-max-width: 10ch;
+  --lb-hero-lead-width: 34ch;
+}
+
+.lb-coming-soon-hero,
+.lb-about-hero,
+.lb-contact-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--lb-border-soft);
+}
+
+.lb-coming-soon-image,
+.lb-about-hero-image,
+.lb-contact-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/pages/lb_home_01.jpg");
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.03);
+}
+
+.lb-coming-soon-overlay,
+.lb-about-overlay,
+.lb-contact-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(18, 22, 24, 0.78) 0%, rgba(18, 22, 24, 0.56) 42%, rgba(18, 22, 24, 0.28) 100%),
+    linear-gradient(180deg, rgba(18, 22, 24, 0.12) 0%, rgba(18, 22, 24, 0.50) 100%);
+}
+
+.lb-coming-soon-hero .page,
+.lb-about-hero .page,
+.lb-contact-hero .page {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 118px;
+  padding-bottom: 118px;
+}
+
+.lb-coming-soon-content,
+.lb-about-content,
+.lb-contact-content {
+  max-width: 680px;
+}
+
+.lb-coming-soon-content h1,
+.lb-about-content h1,
+.lb-contact-content h1 {
+  max-width: var(--lb-hero-max-width);
+  margin: 0 0 24px;
+  font-size: var(--lb-hero-title-size) !important;
+  line-height: var(--lb-hero-title-line);
+  letter-spacing: var(--lb-hero-title-tracking);
+  font-weight: 500;
+}
+
+.lb-coming-soon-content .lead,
+.lb-about-content .lead,
+.lb-contact-content .lead {
+  max-width: var(--lb-hero-lead-width);
+  font-size: var(--lb-hero-lead-size);
+  line-height: 1.56;
+}
+
+.lb-coming-soon-note {
+  max-width: 620px;
+  margin-top: 34px;
+  background: rgba(20, 24, 26, 0.38);
+  backdrop-filter: blur(14px);
+}
+
+/* ==========================================================
+   CONTACT PAGE
+   ========================================================== */
+
+.lb-contact-form-section {
+  position: relative;
+  margin-top: -90px;
+  z-index: 3;
+}
+
+.lb-contact-micro {
+  max-width: 820px;
+  margin: 0 auto 24px;
+  background: rgba(20, 24, 26, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.lb-contact-form-section .form-card {
+  background: rgba(20, 24, 26, 0.56);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(231, 228, 209, 0.16);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+}
+
+.turnstile-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.turnstile-wrap iframe {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.form-card input:-webkit-autofill,
+.form-card input:-webkit-autofill:hover,
+.form-card input:-webkit-autofill:focus,
+.form-card textarea:-webkit-autofill,
+.form-card textarea:-webkit-autofill:hover,
+.form-card textarea:-webkit-autofill:focus,
+.form-card select:-webkit-autofill,
+.form-card select:-webkit-autofill:hover,
+.form-card select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--lb-text) !important;
+  caret-color: var(--lb-text);
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.14) inset !important;
+  border-color: rgba(231, 228, 209, 0.22) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+  color-scheme: dark;
+}
+
+.form-card select {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 18px !important;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--lb-text);
+}
+
+.form-card option {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 18px !important;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #182024;
+  background: #E7E4D1;
+}
+
+.form-status {
+  display: block;
+  margin-top: 16px;
+}
+
+.form-status.is-success {
+  color: #d7f3df;
+}
+
+.form-status.is-error {
+  color: #ffd1d1;
+}
+
+/* ==========================================================
+   ABOUT PAGE SYSTEM
+   ========================================================== */
+
+.lb-about-story-section {
+  position: relative;
+  padding-top: 72px;
+}
+
+.lb-about-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.72fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.lb-about-story-copy h2 {
+  max-width: 13ch;
+  margin: 0 0 18px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+.lb-about-story-copy p {
+  max-width: 62ch;
+  margin: 16px 0 0;
+  font-size: 21px;
+  line-height: 1.72;
+  opacity: 0.92;
+}
+
+.lb-about-note {
+  border: 1px solid var(--lb-border-soft);
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.16);
+  box-shadow: var(--lb-shadow);
+  padding: 22px;
+  position: sticky;
+  top: 24px;
+}
+
+.lb-about-note-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.lb-about-note-list span {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 19px;
+  line-height: 1.45;
+  opacity: 0.94;
+}
+
+.lb-about-note-list span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 10px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: rgba(231, 228, 209, 0.85);
+  box-shadow: 0 0 0 6px rgba(231, 228, 209, 0.06);
+}
+
+.lb-about-values-section {
+  padding-top: 40px;
+}
+
+.lb-about-values {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lb-about-value-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  padding: 24px 22px;
+  border-radius: 20px;
+  border: 1px solid var(--lb-border-soft);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.lb-about-value-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(231, 228, 209, 0.14), transparent 45%),
+    radial-gradient(circle at 75% 45%, rgba(161, 191, 170, 0.12), transparent 48%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.lb-about-value-card h3,
+.lb-about-value-card p,
+.lb-about-value-card .card-tag {
+  position: relative;
+  z-index: 1;
+}
+
+.lb-about-value-card .card-tag {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.lb-about-value-card h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.lb-about-value-card p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.lb-about-values .card-icon,
+.lb-about-values .card-top {
+  display: none !important;
+}
+
+/* ==========================================================
+   HEADER SAFEGUARD
+   Header styling lives in /assets/css/header.css.
+   This prevents unstyled header flashes if header.css loads late.
+   ========================================================== */
+
+#siteHeader img,
+#siteHeader .logo img,
+#siteHeader .menu-logo img {
+  width: auto !important;
+  height: 32px !important;
+  max-width: 92px !important;
+  max-height: 32px !important;
+}
 
 #siteHeader .menu-panel {
   bottom: auto !important;
