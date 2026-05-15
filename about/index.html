@@ -1,377 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About | LuvBlooms</title>
-
-  <meta name="description" content="Learn the story behind LuvBlooms: curated DIY floral recipes, premium stems, and simple rituals that help everyone create beautiful moments at home.">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
+  <title>About LuvBlooms | Floral Design Studio</title>
+
+  <meta
+    name="description"
+    content="Learn about LuvBlooms, a floral design studio creating arrangements, intimate event florals, brand activations, and design-led floral moments."
+  >
+
   <link rel="canonical" href="https://luvblooms.us/about.html">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#364449">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About | LuvBlooms">
-  <meta property="og:description" content="Curated DIY floral recipes, premium stems, and simple rituals that help everyone create beautiful moments at home.">
+  <meta property="og:title" content="About LuvBlooms | Floral Design Studio">
+  <meta
+    property="og:description"
+    content="A softer, more considered floral design experience for arrangements, intimate gatherings, brand moments, and floral consultations."
+  >
   <meta property="og:url" content="https://luvblooms.us/about.html">
-  <meta property="og:image" content="https://luvblooms.us/og-lb.jpg">
+  <meta property="og:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About | LuvBlooms">
-  <meta name="twitter:description" content="Curated DIY floral recipes, premium stems, and simple rituals that help everyone create beautiful moments at home.">
-  <meta name="twitter:image" content="https://luvblooms.us/og-lb.jpg">
+  <meta name="twitter:title" content="About LuvBlooms | Floral Design Studio">
+  <meta
+    name="twitter:description"
+    content="A softer, more considered floral design experience for arrangements, intimate gatherings, brand moments, and floral consultations."
+  >
+  <meta name="twitter:image" content="https://luvblooms.us/assets/images/pages/lb_home_01.jpg">
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
-  <link rel="stylesheet" href="/assets/css/header.css?v=4">
-
-  <!-- Head-only JS -->
-  <script src="/assets/js/includes.js" defer></script>
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About LuvBlooms",
     "url": "https://luvblooms.us/about.html",
+    "description": "Learn about LuvBlooms, a floral design studio creating arrangements, intimate event florals, brand activations, and design-led floral moments.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "LuvBlooms",
-      "url": "https://luvblooms.us"
+      "url": "https://luvblooms.us/"
+    },
+    "about": {
+      "@type": "Florist",
+      "name": "LuvBlooms",
+      "url": "https://luvblooms.us/"
     }
   }
   </script>
-
-  <style>
-    /* About page only styling (kept minimal, scoped) */
-    .about-hero { padding: 34px 0 10px; }
-    .about-hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 18px;
-      align-items: start;
-    }
-    .about-kicker {
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin: 0 0 10px;
-      opacity: 0.88;
-    }
-    .about-title {
-      margin: 0 0 12px;
-      font-size: 40px;
-      line-height: 1.1;
-      font-weight: 500;
-    }
-    .about-lead {
-      margin: 0;
-      font-size: 19px;
-      line-height: 1.6;
-      opacity: 0.92;
-      max-width: 62ch;
-    }
-    .about-side {
-      border: 1px solid rgba(231, 228, 209, 0.14);
-      background: rgba(0,0,0,0.14);
-      border-radius: 18px;
-      padding: 16px;
-    }
-    .about-side h3 {
-      margin: 0 0 8px;
-      font-weight: 500;
-      font-size: 18px;
-    }
-    .about-side p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0.92;
-    }
-
-    /* 4:3 image placeholder */
-    .about-photo {
-      margin-top: 18px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(231, 228, 209, 0.18);
-      background: linear-gradient(135deg, rgba(231, 228, 209, 0.10), rgba(161, 191, 170, 0.10));
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
-      aspect-ratio: 4 / 3;
-      position: relative;
-    }
-    .about-photo::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(231, 228, 209, 0.18), transparent 44%),
-        radial-gradient(circle at 70% 40%, rgba(161, 191, 170, 0.16), transparent 46%),
-        radial-gradient(circle at 55% 70%, rgba(231, 228, 209, 0.14), transparent 48%);
-    }
-    .about-photo .photo-label {
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(231, 228, 209, 0.20);
-      background: rgba(0, 0, 0, 0.22);
-      backdrop-filter: blur(8px);
-    }
-    .photo-label .t1 { font-size: 16px; letter-spacing: 0.02em; }
-    .photo-label .t2 { margin-top: 4px; font-size: 14px; opacity: 0.9; }
-
-    /* Content blocks */
-    .about-section {
-      padding-top: 34px;
-      border-top: 1px solid rgba(231, 228, 209, 0.12);
-      margin-top: 28px;
-    }
-    .about-section h2 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-    .about-section p {
-      margin: 12px 0 0;
-      font-size: 18px;
-      line-height: 1.7;
-      opacity: 0.92;
-      max-width: 78ch;
-    }
-
-    /* Values grid */
-    .values-grid {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .value-card {
-      border-radius: 20px;
-      border: 1px solid rgba(231, 228, 209, 0.12);
-      background: rgba(0,0,0,0.16);
-      padding: 18px 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .value-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 35% 35%, rgba(231, 228, 209, 0.14), transparent 45%),
-        radial-gradient(circle at 75% 45%, rgba(161, 191, 170, 0.12), transparent 48%);
-      opacity: 0.55;
-      pointer-events: none;
-    }
-    .value-card h3 {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 6px;
-      font-size: 20px;
-      font-weight: 500;
-    }
-    .value-card p {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0.92;
-      max-width: none;
-    }
-
-    /* Parent company block */
-    .parent-block {
-      margin-top: 18px;
-      border-radius: 22px;
-      border: 1px solid rgba(231, 228, 209, 0.18);
-      background: linear-gradient(135deg, rgba(231, 228, 209, 0.08), rgba(161, 191, 170, 0.08));
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
-      padding: 16px;
-      display: grid;
-      gap: 10px;
-    }
-    .parent-block .title {
-      font-size: 18px;
-      font-weight: 500;
-    }
-    .parent-block .body {
-      font-size: 16px;
-      line-height: 1.7;
-      opacity: 0.92;
-      max-width: 88ch;
-    }
-
-    /* Pending photos section */
-    .pending {
-      margin-top: 18px;
-      border: 1px dashed rgba(231, 228, 209, 0.28);
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(231, 228, 209, 0.04);
-    }
-    .pending h3 {
-      margin: 0 0 8px;
-      font-weight: 500;
-      font-size: 18px;
-    }
-    .pending ul {
-      margin: 0;
-      padding-left: 18px;
-      opacity: 0.92;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* Mobile */
-    @media (max-width: 900px) {
-      .about-hero-grid { grid-template-columns: 1fr; }
-      .about-title { font-size: 36px; }
-      .values-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 
-<body>
-  <div id="siteHeader"></div>
+<body data-page-type="utility_page" data-primary-goal="inquiry_submit">
 
-  <main class="page">
-    <section class="about-hero">
-      <div class="about-hero-grid">
-        <div>
-          <p class="about-kicker">About LuvBlooms</p>
-          <h1 class="about-title">Beautiful moments, simplified.</h1>
-          <p class="about-lead">
-            Luvblooms was born from a family passion for beautiful moments and the belief that everyone can create them at home.
-            We simplify floral styling through curated DIY recipes that make arranging flowers easy, inspiring, and accessible.
-          </p>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div id="siteHeader"></div>
+
+<main id="main" class="site-main">
+
+  <section class="lb-about-hero">
+
+    <div class="lb-about-hero-image" aria-hidden="true"></div>
+
+    <div class="lb-about-overlay" aria-hidden="true"></div>
+
+    <div class="page">
+
+      <div class="lb-about-content">
+
+        <p class="kicker">About LuvBlooms</p>
+
+        <h1>Floral design with feeling, restraint, and intention.</h1>
+
+        <p class="lead">
+          LuvBlooms creates arrangements, intimate event florals,
+          brand moments, and design-led floral experiences with
+          a softer editorial eye.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="/contact"
+            data-analytics-event="cta_click_inquire"
+            data-analytics-label="Work With Us"
+            data-analytics-location="about_hero"
+            data-analytics-section="about_page"
+          >
+            Work With Us
+          </a>
+
+          <a
+            class="btn btn-ghost"
+            href="/contact"
+            data-analytics-event="cta_click_arrangement"
+            data-analytics-label="Request an Arrangement"
+            data-analytics-location="about_hero"
+            data-analytics-section="about_page"
+          >
+            Request an Arrangement
+          </a>
         </div>
 
-        <aside class="about-side">
-          <h3>What we do</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="lb-about-story-section">
+
+    <div class="page">
+
+      <div class="lb-about-story-grid">
+
+        <div class="lb-about-story-copy">
+
+          <p class="kicker">The approach</p>
+
+          <h2>Beauty should feel composed, personal, and never overdone.</h2>
+
           <p>
-            Every stem is thoughtfully selected so you can design your own arrangements with confidence, no florist experience needed.
-            Whether it is a weekly ritual, a gift, or a moment of calm in your space, luvblooms helps you create something uniquely yours.
+            LuvBlooms was built around the belief that flowers can shift the entire
+            feeling of a room. A table becomes warmer. A gesture becomes more memorable.
+            A brand moment becomes more human. Our work is guided by texture, proportion,
+            color, and the emotional tone each project deserves.
           </p>
+
+          <p>
+            We work with clients who want florals that feel intentional rather than generic:
+            arrangements with presence, intimate settings with atmosphere, and brand
+            activations that photograph beautifully without losing softness.
+          </p>
+
+        </div>
+
+        <aside class="lb-about-note">
+
+          <p class="kicker">What we create</p>
+
+          <div class="lb-about-note-list">
+            <span>Custom arrangements</span>
+            <span>Florals for intimate events</span>
+            <span>Brand events and activations</span>
+            <span>Floral design consultations</span>
+            <span>Curated at-home experiences, coming soon</span>
+          </div>
+
         </aside>
+
       </div>
 
-      <!-- 4:3 image placeholder -->
-      <div class="about-photo" aria-label="About image placeholder">
-        <div class="photo-label">
-          <div class="t1">4:3 Photo Placeholder</div>
-          <div class="t2">Family moment, hands arranging flowers, or behind-the-scenes sourcing.</div>
-        </div>
-      </div>
-    </section>
+    </div>
 
-    <section class="about-section">
-      <h2>Mission</h2>
-      <p>
-        Luvblooms simplifies beautiful living through curated DIY floral recipes that inspire creativity and elevate everyday spaces.
-        We believe in fresh blooms, simple rituals, and empowering everyone to create something uniquely their own.
-      </p>
-    </section>
+  </section>
 
-    <section class="about-section">
-      <h2>Because when creativity meets simplicity</h2>
-      <p>Life blooms beautifully.</p>
+  <section class="lb-about-values-section">
 
-      <div class="parent-block">
-        <div class="title">Powered by Flowermarketplace</div>
-        <div class="body">
-          Flowermarketplace is the parent company that powers LuvBlooms. It provides the sourcing, operational backbone,
-          and floral supply chain expertise that allow luvblooms to launch with major advantages most early-stage brands do not have.
-        </div>
-      </div>
-    </section>
+    <div class="page">
 
-    <section class="about-section">
-      <h2>What we stand for</h2>
-      <p>
-        At Luvblooms, we believe that beauty should feel effortless. We stand for making floral design simple, inspiring,
-        and accessible to everyone, not just florists or creatives. Through curated DIY floral recipes and fresh, premium stems,
-        we empower you to create something uniquely your own.
-      </p>
-
-      <div class="values-grid">
-        <div class="value-card">
-          <h3>Creativity Made Simple</h3>
-          <p>
-            We take the guesswork out of arranging. Our curated recipes, thoughtful guidance, and step-by-step tips help you feel confident,
-            inspired, and excited to create.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <h3>Freshness and Quality First</h3>
-          <p>
-            Every stem is intentionally selected for its beauty, longevity, and seasonality. Backed by Flowermarketplace, we ensure unmatched
-            sourcing and freshness from farm to doorstep.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <h3>Intentional Living</h3>
-          <p>
-            We believe in the power of simple rituals like arranging flowers to elevate everyday moments. A moment of calm, a spark of joy,
-            a way to make your space feel more you.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <h3>Accessible Beauty</h3>
-          <p>
-            Beautiful arrangements should not require a florist or a special skill. We make the art of flowers approachable, enjoyable, and proudly DIY.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <h3>Thoughtful Design</h3>
-          <p>
-            Our aesthetic is minimal, modern, and elevated, never tacky. We curate with intention so what arrives at your home feels refined,
-            inspiring, and timeless.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <h3>Warm and Romantic</h3>
-          <p>
-            Luvblooms is rooted in love, gifting, and heartfelt moments. We bring a warm, approachable luxury feel to modern flower rituals.
-          </p>
-        </div>
+      <div class="section-head">
+        <p class="kicker">What guides us</p>
+        <h2>Quiet luxury, emotional clarity, and flowers that hold attention.</h2>
       </div>
 
-      <div class="pending">
-        <h3>Photos coming soon</h3>
-        <ul>
-          <li>Family photos: pending</li>
-          <li>Behind-the-scenes photos: pending</li>
-        </ul>
+      <div class="cards lb-about-values">
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-icon" aria-hidden="true"></span>
+            <span class="card-tag">01</span>
+          </div>
+
+          <h3>Atmosphere first</h3>
+
+          <p>
+            We begin with the feeling a room, table, arrangement, or brand moment
+            should carry before choosing the floral direction.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-icon" aria-hidden="true"></span>
+            <span class="card-tag">02</span>
+          </div>
+
+          <h3>Designed with restraint</h3>
+
+          <p>
+            Every stem, color, and shape should earn its place. The result feels
+            elegant, romantic, and visually considered.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-icon" aria-hidden="true"></span>
+            <span class="card-tag">03</span>
+          </div>
+
+          <h3>Personal by nature</h3>
+
+          <p>
+            Whether the request is intimate or brand-led, the work should feel
+            specific to the moment, not pulled from a template.
+          </p>
+        </article>
+
       </div>
-    </section>
-  </main>
 
-  <div id="siteFooter"></div>
+    </div>
 
-  <script src="/assets/js/site.js?v=4"></script>
+  </section>
+
+  <section class="lb-about-cta-section">
+
+    <div class="page">
+
+      <div class="cta-bar lb-about-cta">
+
+        <div>
+          <div class="cta-title">Have a floral moment in mind?</div>
+          <div class="cta-subtitle">
+            Tell us what you are imagining and we will guide the next step.
+          </div>
+        </div>
+
+        <a
+          class="btn btn-primary"
+          href="/contact"
+          data-analytics-event="cta_click_inquire"
+          data-analytics-label="Contact LuvBlooms"
+          data-analytics-location="about_footer_cta"
+          data-analytics-section="about_page"
+        >
+          Contact LuvBlooms
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="/assets/js/site.js"></script>
+
 </body>
 </html>
