@@ -68,19 +68,18 @@
 
   function showMessage(type, message) {
     var statusEl = document.getElementById("formStatus");
-    var successEl = document.querySelector(".form-success");
-    var errorEl = document.querySelector(".form-error");
 
-    if (statusEl) statusEl.textContent = message || "";
+    if (!statusEl) return;
 
-    if (successEl) {
-      successEl.hidden = type !== "success";
-      successEl.textContent = type === "success" ? message : "";
+    statusEl.textContent = message || "";
+    statusEl.classList.remove("is-success", "is-error");
+
+    if (type === "success") {
+      statusEl.classList.add("is-success");
     }
 
-    if (errorEl) {
-      errorEl.hidden = type !== "error";
-      errorEl.textContent = type === "error" ? message : "";
+    if (type === "error") {
+      statusEl.classList.add("is-error");
     }
   }
 
@@ -102,7 +101,7 @@
 
     var token = fd.get("cf-turnstile-response");
 
-    if (token) {
+    if (token && !params.has("turnstile_token")) {
       params.append("turnstile_token", token);
     }
 
