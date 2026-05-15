@@ -516,7 +516,6 @@
       if (!panel || !btn) return;
 
       if (overlay) overlay.hidden = false;
-
       panel.hidden = false;
       panel.setAttribute("data-open", "true");
       btn.setAttribute("aria-expanded", "true");
@@ -546,12 +545,8 @@
 
     function toggleMenu() {
       var panel = getPanel();
-
-      if (panel && panel.getAttribute("data-open") === "true") {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      if (panel && panel.getAttribute("data-open") === "true") closeMenu();
+      else openMenu();
     }
 
     if (!document.__lbMenuClickBound) {
@@ -578,7 +573,6 @@
 
     if (!document.__lbMenuKeyBound) {
       document.__lbMenuKeyBound = true;
-
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeMenu();
       });
