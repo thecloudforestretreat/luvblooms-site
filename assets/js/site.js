@@ -24,96 +24,65 @@
       });
   }
 
-  function getPanel() {
-    return document.getElementById("mobileMenu") || document.querySelector(".menu-panel");
-  }
+  function initMobileNav() {
+    var toggle = document.querySelector("[data-lb-nav-toggle]");
+    var mobile = document.querySelector("[data-lb-mobile-nav]");
 
-  function getOverlay() {
-    return document.querySelector("[data-menu-overlay]") || document.querySelector(".menu-overlay");
-  }
-
-  function getButton() {
-    return document.querySelector("[data-menu-open]") || document.querySelector(".hamburger");
-  }
-
-  function openMenu() {
-    var panel = getPanel();
-    var overlay = getOverlay();
-    var button = getButton();
-
-    if (!panel || !button) return;
-
-    if (overlay) overlay.hidden = false;
-
-    panel.hidden = false;
-    panel.setAttribute("data-open", "true");
-    button.setAttribute("aria-expanded", "true");
-
-    document.documentElement.classList.add("menu-is-open");
-    document.body.classList.add("menu-is-open");
-  }
-
-  function closeMenu() {
-    var panel = getPanel();
-    var overlay = getOverlay();
-    var button = getButton();
-
-    if (!panel || !button) return;
-
-    panel.setAttribute("data-open", "false");
-    button.setAttribute("aria-expanded", "false");
-
-    document.documentElement.classList.remove("menu-is-open");
-    document.body.classList.remove("menu-is-open");
-
-    window.setTimeout(function () {
-      if (panel.getAttribute("data-open") === "false") {
-        panel.hidden = true;
-
-        if (overlay) {
-          overlay.hidden = true;
-        }
-      }
-    }, 200);
-  }
-
-  function toggleMenu() {
-    var panel = getPanel();
-
-    if (panel && panel.getAttribute("data-open") === "true") {
-      closeMenu();
-    } else {
-      openMenu();
+    if (!toggle || !mobile || toggle.dataset.lbNavBound === "true") {
+      return;
     }
-  }
 
-  function initMenu() {
-    if (document.__lbMenuBound) return;
+    toggle.dataset.lbNavBound = "true";
 
-    document.__lbMenuBound = true;
+    function closeMenu() {
+      mobile.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      document.documentElement.classList.remove("lb-menu-open");
+    }
+
+    function openMenu() {
+      mobile.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+      document.documentElement.classList.add("lb-menu-open");
+    }
+
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (toggle.getAttribute("aria-expanded") === "true") {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
 
     document.addEventListener("click", function (event) {
-      var openButton = event.target.closest("[data-menu-open], .hamburger");
-      var closeButton = event.target.closest("[data-menu-close], .menu-close");
-      var overlay = event.target.closest("[data-menu-overlay], .menu-overlay");
-      var navLink = event.target.closest(".menu-links a");
+      if (mobile.hidden) return;
 
-      if (openButton) {
-        event.preventDefault();
-        toggleMenu();
-        return;
-      }
+      var closeHit = event.target.closest("[data-lb-nav-close]");
+      var insideHeader = event.target.closest("[data-lb-header]");
 
-      if (closeButton || overlay || navLink) {
+      if (closeHit || !insideHeader) {
         closeMenu();
       }
-    }, true);
+    });
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         closeMenu();
       }
     });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 901) {
+        closeMenu();
+      }
+    });
+
+    closeMenu();
   }
 
   function initAutoCapitalize() {
@@ -162,7 +131,7 @@
       include("siteHeader", "/assets/includes/header.html"),
       include("siteFooter", "/assets/includes/footer.html")
     ]).then(function () {
-      initMenu();
+      initMobileNav();
       initAutoCapitalize();
       initPhoneMask();
     });
