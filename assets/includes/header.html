@@ -1,4 +1,4 @@
-<header class="site-header" data-site-header>
+<header class="site-header" data-lb-header>
   <div class="header-inner">
     <a href="/" class="logo" aria-label="LuvBlooms Home">
       <img src="/assets/images/lb_logo_transparent.png" alt="LuvBlooms">
@@ -16,8 +16,8 @@
       type="button"
       aria-label="Open menu"
       aria-expanded="false"
-      aria-controls="mobileMenu"
-      data-menu-open
+      aria-controls="lbMobileNav"
+      data-lb-nav-toggle
     >
       <span></span>
       <span></span>
@@ -25,29 +25,11 @@
     </button>
   </div>
 
-  <div class="menu-overlay" data-menu-overlay hidden></div>
-
-  <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu" hidden>
-    <div class="menu-top">
-      <a href="/" class="menu-logo" aria-label="LuvBlooms Home">
-        <img src="/assets/images/lb_logo_transparent.png" alt="LuvBlooms">
-        <span>luvblooms.us</span>
-      </a>
-
-      <button class="menu-close" type="button" aria-label="Close menu" data-menu-close>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <nav class="menu-links" aria-label="Mobile navigation">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+  <div class="mobile-nav" id="lbMobileNav" data-lb-mobile-nav hidden>
+    <nav class="mobile-nav-inner" aria-label="Mobile navigation">
+      <a class="mobile-nav-link" href="/" data-lb-nav-close>Home</a>
+      <a class="mobile-nav-link" href="/about" data-lb-nav-close>About</a>
+      <a class="mobile-nav-link" href="/contact" data-lb-nav-close>Contact</a>
     </nav>
-
-    <div class="menu-footer">
-      <span>Floral design for arrangements, intimate events, and brand moments.</span>
-    </div>
-  </aside>
+  </div>
 </header>
