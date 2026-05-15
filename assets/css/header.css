@@ -1,6 +1,6 @@
 /* assets/css/header.css
-   LuvBlooms header + compact mobile menu
-   Recreated cleanly to avoid full-screen drawer behavior.
+   LuvBlooms header + compact mobile menu.
+   This file is the only source of truth for the hamburger menu.
 */
 
 :root {
@@ -118,7 +118,7 @@
   display: none !important;
 }
 
-/* Dim layer: visible, but not visually heavy */
+/* Dim layer */
 .menu-overlay,
 #siteHeader .menu-overlay {
   position: fixed !important;
@@ -237,7 +237,7 @@
   transform: rotate(-45deg) !important;
 }
 
-/* Menu links: compact stacked cards like reference */
+/* Menu links: compact stacked cards */
 .menu-links,
 #siteHeader .menu-links {
   margin: 14px 0 0 !important;
