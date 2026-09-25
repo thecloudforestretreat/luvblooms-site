@@ -2980,6 +2980,247 @@ body {
 }
 
 /* ==========================================================
+   REFINED TEXT LINKS
+   Underlines appear through interaction instead of adding noise.
+   ========================================================== */
+
+.lb-card-link {
+  position: relative;
+  gap: 10px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+.lb-card-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 28px;
+  bottom: 4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+}
+
+.lb-card-link::after {
+  transition: transform 220ms ease;
+}
+
+.lb-card-link:hover::before,
+.lb-card-link:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.lb-card-link:hover::after,
+.lb-card-link:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.footer-nav a {
+  position: relative;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+}
+
+.footer-nav a:hover::after,
+.footer-nav a:focus-visible::after,
+.footer-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==========================================================
+   INTIMATE EVENTS PAGE PAIR
+   A staggered editorial composition distinct from Brand Events.
+   ========================================================== */
+
+.lb-intimate-events-page .lb-page-hero-image {
+  background-position: 52% 48%;
+  filter: saturate(0.82) contrast(1.02) brightness(0.94);
+}
+
+.lb-intimate-visual-section {
+  background:
+    linear-gradient(135deg, rgba(231, 228, 209, 0.025), transparent 48%),
+    rgba(0, 0, 0, 0.055);
+}
+
+.lb-intimate-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-rows: auto minmax(260px, 1fr);
+  gap: 26px clamp(34px, 5vw, 72px);
+  align-items: stretch;
+}
+
+.lb-intimate-visual-copy {
+  align-self: end;
+  padding: 10px 0 clamp(22px, 4vw, 48px);
+}
+
+.lb-intimate-visual-copy h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(44px, 5.1vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.lb-intimate-visual-copy > p:last-child {
+  max-width: 43ch;
+  margin: 22px 0 0;
+  font-size: 19px;
+  line-height: 1.65;
+  opacity: 0.9;
+}
+
+.lb-intimate-image {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(231, 228, 209, 0.14);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.12);
+}
+
+.lb-intimate-image-main {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-height: 720px;
+}
+
+.lb-intimate-image-detail {
+  min-height: 300px;
+}
+
+.lb-intimate-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.84) contrast(1.03) brightness(0.88);
+  transition: transform 600ms cubic-bezier(0.2, 0.65, 0.3, 1), filter 350ms ease;
+}
+
+.lb-intimate-image-main img {
+  object-position: 52% center;
+  transform: scale(1.03);
+}
+
+.lb-intimate-image-detail img {
+  object-position: 72% 38%;
+  transform: scale(1.22);
+}
+
+.lb-intimate-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(13, 18, 19, 0.8) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.lb-intimate-image figcaption {
+  position: absolute;
+  left: clamp(22px, 3vw, 36px);
+  right: clamp(22px, 3vw, 36px);
+  bottom: clamp(20px, 3vw, 32px);
+  z-index: 1;
+  font-size: clamp(25px, 2.8vw, 39px);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.lb-intimate-image:hover img {
+  filter: saturate(0.96) contrast(1.04) brightness(0.93);
+}
+
+.lb-intimate-image-main:hover img {
+  transform: scale(1.055);
+}
+
+.lb-intimate-image-detail:hover img {
+  transform: scale(1.26);
+}
+
+@media (max-width: 900px) {
+  .lb-intimate-editorial {
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 22px;
+  }
+
+  .lb-intimate-image-main {
+    min-height: 600px;
+  }
+
+  .lb-intimate-image-detail {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 650px) {
+  .lb-intimate-editorial {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 18px;
+  }
+
+  .lb-intimate-visual-copy,
+  .lb-intimate-image-main,
+  .lb-intimate-image-detail {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .lb-intimate-visual-copy {
+    padding: 0 0 20px;
+  }
+
+  .lb-intimate-visual-copy h2 {
+    font-size: clamp(40px, 12vw, 54px);
+  }
+
+  .lb-intimate-image-main {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .lb-intimate-image-detail {
+    min-height: 0;
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-card-link::before,
+  .lb-card-link::after,
+  .footer-nav a::after,
+  .lb-intimate-image img {
+    transition: none;
+  }
+}
+
+/* ==========================================================
    GLOBAL FORM ALIGNMENT
    ========================================================== */
 
