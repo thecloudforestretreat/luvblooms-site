@@ -74,6 +74,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 24px;
+  margin-left: auto;
 }
 
 .nav-desktop a {
@@ -97,8 +98,42 @@
   text-underline-offset: 7px;
 }
 
+.header-language-link {
+  min-width: 78px;
+  min-height: 42px;
+  padding: 9px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  color: var(--lb-text);
+  border: 1px solid rgba(231, 228, 209, 0.34);
+  border-radius: 999px;
+  background: rgba(231, 228, 209, 0.075);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.header-language-link strong {
+  font-weight: 750;
+}
+
+.header-language-link span {
+  opacity: 0.58;
+}
+
+.header-language-link:hover {
+  border-color: rgba(231, 228, 209, 0.66);
+  background: rgba(231, 228, 209, 0.13);
+}
+
 .logo:focus-visible,
 .nav-desktop a:focus-visible,
+.header-language-link:focus-visible,
 .hamburger:focus-visible,
 .mobile-nav-link:focus-visible {
   outline: 3px solid var(--lb-text);
@@ -205,6 +240,7 @@ html.lb-menu-open body {
 
   .header-inner {
     padding: 14px 16px;
+    gap: 10px;
   }
 
   .logo {
@@ -219,7 +255,7 @@ html.lb-menu-open body {
 
   .logo span {
     font-size: 23px;
-    max-width: 175px;
+    max-width: 132px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -228,10 +264,17 @@ html.lb-menu-open body {
     display: none !important;
   }
 
+  .header-language-link {
+    min-width: 70px;
+    min-height: 46px;
+    margin-left: auto;
+    padding: 9px 11px;
+  }
+
   .hamburger {
     display: inline-flex;
     flex: 0 0 auto;
-    margin-left: auto;
+    margin-left: 0;
   }
 
   .mobile-nav {
@@ -248,14 +291,23 @@ html.lb-menu-open body {
 }
 
 @media (max-width: 380px) {
+  .logo img {
+    display: none !important;
+  }
+
   .logo span {
-    font-size: 21px;
-    max-width: 145px;
+    font-size: 20px;
+    max-width: 116px;
   }
 
   .hamburger {
     width: 48px;
     height: 48px;
+  }
+
+  .header-language-link {
+    min-width: 62px;
+    padding-inline: 9px;
   }
 
   .mobile-nav-link {

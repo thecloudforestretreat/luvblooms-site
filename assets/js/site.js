@@ -100,9 +100,17 @@
 
     document.querySelectorAll("[data-lb-language-switch]").forEach(function (link) {
       link.href = counterparts[path] || (isSpanish ? "/" : "/es/");
-      link.textContent = isSpanish ? "English" : "Español";
       link.lang = isSpanish ? "en" : "es";
       link.hreflang = isSpanish ? "en" : "es";
+
+      if (link.classList.contains("header-language-link")) {
+        link.innerHTML = isSpanish
+          ? '<span>ES</span><span aria-hidden="true">/</span><strong>EN</strong>'
+          : '<strong>EN</strong><span aria-hidden="true">/</span><span>ES</span>';
+        link.setAttribute("aria-label", isSpanish ? "View site in English" : "Ver sitio en español");
+      } else {
+        link.textContent = isSpanish ? "English" : "Español";
+      }
     });
 
     document.querySelectorAll("[data-lb-primary-nav]").forEach(function (nav) {
