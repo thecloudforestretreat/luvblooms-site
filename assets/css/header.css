@@ -91,6 +91,12 @@
   opacity: 1;
 }
 
+.nav-desktop a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+
 .logo:focus-visible,
 .nav-desktop a:focus-visible,
 .hamburger:focus-visible,
@@ -176,6 +182,11 @@
 
 .mobile-nav-link:hover {
   background: rgba(231, 228, 209, 0.105);
+}
+
+.mobile-nav-link[aria-current="page"] {
+  border-color: rgba(231, 228, 209, 0.48);
+  background: rgba(231, 228, 209, 0.13);
 }
 
 html.lb-menu-open,

@@ -23,7 +23,19 @@
     whatsappMessages: {
       default: "Hi LuvBlooms! I found you through your website and would love to learn more.",
       contact: "Hi LuvBlooms! I would like to discuss a floral project.",
-      inquiry: "Hi LuvBlooms! I am interested in starting a floral inquiry."
+      inquiry: "Hi LuvBlooms! I am interested in starting a floral inquiry.",
+      home_general: "Hi LuvBlooms! I found your website and would like to learn more about your floral services.",
+      service_general: "Hi LuvBlooms! I would like to discuss a floral design service.",
+      arrangement: "Hi LuvBlooms! I would like to request a custom floral arrangement.",
+      brand_event: "Hi LuvBlooms! I would like to discuss florals for a brand event or activation.",
+      intimate_event: "Hi LuvBlooms! I would like to discuss florals for an intimate event.",
+      consultation: "Hi LuvBlooms! I would like to schedule a floral design consultation.",
+      home_general_es: "¡Hola, LuvBlooms! Encontré su sitio y quisiera conocer más sobre sus servicios florales.",
+      service_general_es: "¡Hola, LuvBlooms! Quisiera conversar sobre un servicio de diseño floral.",
+      arrangement_es: "¡Hola, LuvBlooms! Quisiera solicitar un arreglo floral personalizado.",
+      brand_event_es: "¡Hola, LuvBlooms! Quisiera conversar sobre flores para un evento de marca o activación.",
+      intimate_event_es: "¡Hola, LuvBlooms! Quisiera conversar sobre flores para un evento íntimo.",
+      consultation_es: "¡Hola, LuvBlooms! Quisiera programar una consultoría de diseño floral."
     }
   };
 

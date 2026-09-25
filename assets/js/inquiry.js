@@ -7,6 +7,7 @@
   var successEl;
   var errorEl;
   var submitBtn;
+  var isSpanish = document.documentElement.lang.toLowerCase().indexOf("es") === 0;
 
   function showMessage(type, message) {
     if (statusEl) statusEl.textContent = message || "";
@@ -49,6 +50,11 @@
     successEl = document.querySelector(".form-success");
     errorEl = document.querySelector(".form-error");
     submitBtn = form.querySelector('button[type="submit"]');
+
+    var requestedType = new URLSearchParams(window.location.search).get("type");
+    if (requestedType === "arrangement") form.elements.service_type.value = "custom_order";
+    if (requestedType === "brand") form.elements.service_type.value = "brand_events";
+
     setMetadata();
 
     form.addEventListener("submit", function (event) {
@@ -57,13 +63,13 @@
       if (!form.reportValidity()) return;
 
       if (!form.elements.turnstile_token.value) {
-        showMessage("error", "Please complete the security check before submitting.");
+        showMessage("error", isSpanish ? "Completa la verificación de seguridad antes de enviar." : "Please complete the security check before submitting.");
         dispatch("luvblooms:form-error", { form_name: "luvblooms_inquiry", error_message: "Turnstile not completed" });
         return;
       }
 
       setMetadata();
-      showMessage("", "Sending your inquiry...");
+      showMessage("", isSpanish ? "Enviando tu consulta..." : "Sending your inquiry...");
       if (submitBtn) submitBtn.disabled = true;
 
       fetch(config.endpoints.inquiry, {
@@ -73,16 +79,16 @@
       })
         .then(function (response) { return response.json(); })
         .then(function (data) {
-          if (!data || data.ok !== true) throw new Error((data && data.message) || "Something went wrong. Please try again.");
+          if (!data || data.ok !== true) throw new Error((data && data.message) || (isSpanish ? "Ocurrió un error. Inténtalo de nuevo." : "Something went wrong. Please try again."));
 
-          showMessage("success", "Your inquiry was sent. We’ll be in touch soon.");
+          showMessage("success", isSpanish ? "Recibimos tu consulta. Nos comunicaremos contigo pronto." : "Your inquiry was sent. We’ll be in touch soon.");
           dispatch("luvblooms:form-success", { form_name: "luvblooms_inquiry", lead_type: form.elements.service_type.value || "inquiry" });
           form.reset();
           setMetadata();
           if (window.LUVBLOOMS_TURNSTILE) window.LUVBLOOMS_TURNSTILE.reset(form);
         })
         .catch(function (error) {
-          showMessage("error", error.message || "Network error. Please try again.");
+          showMessage("error", error.message || (isSpanish ? "Error de conexión. Inténtalo de nuevo." : "Network error. Please try again."));
           dispatch("luvblooms:form-error", { form_name: "luvblooms_inquiry", error_message: error.message || "Network error" });
         })
         .finally(function () {

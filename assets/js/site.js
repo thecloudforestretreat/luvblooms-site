@@ -26,17 +26,94 @@
   function initWhatsAppWidget() {
     if (!window.LUVBLOOMS_CONTACTS || document.querySelector(".lb-whatsapp-widget")) return;
 
+    var isSpanish = document.documentElement.lang.toLowerCase().indexOf("es") === 0;
     var link = document.createElement("a");
     link.className = "lb-whatsapp-widget";
-    link.href = window.LUVBLOOMS_CONTACTS.whatsappUrl("default");
+    link.href = window.LUVBLOOMS_CONTACTS.whatsappUrl(isSpanish ? "home_general_es" : "default");
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", "Chat with LuvBlooms on WhatsApp");
+    link.setAttribute("aria-label", isSpanish ? "Escribir a LuvBlooms por WhatsApp" : "Chat with LuvBlooms on WhatsApp");
     link.setAttribute("data-analytics-event", "whatsapp_click");
     link.setAttribute("data-analytics-label", "Floating WhatsApp widget");
     link.setAttribute("data-analytics-location", "floating_widget");
-    link.innerHTML = '<img src="/assets/images/icons/lb_wa.png" alt="" aria-hidden="true"><span>Chat with us</span>';
+    link.innerHTML = '<img src="/assets/images/icons/lb_wa.png" alt="" aria-hidden="true"><span>' + (isSpanish ? "Escríbenos" : "Chat with us") + "</span>";
     document.body.appendChild(link);
+  }
+
+  function normalizePath(pathname) {
+    if (!pathname || pathname === "/") return "/";
+    return pathname.replace(/\/+$/, "") + "/";
+  }
+
+  function localizeSharedChrome() {
+    var isSpanish = document.documentElement.lang.toLowerCase().indexOf("es") === 0;
+    var path = normalizePath(window.location.pathname);
+    var counterparts = {
+      "/": "/es/",
+      "/es/": "/",
+      "/services/": "/es/servicios/",
+      "/es/servicios/": "/services/",
+      "/services/brand-events-activations/": "/es/servicios/eventos-de-marca/",
+      "/es/servicios/eventos-de-marca/": "/services/brand-events-activations/",
+      "/services/intimate-events/": "/es/servicios/eventos-intimos/",
+      "/es/servicios/eventos-intimos/": "/services/intimate-events/",
+      "/services/custom-arrangements/": "/es/servicios/arreglos-florales/",
+      "/es/servicios/arreglos-florales/": "/services/custom-arrangements/",
+      "/services/floral-design-consultations/": "/es/servicios/consultoria-diseno-floral/",
+      "/es/servicios/consultoria-diseno-floral/": "/services/floral-design-consultations/",
+      "/curated-at-home/": "/es/experiencias-florales-en-casa/",
+      "/es/experiencias-florales-en-casa/": "/curated-at-home/",
+      "/about/": "/es/nosotros/",
+      "/es/nosotros/": "/about/",
+      "/inquire/": "/es/consultas/",
+      "/es/consultas/": "/inquire/",
+      "/privacy/": "/es/privacidad/",
+      "/es/privacidad/": "/privacy/"
+    };
+    var labels = isSpanish
+      ? { home: "Inicio", services: "Servicios", about: "Por qué LuvBlooms", inquire: "Consultas", privacy: "Privacidad" }
+      : { home: "Home", services: "Services", about: "Why LuvBlooms", inquire: "Inquire", privacy: "Privacy" };
+    var hrefs = isSpanish
+      ? { home: "/es/", services: "/es/servicios/", about: "/es/nosotros/", inquire: "/es/consultas/", privacy: "/es/privacidad/" }
+      : { home: "/", services: "/services/", about: "/about/", inquire: "/inquire/", privacy: "/privacy/" };
+
+    document.querySelectorAll("[data-lb-nav-key]").forEach(function (link) {
+      var key = link.getAttribute("data-lb-nav-key");
+      if (labels[key]) link.textContent = labels[key];
+      if (hrefs[key]) link.href = hrefs[key];
+      if (hrefs[key] && normalizePath(hrefs[key]) === path) link.setAttribute("aria-current", "page");
+    });
+
+    document.querySelectorAll("[data-lb-home-link]").forEach(function (link) {
+      link.href = hrefs.home;
+      if (link.classList.contains("logo")) {
+        link.setAttribute("aria-label", isSpanish ? "Inicio de LuvBlooms" : "LuvBlooms Home");
+      }
+    });
+
+    document.querySelectorAll("[data-lb-language-switch]").forEach(function (link) {
+      link.href = counterparts[path] || (isSpanish ? "/" : "/es/");
+      link.textContent = isSpanish ? "English" : "Español";
+      link.lang = isSpanish ? "en" : "es";
+      link.hreflang = isSpanish ? "en" : "es";
+    });
+
+    document.querySelectorAll("[data-lb-primary-nav]").forEach(function (nav) {
+      nav.setAttribute("aria-label", isSpanish ? "Navegación principal" : "Primary navigation");
+    });
+    document.querySelectorAll("[data-lb-mobile-primary-nav]").forEach(function (nav) {
+      nav.setAttribute("aria-label", isSpanish ? "Navegación móvil" : "Mobile navigation");
+    });
+    document.querySelectorAll("[data-lb-footer-nav]").forEach(function (nav) {
+      nav.setAttribute("aria-label", isSpanish ? "Navegación del pie de página" : "Footer navigation");
+    });
+
+    var serviceArea = document.querySelector("[data-lb-footer-service-area]");
+    if (serviceArea) {
+      serviceArea.textContent = isSpanish
+        ? "Estudio de diseño floral en Doral, con servicio en todo el condado de Miami-Dade."
+        : "Floral design studio based in Doral and serving Miami-Dade County.";
+    }
   }
 
   function getPageContext() {
@@ -296,6 +373,7 @@
       include("siteHeader", "/assets/includes/header.html"),
       include("siteFooter", "/assets/includes/footer.html")
     ]).then(function () {
+      localizeSharedChrome();
       initMobileNav();
       initAutoCapitalize();
       initPhoneMask();
