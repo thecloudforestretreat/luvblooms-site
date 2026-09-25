@@ -38,6 +38,13 @@
     link.setAttribute("data-analytics-location", "floating_widget");
     link.innerHTML = '<img src="/assets/images/icons/lb_wa.png" alt="" aria-hidden="true"><span>' + (isSpanish ? "Escríbenos" : "Chat with us") + "</span>";
     document.body.appendChild(link);
+
+    var footer = document.querySelector(".site-footer");
+    if (footer && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        link.classList.toggle("lb-whatsapp-widget-hidden", entries[0].isIntersecting);
+      }, { threshold: 0.08 }).observe(footer);
+    }
   }
 
   function normalizePath(pathname) {
