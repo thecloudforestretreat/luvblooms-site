@@ -1,45 +1,42 @@
 (function () {
   "use strict";
 
-  var GA_MEASUREMENT_ID = "G-T3XJE3NV2Y";
   var SCROLL_DEPTHS = [25, 50, 75, 90];
   var scrollDepthSent = {};
-
-  function loadAnalytics() {
-    if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") return;
-
-    if (!window.dataLayer) {
-      window.dataLayer = [];
-    }
-
-    window.gtag = window.gtag || function () {
-      window.dataLayer.push(arguments);
-    };
-
-    window.gtag("js", new Date());
-
-    window.gtag("config", GA_MEASUREMENT_ID, {
-      send_page_view: true,
-      page_path: window.location.pathname,
-      page_title: document.title
-    });
-
-    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID + '"]')) {
-      var script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
-      document.head.appendChild(script);
-    }
-  }
 
   function trackEvent(eventName, params) {
     if (!eventName) return;
 
     params = params || {};
 
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: eventName }, params));
+
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, params);
     }
+  }
+
+  function initContactLinks() {
+    if (window.LUVBLOOMS_CONTACTS) {
+      window.LUVBLOOMS_CONTACTS.update(document);
+    }
+  }
+
+  function initWhatsAppWidget() {
+    if (!window.LUVBLOOMS_CONTACTS || document.querySelector(".lb-whatsapp-widget")) return;
+
+    var link = document.createElement("a");
+    link.className = "lb-whatsapp-widget";
+    link.href = window.LUVBLOOMS_CONTACTS.whatsappUrl("default");
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", "Chat with LuvBlooms on WhatsApp");
+    link.setAttribute("data-analytics-event", "whatsapp_click");
+    link.setAttribute("data-analytics-label", "Floating WhatsApp widget");
+    link.setAttribute("data-analytics-location", "floating_widget");
+    link.innerHTML = '<img src="/assets/images/icons/lb_wa.png" alt="" aria-hidden="true"><span>Chat with us</span>';
+    document.body.appendChild(link);
   }
 
   function getPageContext() {
@@ -270,14 +267,29 @@
         }
       });
     }, { passive: true });
+
+    document.addEventListener("luvblooms:form-success", function (event) {
+      var detail = event.detail || {};
+      var params = getPageContext();
+      params.form_name = detail.form_name || "";
+      params.lead_type = detail.lead_type || "floral_inquiry";
+      trackEvent("form_submit_success", params);
+      trackEvent("generate_lead", params);
+    });
+
+    document.addEventListener("luvblooms:form-error", function (event) {
+      var detail = event.detail || {};
+      var params = getPageContext();
+      params.form_name = detail.form_name || "";
+      params.error_message = detail.error_message || "";
+      trackEvent("form_submit_error", params);
+    });
   }
 
   window.LuvBloomsAnalytics = {
     trackEvent: trackEvent,
     getPageContext: getPageContext
   };
-
-  loadAnalytics();
 
   document.addEventListener("DOMContentLoaded", function () {
     Promise.all([
@@ -287,6 +299,8 @@
       initMobileNav();
       initAutoCapitalize();
       initPhoneMask();
+      initContactLinks();
+      initWhatsAppWidget();
       initAnalyticsEvents();
     });
   });

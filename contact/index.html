@@ -33,9 +33,14 @@
 
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/header.css">
+  <script src="/assets/js/site-config.js"></script>
+  <script src="/assets/js/attribution.js"></script>
+  <script src="/assets/js/head.js"></script>
+  <script src="/assets/js/turnstile.js"></script>
 </head>
 
 <body data-page-type="contact_page" data-primary-goal="inquiry_submit">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJH5TLWQ" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -221,10 +226,7 @@
 
         <div class="turnstile-wrap">
 
-          <div
-            class="cf-turnstile"
-            data-sitekey="0x4AAAAAADOtXOriiveud1Pw"
-          ></div>
+          <div class="cf-turnstile" data-turnstile-widget data-action="contact"></div>
 
         </div>
 
@@ -252,7 +254,7 @@
 
 <div id="siteFooter"></div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=luvBloomsTurnstileReady&amp;render=explicit" async defer></script>
 <script src="/assets/js/site.js"></script>
 <script src="/assets/js/contact.js" defer></script>
 

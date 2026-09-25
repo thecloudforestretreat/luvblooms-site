@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8AxsZjd7AUXHfdcBXxgEYGA0bsJGGKm_nTr6tUgnxQqNVN7tTWTEy3WZsm_0kiO2N/exec";
+  var config = window.LUVBLOOMS_CONFIG || {};
 
   function capitalizeName(value) {
     return (value || "")
@@ -138,11 +138,12 @@
       }
 
       setHiddenFields();
+      if (window.LuvBloomsAttribution) window.LuvBloomsAttribution.applyToForm(form);
       showMessage("", "Sending your inquiry...");
 
       if (submitBtn) submitBtn.disabled = true;
 
-      fetch(APPS_SCRIPT_URL, {
+      fetch(config.endpoints.contact, {
         method: "POST",
         mode: "cors",
         headers: {
@@ -164,15 +165,25 @@
           }
 
           showMessage("success", "Your inquiry was sent. We will be in touch soon.");
+          document.dispatchEvent(new CustomEvent("luvblooms:form-success", {
+            detail: {
+              form_name: "luvblooms_contact",
+              lead_type: form.elements.interest_type.value || "floral_inquiry"
+            }
+          }));
           form.reset();
           setHiddenFields();
 
-          if (window.turnstile) {
-            window.turnstile.reset();
-          }
+          if (window.LUVBLOOMS_TURNSTILE) window.LUVBLOOMS_TURNSTILE.reset(form);
         })
         .catch(function (error) {
           showMessage("error", error.message || "Network error. Please try again.");
+          document.dispatchEvent(new CustomEvent("luvblooms:form-error", {
+            detail: {
+              form_name: "luvblooms_contact",
+              error_message: error.message || "Network error"
+            }
+          }));
         })
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;

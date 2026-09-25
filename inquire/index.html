@@ -25,8 +25,14 @@
     >
 
     <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <script src="/assets/js/site-config.js"></script>
+    <script src="/assets/js/attribution.js"></script>
+    <script src="/assets/js/head.js"></script>
+    <script src="/assets/js/turnstile.js"></script>
   </head>
   <body data-page-type="contact_page" data-primary-goal="inquiry_submit">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJH5TLWQ" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div id="siteHeader"></div>
@@ -340,13 +346,7 @@
             </div>
 
             <div class="turnstile-wrap">
-              <div
-                class="cf-turnstile"
-                data-sitekey="YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY"
-                data-callback="onTurnstileSuccess"
-                data-expired-callback="onTurnstileExpired"
-                data-error-callback="onTurnstileError"
-              ></div>
+              <div class="cf-turnstile" data-turnstile-widget data-action="inquiry"></div>
             </div>
 
             <div class="button-row form-actions">
@@ -372,124 +372,8 @@
 
     <div id="siteFooter"></div>
 
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=luvBloomsTurnstileReady&amp;render=explicit" async defer></script>
     <script src="/assets/js/site.js"></script>
-    <script>
-      (function () {
-        var WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzLvL3-Lw5T2GFBkypn45toSleU5cjz85IV1-GskYPD0NGKpbtmxHcn0ZlUp5G9mP3l/exec";
-        var form = document.getElementById("lbInquiryForm");
-        var statusEl = document.getElementById("formStatus");
-        var successEl = document.querySelector(".form-success");
-        var errorEl = document.querySelector(".form-error");
-        var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-
-        if (!form) return;
-
-        form.elements.page_url.value = window.location.href;
-        form.elements.user_agent.value = navigator.userAgent || "";
-        form.elements.submission_timestamp.value = new Date().toISOString();
-
-        function showMessage(type, message) {
-          if (statusEl) statusEl.textContent = message || "";
-          if (successEl) {
-            successEl.hidden = type !== "success";
-            successEl.textContent = type === "success" ? message : "";
-          }
-          if (errorEl) {
-            errorEl.hidden = type !== "error";
-            errorEl.textContent = type === "error" ? message : "";
-          }
-        }
-
-        function serialize(formEl) {
-          var fd = new FormData(formEl);
-          var params = new URLSearchParams();
-
-          fd.forEach(function (value, key) {
-            if (params.has(key)) {
-              var existing = params.get(key);
-              params.set(key, existing + ", " + value);
-            } else {
-              params.append(key, value);
-            }
-          });
-
-          return params;
-        }
-
-        window.onTurnstileSuccess = function (token) {
-          var field = document.getElementById("turnstile_token");
-          if (field) field.value = token || "";
-        };
-
-        window.onTurnstileExpired = function () {
-          var field = document.getElementById("turnstile_token");
-          if (field) field.value = "";
-        };
-
-        window.onTurnstileError = function () {
-          var field = document.getElementById("turnstile_token");
-          if (field) field.value = "";
-        };
-
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          if (!form.reportValidity()) return;
-
-          if (!form.elements.turnstile_token.value) {
-            showMessage("error", "Please complete the security check before submitting.");
-            document.dispatchEvent(new CustomEvent("luvblooms:form-error", {
-              detail: {
-                form_name: "luvblooms_inquiry",
-                error_message: "Turnstile not completed"
-              }
-            }));
-            return;
-          }
-
-          showMessage("", "Sending your inquiry...");
-          if (submitBtn) submitBtn.disabled = true;
-          form.elements.submission_timestamp.value = new Date().toISOString();
-
-          fetch(WEB_APP_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-            },
-            body: serialize(form).toString()
-          })
-            .then(function (response) { return response.json(); })
-            .then(function (data) {
-              if (data && data.ok) {
-                showMessage("success", "Your inquiry was sent. We’ll be in touch soon.");
-                form.reset();
-                form.elements.page_url.value = window.location.href;
-                form.elements.user_agent.value = navigator.userAgent || "";
-                form.elements.submission_timestamp.value = new Date().toISOString();
-                document.dispatchEvent(new CustomEvent("luvblooms:form-success", {
-                  detail: {
-                    form_name: "luvblooms_inquiry"
-                  }
-                }));
-              } else {
-                throw new Error((data && data.message) || "Unable to send inquiry.");
-              }
-            })
-            .catch(function (error) {
-              showMessage("error", error.message || "Something went wrong. Please try again.");
-              document.dispatchEvent(new CustomEvent("luvblooms:form-error", {
-                detail: {
-                  form_name: "luvblooms_inquiry",
-                  error_message: error.message || "Submission failed"
-                }
-              }));
-            })
-            .finally(function () {
-              if (submitBtn) submitBtn.disabled = false;
-            });
-        });
-      })();
-    </script>
+    <script src="/assets/js/inquiry.js" defer></script>
   </body>
 </html>
