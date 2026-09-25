@@ -1,13 +1,18 @@
 (function () {
   "use strict";
 
+  var hostname = window.location.hostname.toLowerCase();
+  var productionHosts = ["luvblooms.us", "www.luvblooms.us", "luvblooms-site.pages.dev"];
+  var isProduction = productionHosts.indexOf(hostname) !== -1;
+
   var config = {
     siteName: "LuvBlooms",
     siteUrl: "https://luvblooms.us",
     sourceSite: "luvblooms",
     sourceDomain: "luvblooms.us",
-    googleTagManagerId: "GTM-PJH5TLWQ",
-    googleAnalyticsId: "G-T3XJE3NV2Y",
+    environment: isProduction ? "production" : "staging",
+    googleTagManagerId: isProduction ? "GTM-PJH5TLWQ" : "",
+    googleAnalyticsId: isProduction ? "G-T3XJE3NV2Y" : "",
     turnstileSiteKey: "0x4AAAAAADOtXOriiveud1Pw",
     contactEmail: "luvblooms.us@gmail.com",
     whatsappNumber: "13057937727",
