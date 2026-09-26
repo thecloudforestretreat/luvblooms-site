@@ -3626,6 +3626,252 @@ body {
 }
 
 /* ==========================================================
+   CURATED AT-HOME PAGE PAIR
+   A calm, horizontal seasonal rhythm for a developing offer.
+   ========================================================== */
+
+.lb-at-home-page .lb-page-hero-image {
+  background-position: 48% 52%;
+  filter: saturate(0.7) contrast(1.05) brightness(0.88);
+}
+
+.lb-at-home-visual-section {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 28%, rgba(195, 163, 120, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(231, 228, 209, 0.03), rgba(0, 0, 0, 0.08));
+}
+
+.lb-at-home-rhythm {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.78fr);
+  grid-template-rows: minmax(280px, 0.95fr) auto;
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.lb-at-home-image {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(231, 228, 209, 0.15);
+  background: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.15);
+}
+
+.lb-at-home-image-main {
+  grid-row: 1 / 3;
+  min-height: 650px;
+  border-radius: 190px 28px 28px 28px;
+}
+
+.lb-at-home-image-detail {
+  min-height: 340px;
+  border-radius: 26px 120px 26px 26px;
+}
+
+.lb-at-home-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 48%;
+  filter: saturate(0.82) contrast(1.04) brightness(0.82);
+  transform: scale(1.025);
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1), filter 350ms ease;
+}
+
+.lb-at-home-image-detail img {
+  object-position: 66% 42%;
+  transform: scale(1.45);
+}
+
+.lb-at-home-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(15, 20, 22, 0.88) 0%, rgba(15, 20, 22, 0.12) 55%, transparent 78%);
+  pointer-events: none;
+}
+
+.lb-at-home-image figcaption {
+  position: absolute;
+  left: clamp(22px, 3.5vw, 44px);
+  right: clamp(22px, 3.5vw, 44px);
+  bottom: clamp(22px, 3.5vw, 42px);
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+}
+
+.lb-at-home-image figcaption span,
+.lb-at-home-principle > span,
+.lb-at-home-page .lb-detail-card > span {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  opacity: 0.66;
+}
+
+.lb-at-home-image figcaption strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+  font-weight: 500;
+}
+
+.lb-at-home-image figcaption small {
+  grid-column: 2;
+  max-width: 42ch;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.86;
+}
+
+.lb-at-home-principle {
+  min-height: 250px;
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid rgba(231, 228, 209, 0.15);
+  border-radius: 26px 26px 110px 26px;
+  background:
+    radial-gradient(circle at 90% 100%, rgba(195, 163, 120, 0.12), transparent 42%),
+    rgba(0, 0, 0, 0.12);
+}
+
+.lb-at-home-principle h3 {
+  max-width: 11ch;
+  margin: 34px 0 14px;
+  font-size: clamp(32px, 3.5vw, 46px);
+  line-height: 0.98;
+  font-weight: 500;
+}
+
+.lb-at-home-principle p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.58;
+  opacity: 0.88;
+}
+
+.lb-at-home-page .lb-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 34px;
+}
+
+.lb-at-home-page .lb-detail-card {
+  min-height: 245px;
+  padding: 28px 24px;
+  border: 1px solid rgba(231, 228, 209, 0.15);
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.lb-at-home-page .lb-detail-card h3 {
+  margin: 42px 0 12px;
+  font-size: clamp(27px, 2.4vw, 34px);
+  line-height: 1.02;
+  font-weight: 500;
+}
+
+.lb-at-home-page .lb-detail-card p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+.lb-check-list {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lb-check-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.lb-check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 9px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.lb-at-home-image:hover img {
+  filter: saturate(0.92) contrast(1.04) brightness(0.88);
+  transform: scale(1.055);
+}
+
+.lb-at-home-image-detail:hover img {
+  transform: scale(1.5);
+}
+
+@media (max-width: 980px) {
+  .lb-at-home-page .lb-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lb-at-home-rhythm {
+    grid-template-columns: minmax(0, 1.2fr) minmax(230px, 0.8fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .lb-at-home-rhythm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .lb-at-home-image-main {
+    grid-row: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 100px 22px 22px 22px;
+  }
+
+  .lb-at-home-image-detail {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 22px 80px 22px 22px;
+  }
+
+  .lb-at-home-principle {
+    min-height: 0;
+    border-radius: 22px 22px 80px 22px;
+  }
+
+  .lb-at-home-page .lb-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lb-at-home-page .lb-detail-card {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-at-home-image img {
+    transition: none;
+  }
+}
+
+/* ==========================================================
    GLOBAL FORM ALIGNMENT
    ========================================================== */
 
