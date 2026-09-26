@@ -1718,6 +1718,201 @@ h1 {
 }
 
 /* ==========================================================
+   WHY LUVBLOOMS PAGE PAIR
+   Editorial studio story and local-service context.
+   ========================================================== */
+
+.lb-about-page .lb-page-hero-image {
+  background-position: 54% 45%;
+  filter: saturate(0.74) contrast(1.04) brightness(0.86);
+}
+
+.lb-about-page .lb-about-story-section {
+  padding-top: clamp(76px, 9vw, 128px);
+}
+
+.lb-about-page .lb-about-story-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.66fr);
+  gap: clamp(30px, 6vw, 86px);
+}
+
+.lb-about-page .lb-about-story-copy h2 {
+  max-width: 12ch;
+}
+
+.lb-about-page .lb-about-note {
+  top: 104px;
+  border-radius: 110px 24px 24px 24px;
+  padding: clamp(34px, 4vw, 50px);
+  background:
+    radial-gradient(circle at 25% 12%, rgba(231, 228, 209, 0.1), transparent 36%),
+    rgba(0, 0, 0, 0.14);
+}
+
+.lb-about-page .lb-about-note h3 {
+  margin: 14px 0 0;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.02;
+  font-weight: 500;
+}
+
+.lb-about-editorial-section {
+  overflow: hidden;
+}
+
+.lb-about-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.lb-about-editorial-image {
+  position: relative;
+  min-height: 650px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(231, 228, 209, 0.14);
+  border-radius: 26px 210px 26px 26px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.17);
+}
+
+.lb-about-editorial-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(18, 24, 26, 0.08), rgba(18, 24, 26, 0.34));
+  pointer-events: none;
+}
+
+.lb-about-editorial-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 46%;
+  filter: saturate(0.82) contrast(1.03) brightness(0.88);
+  transform: scale(1.025);
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1), filter 350ms ease;
+}
+
+.lb-about-editorial-image:hover img {
+  transform: scale(1.055);
+  filter: saturate(0.92) contrast(1.03) brightness(0.94);
+}
+
+.lb-about-editorial-copy h2 {
+  max-width: 10ch;
+  margin: 14px 0 24px;
+  font-size: clamp(48px, 5.8vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.lb-about-editorial-copy p:not(.kicker) {
+  max-width: 48ch;
+  margin: 16px 0 0;
+  font-size: 19px;
+  line-height: 1.66;
+}
+
+.lb-text-link {
+  display: inline-flex;
+  margin-top: 28px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(231, 228, 209, 0.55);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.lb-text-link:hover,
+.lb-text-link:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.lb-about-page .lb-about-values {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 34px;
+}
+
+.lb-about-page .lb-about-value-card {
+  min-height: 255px;
+  padding: 28px 24px;
+}
+
+.lb-about-page .lb-about-value-card .card-tag {
+  margin-bottom: 44px;
+}
+
+.lb-about-page .lb-boundary-note {
+  margin: 26px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(231, 228, 209, 0.14);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.lb-about-page .lb-note .lb-check-list a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(231, 228, 209, 0.34);
+}
+
+.lb-about-page .lb-note .lb-check-list a:hover,
+.lb-about-page .lb-note .lb-check-list a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 1050px) {
+  .lb-about-page .lb-about-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lb-about-editorial {
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .lb-about-page .lb-about-story-grid,
+  .lb-about-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .lb-about-page .lb-about-note {
+    top: auto;
+    border-radius: 76px 22px 22px 22px;
+  }
+
+  .lb-about-editorial-image {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 22px 100px 22px 22px;
+  }
+
+  .lb-about-editorial-copy h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .lb-about-page .lb-about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .lb-about-page .lb-about-value-card {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-about-editorial-image img {
+    transition: none;
+  }
+}
+
+/* ==========================================================
    BILINGUAL CONTENT SYSTEM
    Shared layouts for the English and Spanish page clusters.
    ========================================================== */
