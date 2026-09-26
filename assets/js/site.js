@@ -268,7 +268,11 @@
   }
 
   function initAnalyticsEvents() {
-    trackEvent("page_view_enhanced", getPageContext());
+    var pageContext = getPageContext();
+    var pageViewEvent = document.body ? (document.body.getAttribute("data-analytics-view-event") || "") : "";
+
+    trackEvent("page_view_enhanced", pageContext);
+    if (pageViewEvent) trackEvent(pageViewEvent, pageContext);
 
     document.addEventListener("click", function (event) {
       var link = event.target.closest("a");
